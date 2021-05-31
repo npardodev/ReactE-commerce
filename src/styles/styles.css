@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;900&display=swap');
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    width: 100%;
+    padding: 0.5em;
+}
+
+.nav {
+    background-color: rgba(152, 0, 0, 1);
+}
+
+.nav .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+.nav .menu li {
+    list-style: none;
+    color: rgb(0, 0, 0);
+}
+
+.nav .menu li a:hover {
+    color: rgb(48, 48, 48);
+    transition: 0.7s;
+    font-size: 1.223em;
+    text-decoration: underline;
+}
+
+.nav .menu li a {
+    font-size: 1rem;
+    font-weight: 300;
+    text-decoration: none;
+    width: 100%;
+    color: black;
+}
+
+.orderBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.orderBox .orderItems {
+    padding: 2rem;
+}
+
+.orderBox .icon {
+    padding: 2rem;
+}
+
+
+/* ----------------------------------
+-------------- Home -----------------
+------------------------------------*/
+
+.home {
+    min-height: 100vh;
+    padding-top: 10%;
+    text-align: center;
+    background-color: red;
+    /*background-image: url("../../public/img/home.jpg");*/
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.home h1 {
+    padding: 10%;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.home h3 {
+    padding-left: 20%;
+    text-align: center;
+}
+
+.home button {
+    width: 10%;
+}
+
+.home button i {
+    text-align: center;
+    background-color: aqua;
+    border-radius: 20px;
+    width: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ----------------------------------
+------------- Footer ----------------
+------------------------------------*/
+
+.container footer {
+    padding: 1rem;
+    text-align: center;
+    background-color: #6843cf;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ----------------------------------
+-------------- Store ----------------
+------------------------------------*/
+
+.container .searchBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+.container .searchBox h3 {
+    font-size: 2em;
+}
+
+.container .searchBox h3:hover {
+    font-size: 2em;
+    color: rgb(95, 98, 25);
+}
+
+.container .searchBox .searchBar {
+    width: 50%;
+    height: 2em;
+    border-radius: 10px;
+}
+
+.container .searchBox .searchBar input {
+    background-color: rgba(229, 226, 222, 0.3);
+    width: 100%;
+    height: 2em;
+    border-radius: 10px;
+}
+
+.container .searchBox .searchBar i {}
+
+.container .searchBox .searchList {}
+
+.container .searchBox .searchList ul {
+    font-size: 0.8em;
+    font-weight: 300;
+    text-decoration: none;
+    bottom: 10%;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container .searchBox .searchList ul li {
+    text-decoration: none;
+    padding-top: 10%;
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+}
+
+.container .searchBox .searchList button {
+    width: 100%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(245, 245, 246);
+    font-size: 1.5rem;
+    border-radius: 8px;
+    padding: 0.1em;
+    font-weight: 100;
+}
+
+.container .searchBox .searchList button:hover {}
+
+.container .portfolio {
+    position: relative;
+    width: 100%;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    background-color: rgb(212, 215, 222);
+}
+
+.container .portfolio .card {
+    position: relative;
+    background: #ffff;
+    padding: 1em;
+    justify-content: space-between;
+    display: flex;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.container .portfolio .card .number {
+    position: relative;
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.container .portfolio .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    margin-right: 1rem;
+    margin-left: 2rem;
+}
+
+.container .portfolio .card img {
+    width: clamp(5em, 7em, 10em);
+    height: clamp(10em, 12em, 15em);
+}
+
+.container .portfolio .card p {
+    padding: 1rem;
+    background-color: rgb(132, 201, 156);
+}
+
+
+/* ----------------------------------
+----------- Responsive --------------
+------------------------------------*/
+
+@media (max-width: 1200px) {
+    .container .portfolio {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .container .portfolio {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {}
+
+@media (max-width: 480px) {
+    .container .portfolio {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+/*----------------------------*/

@@ -1,25 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {NavBar} from './components/NavBar/NavBar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Mi primera App read.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+// Componente padre que recibe algo.
+const App = props => {
+
+  return <React.Fragment>
+      <NavBar/> 
+      <h2>Contenido</h2>
+    </React.Fragment>
 }
 
 export default App;
