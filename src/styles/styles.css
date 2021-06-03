@@ -77,8 +77,8 @@ body {
     min-height: 100vh;
     padding-top: 10%;
     text-align: center;
-    background-color: red;
-    /*background-image: url("../../public/img/home.jpg");*/
+    background-color: rgb(251, 251, 233);
+    /*background-image: url("../../src/img/home.svg"); */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -193,7 +193,7 @@ body {
 
 .container .searchBox .searchList button:hover {}
 
-.container .portfolio {
+.container .products {
     position: relative;
     width: 100%;
     padding: 2em;
@@ -203,7 +203,7 @@ body {
     background-color: rgb(212, 215, 222);
 }
 
-.container .portfolio .card {
+.container .products .card {
     position: relative;
     background: #ffff;
     padding: 1em;
@@ -214,13 +214,13 @@ body {
     transition: 0.5s;
 }
 
-.container .portfolio .card .number {
+.container .products .card .number {
     position: relative;
     font-size: 2em;
     font-weight: 500;
 }
 
-.container .portfolio .card {
+.container .products .card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -231,7 +231,7 @@ body {
     margin-left: 2rem;
 }
 
-.container .portfolio .card img {
+.container .products .card img {
     width: clamp(5em, 7em, 10em);
     height: clamp(10em, 12em, 15em);
 }
@@ -247,13 +247,13 @@ body {
 ------------------------------------*/
 
 @media (max-width: 1200px) {
-    .container .portfolio {
+    .container .products {
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media (max-width: 992px) {
-    .container .portfolio {
+    .container .products {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -261,7 +261,7 @@ body {
 @media (max-width: 768px) {}
 
 @media (max-width: 480px) {
-    .container .portfolio {
+    .container .products {
         grid-template-columns: repeat(1, 1fr);
     }
 }
