@@ -20,6 +20,11 @@ body {
     padding: 0.5em;
 }
 
+
+/* ----------------------------------
+--------- Header & Navbar -----------
+------------------------------------*/
+
 .nav {
     background-color: rgba(152, 0, 0, 1);
 }
@@ -66,6 +71,13 @@ body {
 
 .orderBox .icon {
     padding: 2rem;
+}
+
+.logo img {
+    width: clamp(2em, 3em, 5em);
+    height: clamp(2em, 3em, 5em);
+    padding: 0.2em;
+    margin: 0.8em;
 }
 
 
@@ -239,6 +251,20 @@ body {
 .container .portfolio .card p {
     padding: 1rem;
     background-color: rgb(132, 201, 156);
+}
+
+
+/* ----------------------------------
+-------------- Contact --------------
+------------------------------------*/
+
+.contact {
+    min-height: 60vh;
+    padding-top: 10%;
+    text-align: center;
+    background-color: rgb(194, 235, 241);
+    display: flex;
+    flex-direction: column;
 }
 
 

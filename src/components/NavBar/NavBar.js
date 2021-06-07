@@ -1,28 +1,24 @@
 import React from 'react';
+import {CartWidget} from '../../components/CartWidget/CartWidget';
 import '../../styles/styles.css';
 
 export const NavBar = () => {
 
-    return <React.Fragment>
+    return <>
         <div className="nav">
             <ul className="menu">
                 <li className="logo">
-                        <span className="icon"><i className="fa fa-user" aria-hidden="true"></i></span>
+                        <img src='./img/logo.svg' alt="Imagen logo" />
                 </li>
                 <li><a href=""> Home</a></li>
                 <li><a href=""> Productos</a></li>
                 <li><a href=""> Nosotros</a></li>
                 <li><a href=""> fghfgyr 1</a></li>
                 <li><a href=""> Contact</a></li>
-                <li className="logo">
-                    <a href="">
-                    </a>
-                </li>
-                <li className="orderBox">
-                    <p id="orderItems" class="orderItems">+1</p>
-                    <a href=""><span className="icon"><i className="fa fa-shopping-cart" aria-hidden="true"></i></span></a>
+                <li>
+                    <CartWidget />
                 </li>
             </ul>
         </div>
-    </React.Fragment>
+    </>
 }
