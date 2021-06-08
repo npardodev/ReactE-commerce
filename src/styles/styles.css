@@ -12,116 +12,6 @@ body {
     padding: 0;
     height: 100vh;
     background-color: #fff;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.container {
-    width: 100%;
-    padding: 0.5em;
-}
-
-
-/* ----------------------------------
---------- Header & Navbar -----------
-------------------------------------*/
-
-.nav {
-    background-color: rgba(152, 0, 0, 1);
-}
-
-.nav .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgba(255, 255, 255, 1);
-    text-align: center;
-}
-
-.nav .menu li {
-    list-style: none;
-    color: rgb(0, 0, 0);
-}
-
-.nav .menu li a:hover {
-    color: rgb(48, 48, 48);
-    transition: 0.7s;
-    font-size: 1.223em;
-    text-decoration: underline;
-}
-
-.nav .menu li a {
-    font-size: 1rem;
-    font-weight: 300;
-    text-decoration: none;
-    width: 100%;
-    color: black;
-}
-
-.orderBox {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-}
-
-.orderBox .orderItems {
-    padding: 2rem;
-}
-
-.orderBox .icon {
-    padding: 2rem;
-}
-
-.logo img {
-    width: clamp(2em, 3em, 5em);
-    height: clamp(2em, 3em, 5em);
-    padding: 0.2em;
-    margin: 0.8em;
-}
-
-
-/* ----------------------------------
--------------- Home -----------------
-------------------------------------*/
-
-.home {
-    min-height: 100vh;
-    padding-top: 10%;
-    text-align: center;
-    background-color: rgb(251, 251, 233);
-    /*background-image: url("../../src/img/home.svg"); */
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-}
-
-.home h1 {
-    padding: 10%;
-    text-align: center;
-    font-size: 3rem;
-    font-weight: 600;
-}
-
-.home h3 {
-    padding-left: 20%;
-    text-align: center;
-}
-
-.home button {
-    width: 10%;
-}
-
-.home button i {
-    text-align: center;
-    background-color: aqua;
-    border-radius: 20px;
-    width: 3rem;
-    justify-content: center;
-    align-items: center;
 }
 
 
@@ -139,71 +29,17 @@ body {
 
 
 /* ----------------------------------
--------------- Store ----------------
+-------------- Contact --------------
 ------------------------------------*/
 
-.container .searchBox {
+.contact {
+    min-height: 60vh;
+    padding-top: 10%;
+    text-align: center;
+    background-color: rgb(194, 235, 241);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5%;
 }
-
-.container .searchBox h3 {
-    font-size: 2em;
-}
-
-.container .searchBox h3:hover {
-    font-size: 2em;
-    color: rgb(95, 98, 25);
-}
-
-.container .searchBox .searchBar {
-    width: 50%;
-    height: 2em;
-    border-radius: 10px;
-}
-
-.container .searchBox .searchBar input {
-    background-color: rgba(229, 226, 222, 0.3);
-    width: 100%;
-    height: 2em;
-    border-radius: 10px;
-}
-
-.container .searchBox .searchBar i {}
-
-.container .searchBox .searchList {}
-
-.container .searchBox .searchList ul {
-    font-size: 0.8em;
-    font-weight: 300;
-    text-decoration: none;
-    bottom: 10%;
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-}
-
-.container .searchBox .searchList ul li {
-    text-decoration: none;
-    padding-top: 10%;
-    margin-right: 0.5em;
-    margin-left: 0.5em;
-}
-
-.container .searchBox .searchList button {
-    width: 100%;
-    color: rgb(0, 0, 0);
-    background-color: rgb(245, 245, 246);
-    font-size: 1.5rem;
-    border-radius: 8px;
-    padding: 0.1em;
-    font-weight: 100;
-}
-
-.container .searchBox .searchList button:hover {}
 
 .container .products {
     position: relative;
@@ -212,7 +48,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1em;
-    background-color: rgb(212, 215, 222);
+    background-color: rgba(238, 240, 242, 0.62);
 }
 
 .container .products .card {
@@ -224,6 +60,7 @@ body {
     cursor: pointer;
     border-radius: 20px;
     transition: 0.5s;
+    box-shadow: rgb(70 79 184 / 80%) 0px 10px 36px -25px;
 }
 
 .container .products .card .number {
@@ -253,25 +90,6 @@ body {
     background-color: rgb(132, 201, 156);
 }
 
-
-/* ----------------------------------
--------------- Contact --------------
-------------------------------------*/
-
-.contact {
-    min-height: 60vh;
-    padding-top: 10%;
-    text-align: center;
-    background-color: rgb(194, 235, 241);
-    display: flex;
-    flex-direction: column;
-}
-
-
-/* ----------------------------------
------------ Responsive --------------
-------------------------------------*/
-
 @media (max-width: 1200px) {
     .container .products {
         grid-template-columns: repeat(3, 1fr);
@@ -291,6 +109,3 @@ body {
         grid-template-columns: repeat(1, 1fr);
     }
 }
-
-
-/*----------------------------*/

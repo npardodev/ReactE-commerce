@@ -1,27 +1,63 @@
-import React,{useState} from 'react';
-import '../../styles/styles.css';
+import React,{useState, useEffect} from 'react';
 
+import { CounterStyle } from '../../styles/Counter/CounterStyle.js'
+import { makeStyles } from '@material-ui/core';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Input from '@material-ui/core/Input';
 
-export const Counter = props => {
+const useStyle = makeStyles ((theme) => CounterStyle(theme));
+
+export const Counter = ({ stock, initial,  onAdd }) => {
     
-    const [count, setCount] = useState(0);
-    const [dateAndHour, setDateAndHour] = useState(undefined);
+    const classes = useStyle ();
+
+    const [count, setCount] = useState(initial);
+
+    useEffect(() => {
+        console.log('Hay un cambio de estado en contador');
+
+    }, [count])
+
+    const  handleCountChange = (e) => {
+        setCount(e.target.value );
+     }
 
     const handleAddCount = () =>{
         setCount(count +1);
     }
 
     const handleRemoveCount = () =>{
-        if (count > 0)
-            setCount(count -1);
+        setCount(count -1);
     }
 
+
     return (
-        <div>
-            <h4>{`${count}`}</h4>
-            {dateAndHour && <h5>{dateAndHour} </h5> }
-            <button onClick={e => handleAddCount()}>+</button>
-            <button onClick={e => handleRemoveCount()}>-</button>
+        <div className={classes.counterWidget} >
+            <div className={classes.counter}>
+                <Button 
+                    onClick={ (e) => {
+                        if (stock -1 >= count){
+                            handleAddCount();
+                        }
+                        else
+                            console.log("la cantidad indicada supera el stock actual");
+                    }}
+                    color="primary">+ 
+                </Button>
+                <h5> {`${count}`}  </h5>                
+                <Button 
+                onClick={ (e) => {
+                    if (count >0){
+                        handleRemoveCount();
+                    }
+                }}
+                    color="primary">- 
+                </Button>
+            </div>
+            { count !== 0 ? <Button id="AddToCart" variant="contained" color="primary">{"Agregar"}</Button> : null }
+            
+            <h4>{`En stock: ${stock}`}</h4>
         </div>
     )
 }

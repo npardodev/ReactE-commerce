@@ -1,10 +1,8 @@
 import React from 'react';
 
 const commonStyles = {
-    color: 'blue',
     fontFamily: 'Arial',
-    fontWeight: '300',
-
+    color: '#6C63FF'
 }
 
 export const commonComponentStyle = theme => {
@@ -12,28 +10,44 @@ export const commonComponentStyle = theme => {
     return ({
         container: {
             display: 'flex',
+            flexDirection: 'column',
             position: 'relative',
             width: '100%',
-            height: '50vh',
+            height: '100vh',
             justifyItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'red',
-            ' & > h1': {
+            backgroundColor: 'white',
+            justifyContent: 'center',
+            alignItems: 'center',
+            ' & h2': {
                 position: 'absolute',
                 top: '5%',
-                fontFamily: 'Zillaa slab',
-                fontWeight: '100',
-                color: '#4b4b4b',
+                justifyItems: 'center',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontSize: '2.2em',
                 ...commonStyles
             },
-            ' & > img': {
-                width: 'clamp(20em, 25em, 30em)'
+            ' & h3': {
+                position: 'absolute',
+                top: '12%',
+                justifyItems: 'center',
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontWeight: '600',
+                fontSize: '1em',
+                ...commonStyles
+
+            },
+            ' & img': {
+                width: 'clamp(20em, 5em, 30em)',
             },
             ' & button': {
                 alignSelf: 'center',
-                marginRight: '1em',
+                padding: '1em',
                 backgroundColor: 'aquamarine'
             }
         }
+
     })
 };

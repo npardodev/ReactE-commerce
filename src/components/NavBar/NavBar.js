@@ -1,20 +1,24 @@
 import React from 'react';
 import {CartWidget} from '../../components/CartWidget/CartWidget';
-import '../../styles/styles.css';
+
+import { makeStyles } from '@material-ui/core';
+import { NavBarStyle } from '../../styles/NavBar/NavBarStyle.js'
+
+const useStyle = makeStyles ((theme) => NavBarStyle(theme));
 
 export const NavBar = () => {
 
+    const classes = useStyle();
+    
     return <>
-        <div className="nav">
-            <ul className="menu">
-                <li className="logo">
-                        <img src='./img/logo.svg' alt="Imagen logo" />
+        <div className={classes.nav}>
+            <ul>
+                <li className={classes.logo}>
+                    <img src='./img/logo.svg' alt="Imagen logo" />
                 </li>
-                <li><a href=""> Home</a></li>
-                <li><a href=""> Productos</a></li>
                 <li><a href=""> Nosotros</a></li>
-                <li><a href=""> fghfgyr 1</a></li>
-                <li><a href=""> Contact</a></li>
+                <li><a href=""> Productos</a></li>
+                <li><a href=""> Contacto</a></li>
                 <li>
                     <CartWidget />
                 </li>

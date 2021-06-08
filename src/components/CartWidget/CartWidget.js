@@ -1,27 +1,34 @@
-import React from 'react';
-import '../../styles/styles.css';
+import React,{useState} from 'react';
+
 import { makeStyles } from '@material-ui/core';
+import { withStyles } from '@material-ui/core';
 
-//import { componentePadreStyle } from '../componentePadreStyle.js'
-//const useStyle = makeStyles ((theme) => componentePadreStyle(theme));
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import Badge from '@material-ui/core/Badge';
+import IconButton from '@material-ui/core/IconButton';
 
-export const CartWidget = ( {icon, items }) => {
+import { CartWidgetStyle } from '../../styles/CartWidget/CartWidgetStyle.js'
+import { CartWidgetBadgeStyle } from '../../styles/CartWidget/CartWidgetStyle.js'
+
+
+const useStyle = makeStyles ((theme) => CartWidgetStyle(theme));
+const StyledBadge = withStyles((theme) => CartWidgetBadgeStyle(theme))(Badge);
+  
+export const CartWidget = ( {items }) => {
+    
+    const classes = useStyle();
+
+    const [count, setCount] = useState(0);
+
     return (
         <div className="CartWidget">
-            <span> {icon} </span>
             <h4>{items}</h4>
+            <IconButton aria-label="cart">
+            <StyledBadge badgeContent={`${count}`} color="primary">
+                <ShoppingCartIcon />
+            </StyledBadge>
+            </IconButton>
         </div>
     )
 }
 
-export const ComponentePadre = () => {
-   
-
-    return (
-        <div className="Widget">
-            <p>Hola manolo</p>
-            <h3>Ruberti</h3>
-            <button>Botonazo</button>
-        </div>
-    )
-}

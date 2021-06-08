@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../styles/styles.css';
 import { makeStyles } from '@material-ui/core';
 
 import { commonComponentStyle } from './commonComponentStyle.js'
@@ -12,19 +11,24 @@ const commonStyles = {
     fontWeight: 'bold',
 }
 
-export const CommonComponent = ({title, image, alt, buttonLabel}) => {
+export const CommonComponent = ({title, substitle, image, alt, buttonLabel, action}) => {
 
-	/* Ejecuta estos estilos y guardalos aca */
     const classes = useStyle ();
+
+    const commonAction = () => {
+        action();
+        console.log('Ejecucion de boton comun')
+    }
 
     return (
         <>
-        <section>
-            <div className={classes.container}>
-                <h1> {title} </h1>
+        <section className={classes.container}>
+            <div>
+                <h2> {title} </h2>
+                <h3> {substitle} </h3>
                 <img src={image} alt={alt} />
             </div>
-            <button> {buttonLabel} </button>
+            <button onClick={commonAction}> {buttonLabel} </button>
         </section>
 
     </>
