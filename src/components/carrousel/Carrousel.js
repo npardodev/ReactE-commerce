@@ -12,7 +12,7 @@ import { CartWidgetBadgeStyle } from '../../styles/CartWidget/CartWidgetStyle.js
 
 const useStyle = makeStyles((theme) => CarrouselStyle(theme));
 
-const data = {
+const data = [
     {
         img:'./img/test.jpg',
         alt: 'imagen 1'
@@ -25,7 +25,7 @@ const data = {
         img:'./img/test3.jpg',
         alt: 'imagen 4  
     }
-}
+]
 
 export const Carrousel = () => {
 
@@ -37,6 +37,7 @@ export const Carrousel = () => {
         const numeroProximafOTO = position + 1;
         const estoyEnUltimaFoto = numeroProximafOTO > data.lenght -1;
         setPosition(estoyEnUltimaFoto ? 0 : numeroProximafOTO);
+
 
     return ( 
         <>
