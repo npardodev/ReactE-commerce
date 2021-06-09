@@ -11,7 +11,7 @@ const commonStyles = {
     fontWeight: 'bold',
 }
 
-export const CommonComponent = ({title, substitle, image, alt, buttonLabel, action}) => {
+export const CommonComponent = ({title, subtitle, image, alt, buttonLabel, action}) => {
 
     const classes = useStyle ();
 
@@ -25,7 +25,7 @@ export const CommonComponent = ({title, substitle, image, alt, buttonLabel, acti
         <section className={classes.container}>
             <div>
                 <h2> {title} </h2>
-                <h3> {substitle} </h3>
+                <h3> {subtitle} </h3>
                 <img src={image} alt={alt} />
             </div>
             <button onClick={commonAction}> {buttonLabel} </button>

@@ -16,47 +16,33 @@ export const Counter = ({ stock, initial,  onAdd }) => {
 
     useEffect(() => {
         console.log('Hay un cambio de estado en contador');
-
     }, [count])
 
-    const  handleCountChange = (e) => {
-        setCount(e.target.value );
-     }
-
     const handleAddCount = () =>{
-        setCount(count +1);
+
+        if (stock -1 >= count){
+            setCount(count +1);
+        }
+        else
+            console.log("la cantidad indicada supera el stock actual");
     }
 
     const handleRemoveCount = () =>{
-        setCount(count -1);
+
+        if (count >0){
+            setCount(count -1);
+        }
     }
 
 
     return (
         <div className={classes.counterWidget} >
             <div className={classes.counter}>
-                <Button 
-                    onClick={ (e) => {
-                        if (stock -1 >= count){
-                            handleAddCount();
-                        }
-                        else
-                            console.log("la cantidad indicada supera el stock actual");
-                    }}
-                    color="primary">+ 
-                </Button>
+                <Button onClick={handleAddCount} color="primary">+ </Button>
                 <h5> {`${count}`}  </h5>                
-                <Button 
-                onClick={ (e) => {
-                    if (count >0){
-                        handleRemoveCount();
-                    }
-                }}
-                    color="primary">- 
-                </Button>
+                <Button onClick={handleRemoveCount}color="primary">-</Button>
             </div>
             { count !== 0 ? <Button id="AddToCart" variant="contained" color="primary">{"Agregar"}</Button> : null }
-            
             <h4>{`En stock: ${stock}`}</h4>
         </div>
     )
