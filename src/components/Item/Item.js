@@ -2,21 +2,22 @@ import React from 'react';
 import {Counter} from '../Counter/Counter.js';
 
 import { makeStyles } from '@material-ui/core';
-import { CardStyle } from '../../styles/Card/CardStyle.js'
+import { ItemStyle } from '../../styles/Item/ItemStyle.js'
 
-const useStyle = makeStyles ((theme) => CardStyle(theme));
+const useStyle = makeStyles ((theme) => ItemStyle(theme));
 
-export const Card = ( {imagen, descrip, precio }) => {
+export const Item = ( {id, title, price, descrip, img, alt, stock  }) => {
 
     const classes = useStyle();
 
     return (
         <div className= {classes.card}>
-            <img src={imagen} alt="Imagen de card" />
-            <h4>{`$${precio}`}</h4>
+            <img src={img} alt="Imagen de card" />
+            <h4>{`$${price}`}</h4>
             <p>{descrip}</p>
             <Counter stock= {9} initial={0} /> 
         </div>
     )
 }
+
 

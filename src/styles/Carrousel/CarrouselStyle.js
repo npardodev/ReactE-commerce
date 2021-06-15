@@ -6,9 +6,7 @@ export const CarrouselStyle = theme => {
 
     return ({
 
-        div: {
-            color: 'red'
-        }
+
 
     })
 };

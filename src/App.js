@@ -5,7 +5,11 @@ import {ItemListContainer} from './components/ItemListContainer/ItemListContaine
 import {Home} from './components/Home/Home';
 import {Counter} from './components/Counter/Counter';
 import {ContactForm} from './components/ContactForm/ContactForm';
-import {CommonComponent} from './components/componenteReutilizable/CommonComponent';
+import {Carrousel} from './components/Carrousel/Carrousel';
+import {DolarService} from './services/cotizacion/DolarService';
+
+import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer';
+
 
 // Componente padre que recibe algo.
 const App = props => {
@@ -22,22 +26,13 @@ const App = props => {
           action = { () => console.log('test')}
       />
       <ItemListContainer/>
-      
-      {/*
-      --- PARA TEST ----
-         <CommonComponent 
-          title="Ups!" 
-          subtitle="Parece que nos perdimos"
-          image="./img/not_found.svg" 
-          alt="Imagen página no encontrada" 
-          buttonLabel="Volver"
-          action = { () => console.log('Ejecutado')}
-      />
-      <ContactForm/>
-      -----------------
-      */}
       </body>
 
+    {/* En Test
+
+    <ItemDetailContainer/>
+     <DolarService/>
+    */}      
     </React.Fragment>
 }
 
