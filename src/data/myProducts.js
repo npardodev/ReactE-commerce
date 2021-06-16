@@ -1,4 +1,4 @@
-export const myData = [{
+export const myProducts = [{
         id: 1,
         title: 'Notebook Bangho',
         descrip: 'Notebook Bangho ',

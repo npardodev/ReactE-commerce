@@ -26,6 +26,7 @@ const App = props => {
           action = { () => console.log('test')}
       />
       <ItemListContainer/>
+      <ItemDetailContainer/>
       </body>
 
     {/* En Test

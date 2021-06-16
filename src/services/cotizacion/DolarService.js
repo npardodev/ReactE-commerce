@@ -22,8 +22,7 @@ export const DolarService = () => {
         }, []);
 
     return <>
-        <h3>Dolar venta: {dolarBuy}</h3>
-        <h3>Dolar compra: {dolarBuy}</h3>
+       {dolarBuy,dolarSold}
     </>
 }
 

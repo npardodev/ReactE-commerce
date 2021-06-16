@@ -1,49 +1,56 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { ItemDetailContainerStyle } from './ItemDetailContainerStyle'
+import { Alert, AlertTitle } from '@material-ui/lab';
+import {Snackbar} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
-import { myData } from './../../data/data.js';
+import { myProducts } from './../../data/myProducts.js';
 
-const useStyle = makeStyles ((theme) => ItemDetailContainerStyle(theme));
-
+const useStyle = makeStyles((theme) => ItemDetailContainerStyle(theme));
 
 //Creamos la promise emulando la llamada al backend
 const myPromise = () => {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => resolve (
-           myData
-        ), 1000)
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(
+            myProducts
+        ), 3000)
     })
 }
 
 export const ItemDetailContainer = () => {
-   
-    const classes = useStyle ();
 
-    const [data, setData] = useState('')
-	const [filter, setFilter] = useState('')
-    const [error,setError] = useState('');
-    const [showError,setShowError] = useState(false);
+    const classes = useStyle();
 
-	const filterItems = data => {
-		return filter === '' ? data : data.filter(item => item.type ===filter);
-	}
+    const [productData, setProductData] = useState('');
+    const [filter, setFilter] = useState('');
+    const [error, setError] = useState('');
+    const [showError, setShowError] = useState(false);
+
+    const filterItems = data => {
+        return filter === '' ? data : data.filter(item => item.type === filter);
+    }
 
     const getItems = () => {
-        myPromise().then(productData => {
-            setData(productData);
+        myPromise().then(data => {
+            setProductData(data[1]); // Elegir luego por ID
         });
         myPromise().catch(error => {
             setError(error);
             setShowError(true);
         });
     }
-    
-	useEffect(() => {
+
+    useEffect(() => {
         getItems()
-	},[]);
+    }, []);
 
     return <>
-        <ItemDetail items={data} />
+       
+        <ItemDetail item={productData}/>
+        <Snackbar open={showError} autoHideDuration={3000} >
+            <Alert onClose={() => setShowError(false)} severity="error">
+                {error}
+            </Alert>
+        </Snackbar>
     </>
 }

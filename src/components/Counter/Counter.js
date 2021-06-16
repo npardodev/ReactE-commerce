@@ -15,7 +15,7 @@ export const Counter = ({ stock, initial,  onAdd }) => {
     const [count, setCount] = useState(initial);
 
     useEffect(() => {
-        console.log('Hay un cambio de estado en contador');
+        //console.log('Hay un cambio de estado en contador');
     }, [count])
 
     const handleAddCount = () =>{
