@@ -30,7 +30,7 @@ export const ItemStyle = theme => {
 
             ' & img': {
                 width: 'clamp(5em, 7em, 10em)',
-                height: ' clamp(10em, 12em, 15em)',
+                height: ' clamp(7em, 8em, 10em)',
             },
 
             ' & p': {

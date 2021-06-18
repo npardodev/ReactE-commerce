@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export const ItemDetailStyle = theme => {
+export const ProductDetailStyle = theme => {
 
     return ({
         productItem: {
@@ -57,11 +57,6 @@ export const ItemDetailStyle = theme => {
                 fontSize: '1rem'
             },
 
-            ' & offerPrice': {
-                fontSize: '1rem',
-                textDecoration: 'line-through',
-
-            },
             ' & select': {
                 width: '20%',
                 textAlign: 'start',
@@ -84,8 +79,11 @@ export const ItemDetailStyle = theme => {
                 paddingTop: '0.5rem',
             }
 
+        },
+        offerPrice: {
+            fontSize: '1rem',
+            textDecoration: 'line-through',
         }
-
 
     })
 };

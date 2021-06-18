@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { ItemDetailStyle } from './ItemDetailStyle.js'
+import { ProductDetailStyle } from './ProductDetailStyle.js'
 import { makeStyles, CircularProgress} from '@material-ui/core';
 import {Button, Typography, Chip} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
-const useStyles = makeStyles ((theme) => ItemDetailStyle(theme));
+const useStyles = makeStyles ((theme) => ProductDetailStyle(theme));
 
-export const ItemDetail = ({item}) => {
+export const ProductDetail = ({item}) => {
 
     const classes = useStyles();
 
@@ -21,9 +21,9 @@ export const ItemDetail = ({item}) => {
                     <h3>{item.title}</h3>
                     <h4 className= {classes.actualPrice}>{item.price}</h4>
                     <h4 className= {classes.offerPrice}>{item.price}</h4>
-                    <p>{item.longDescipt}</p>
+                    <p>{item.descrip}</p>
                     <div>
-                        <h4>Categoria</h4>
+                        <h4>Tamaño</h4>
                         <select name="select">
                             <option value="value1">Value 1</option>
                             <option value="value2" selected>Value 2</option>
