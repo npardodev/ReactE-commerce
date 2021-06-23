@@ -7,9 +7,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
 import IconButton from '@material-ui/core/IconButton';
 
-import { CartWidgetStyle } from '../../styles/CartWidget/CartWidgetStyle.js'
-import { CartWidgetBadgeStyle } from '../../styles/CartWidget/CartWidgetStyle.js'
-
+import { CartWidgetStyle, CartWidgetBadgeStyle} from './CartWidgetStyle.js'
 
 const useStyle = makeStyles ((theme) => CartWidgetStyle(theme));
 const StyledBadge = withStyles((theme) => CartWidgetBadgeStyle(theme))(Badge);

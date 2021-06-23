@@ -8,6 +8,7 @@ export const NavBarStyle = theme => {
 
     return ({
         nav: {
+
             boxShadow: '0 4px 2px -2px gray',
             '& ul': {
                 display: 'flex',
@@ -48,8 +49,16 @@ export const NavBarStyle = theme => {
                 padding: '0.2em',
                 margin: '0.8em'
             }
-        }
+        },
 
+        dropdown: {
+            overflow: 'hidden',
+        },
+        dropdownContent: {
+            display: 'none',
+            position: 'absolute',
+            zIndex: '1',
+        }
 
     })
 };

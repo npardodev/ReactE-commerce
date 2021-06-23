@@ -5,8 +5,10 @@ import {Snackbar} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { myProducts } from './../../data/myProducts.js';
+import { useParams, Link, useHistory, useLocation} from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ItemDetailContainerStyle(theme));
+
 
 //Creamos la promise emulando la llamada al backend
 const myPromise = () => {
@@ -20,19 +22,21 @@ const myPromise = () => {
 export const ItemDetailContainer = () => {
 
     const classes = useStyle();
+    const { idCat, idItem} = useParams();
+    const history = useHistory();
+    const location = useLocation();
 
     const [productData, setProductData] = useState('');
     const [filter, setFilter] = useState('');
     const [error, setError] = useState('');
     const [showError, setShowError] = useState(false);
 
-    const filterItems = data => {
-        return filter === '' ? data : data.filter(item => item.type === filter);
-    }
-
     const getItems = () => {
+        console.log(idItem);
         myPromise().then(data => {
-            setProductData(data[1]); // Elegir luego por ID
+            const filterData = data.filter(product => product.id === idItem);
+            console.log(filterData);
+            setProductData(filterData); 
         });
         myPromise().catch(error => {
             setError(error);
@@ -42,7 +46,7 @@ export const ItemDetailContainer = () => {
 
     useEffect(() => {
         getItems()
-    }, []);
+    }, [idItem]);
 
     return <>
        

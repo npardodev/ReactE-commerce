@@ -5,7 +5,7 @@ export const ItemDetailStyle = theme => {
 
     return ({
         productItem: {
-            position: 'relative',
+
             padding: '2em',
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
@@ -53,23 +53,6 @@ export const ItemDetailStyle = theme => {
                 color: '#706f6f',
             },
 
-            ' & actualPrice': {
-                fontSize: '1rem'
-            },
-
-            ' & offerPrice': {
-                fontSize: '1rem',
-                textDecoration: 'line-through',
-
-            },
-            ' & select': {
-                width: '20%',
-                textAlign: 'start',
-                padding: '0.5rem',
-                marginLeft: ' 1rem',
-                fontSize: '0.7rem',
-                border: 'none',
-            },
 
             ' & button': {
                 width: '25%',
@@ -82,103 +65,39 @@ export const ItemDetailStyle = theme => {
                 padding: '0.3 rem',
                 marginLeft: '1rem',
                 paddingTop: '0.5rem',
+            },
+
+            '& div': {
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                width: '40%',
+                paddingBottom: '0.8rem',
+
+
+
             }
 
+        },
+
+        actualPrice: {
+            fontSize: '1rem'
+        },
+
+        offerPrice: {
+            fontSize: '12rem',
+            textDecoration: 'line-through',
+        },
+
+        CustomSelectComponent: {
+            width: '20%',
+            textAlign: 'start',
+            padding: '0.5rem',
+            marginLeft: ' 1rem',
+            fontSize: '0.7rem',
+            border: 'none',
         }
 
 
     })
 };
-
-
-
-/* ----------------------------------
----------- Product Details ----------
-------------------------------------*/
-/*
-.container .productItem {
-    position: relative;
-    width: 100%;
-    padding: 2em;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1em;
-    background-color: var(--primary);
-    margin: 1rem;
-    padding: 3rem;
-}
-
-.productItem img {
-    width: 100%;
-    height: auto;
-}
-
-.productDetails {
-    display: flex;
-    flex-direction: column;
-}
-
-.productDetails h3 {
-    text-align: start;
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-}
-
-.productDetails h4 {
-    text-align: start;
-    padding-left: 1rem;
-    padding-top: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 100;
-}
-
-.productDetails .actualPrice {
-    font-size: 1rem;
-}
-
-.productDetails .offerPrice {
-    font-size: 1rem;
-    text-decoration: line-through;
-}
-
-.productDetails p {
-    text-align: start;
-    text-align: justify;
-    text-justify: inter-word;
-    padding: 1rem;
-    margin-right: 20%;
-    font-size: 1rem;
-    font-weight: 100;
-    color: #CBCBCB;
-}
-
-.productDetails select {
-    width: 20%;
-    text-align: start;
-    padding: 0.5rem;
-    margin-left: 1rem;
-    font-size: 0.7rem;
-    border: none;
-}
-
-.productDetails button {
-    background-color: var(--tercery);
-    width: 25%;
-    font-size: 1rem;
-    color: var(--primary);
-    text-align: start;
-    text-align: center;
-    margin: 2rem;
-    border: #a89283;
-    padding: 0.3rem;
-}
-
-.productDetails>div {
-    display: flex;
-}
-
-.productDetails>div h4 {
-    font-size: 1rem;
-}
-*/

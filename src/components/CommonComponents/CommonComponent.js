@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Button } from '@material-ui/core';
 
 import { commonComponentStyle } from './commonComponentStyle.js'
 
@@ -17,7 +17,7 @@ export const CommonComponent = ({title, subtitle, image, alt, buttonLabel, actio
 
     const commonAction = () => {
         action();
-        console.log('Ejecucion de boton comun')
+        console.log('Ejecucion de boton comun');
     }
 
     return (
@@ -28,7 +28,7 @@ export const CommonComponent = ({title, subtitle, image, alt, buttonLabel, actio
                 <h3> {subtitle} </h3>
                 <img src={image} alt={alt} />
             </div>
-            <button onClick={commonAction}> {buttonLabel} </button>
+            <Button variant="contained" color="primary" onClick={commonAction} >{buttonLabel}</Button>
         </section>
 
     </>

@@ -1,27 +1,30 @@
 import React, {useState, useEffect} from 'react';
+import { useParams, useHistory} from 'react-router-dom';
 import {Item} from '../../components/Item/Item';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
+import { Container } from '@material-ui/core';
 import LinearProgress from '@material-ui/core/LinearProgress';
+import { ItemListStyles } from './ItemListStyles.js'
+import {CustomLoadingComponent} from './../CustomComponents/CustomLoadingComponent.js'
 
-//import { itemListStyles } from './ItemListStyles'
-//const useStyle = makeStyles((theme) => itemListStyles(theme));
+const useStyle = makeStyles((theme) => ItemListStyles(theme));
 
 export const ItemList = ({items}) => {
 
-    //const classes = useStyle ();
+    const classes = useStyle ();
+    
+    return <>
+        <Container alignContent="center">
+            {(items.length === 0 ? (<CustomLoadingComponent  iconLoad={CircularProgress} messageLoad="Cargando..." color="primary"/> ) : (
+                    <div className = {classes.products }>
+                        {items.map((element, index)=><Item key={index} item={element}/>)}
+                    </div>
+            ))}
+        </Container>
 
-    return<>
-        {
-            (items.length === 0 ? (<CircularProgress color="primary" />) : (
-            <div className= "container">
-                <div className= "products">
-                    {items.map((element, index)=><Item key={index} item={element}/>)}
-                </div>
-            </div>
-            ))
-        }
     </>
 }
+
 
 

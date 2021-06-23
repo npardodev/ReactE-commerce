@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React , { useState, useEffect } from 'react';
 import { ItemDetailStyle } from './ItemDetailStyle.js'
 import { makeStyles, CircularProgress} from '@material-ui/core';
 import {Button, Typography, Chip} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+
+import { CustomSelectComponent } from './../CustomComponents/CustomSelectComponent.js'
+
+let categories = [{name:'Opt1', value:'Opt1'},{name:'Opt2', value:'Opt2'},{name:'Opt3', value:'Opt3'}];
 
 const useStyles = makeStyles ((theme) => ItemDetailStyle(theme));
 
@@ -23,12 +27,8 @@ export const ItemDetail = ({item}) => {
                     <h4 className= {classes.offerPrice}>{item.price}</h4>
                     <p>{item.longDescipt}</p>
                     <div>
-                        <h4>Categoria</h4>
-                        <select name="select">
-                            <option value="value1">Value 1</option>
-                            <option value="value2" selected>Value 2</option>
-                            <option value="value3">Value 3</option>
-                        </select>
+                    <h4>Categoria</h4>
+                    <CustomSelectComponent options ={categories} />
                     </div>
                     <Button variant="contained" color="primary"> Agregar </Button>
                 </div>

@@ -7,6 +7,5 @@ export const ItemDetailContainerStyle = theme => {
         container: {
             /* En construccion */
         }
-
     })
 };

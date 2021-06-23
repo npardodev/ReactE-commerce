@@ -1,6 +1,5 @@
 import React,{useState, useEffect} from 'react';
-
-import { CounterStyle } from '../../styles/Counter/CounterStyle.js'
+import { CounterStyle } from './CounterStyle.js'
 import { makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -11,7 +10,6 @@ const useStyle = makeStyles ((theme) => CounterStyle(theme));
 export const Counter = ({ stock, initial,  onAdd }) => {
     
     const classes = useStyle ();
-
     const [count, setCount] = useState(initial);
 
     useEffect(() => {
@@ -19,7 +17,6 @@ export const Counter = ({ stock, initial,  onAdd }) => {
     }, [count])
 
     const handleAddCount = () =>{
-
         if (stock -1 >= count){
             setCount(count +1);
         }
@@ -28,7 +25,6 @@ export const Counter = ({ stock, initial,  onAdd }) => {
     }
 
     const handleRemoveCount = () =>{
-
         if (count >0){
             setCount(count -1);
         }

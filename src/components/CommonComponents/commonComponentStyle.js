@@ -1,9 +1,6 @@
 import React from 'react';
 
-const commonStyles = {
-    fontFamily: 'Arial',
-    color: '#6C63FF'
-}
+
 
 export const commonComponentStyle = theme => {
 
@@ -12,7 +9,6 @@ export const commonComponentStyle = theme => {
             display: 'flex',
             flexDirection: 'column',
             position: 'relative',
-            width: '100%',
             height: '100vh',
             justifyItems: 'center',
             justifyContent: 'center',
@@ -21,12 +17,12 @@ export const commonComponentStyle = theme => {
             alignItems: 'center',
             ' & h2': {
                 position: 'absolute',
-                top: '5%',
+                top: '2rem',
                 justifyItems: 'center',
                 justifyContent: 'center',
                 alignItems: 'center',
                 fontSize: '2.2em',
-                ...commonStyles
+                color: '#464EB8'
             },
             ' & h3': {
                 position: 'absolute',
@@ -35,18 +31,15 @@ export const commonComponentStyle = theme => {
                 justifyContent: 'center',
                 alignItems: 'center',
                 fontWeight: '600',
-                fontSize: '1em',
-                ...commonStyles
-
+                fontSize: '1.3em',
+                color: '#6E65FF'
             },
             ' & img': {
-                width: 'clamp(20em, 5em, 30em)',
+                width: 'clamp(18em, 20em, 22em)',
+                heigth: 'clamp(18em, 20em, 22em)',
+
             },
-            ' & button': {
-                alignSelf: 'center',
-                padding: '1em',
-                backgroundColor: 'aquamarine'
-            }
+
         }
 
     })

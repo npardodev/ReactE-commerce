@@ -2,7 +2,6 @@ import React from 'react';
 
 const commonStyles = {}
 
-
 export const HomeStyle = theme => {
 
     return ({
@@ -20,16 +19,18 @@ export const HomeStyle = theme => {
             wrap: 'no-wrap',
             alignItems: 'center',
             textAlign: 'center',
+            color: '#083748',
 
             '& h1': {
-                padding: '10%',
+                padding: '1rem',
                 textAlign: 'center',
                 fontSize: '3rem',
-                fontWeight: '900'
+                fontWeight: '900',
+
             },
             '& h2': {
-                paddingRight: '20%',
-                textAlign: 'center'
+                textAlign: 'center',
+                color: ''
             },
             '& button': {
                 marginTop: '7%',
