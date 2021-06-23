@@ -34,9 +34,9 @@ export const Counter = ({ stock, initial,  onAdd }) => {
     return (
         <div className={classes.counterWidget} >
             <div className={classes.counter}>
-                <Button onClick={handleAddCount} color="primary">+ </Button>
-                <h5> {`${count}`}  </h5>                
                 <Button onClick={handleRemoveCount}color="primary">-</Button>
+                <h5> {`${count}`} </h5>
+                <Button onClick={handleAddCount} color="primary">+ </Button>                
             </div>
             { count !== 0 ? <Button id="AddToCart" variant="contained" color="primary">{"Agregar"}</Button> : null }
             <h4>{`En stock: ${stock}`}</h4>

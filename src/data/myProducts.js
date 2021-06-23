@@ -8,7 +8,7 @@ export const categories = {
         id: '2'
     },
     MONITORES: {
-        name: 'Discos',
+        name: 'Monitores',
         id: '3'
     },
     COMBO_PC: {
@@ -19,7 +19,7 @@ export const categories = {
         name: 'Placas de video',
         id: '5'
     }
-};
+}
 
 export const myProducts = [{
         id: 1,
@@ -28,7 +28,7 @@ export const myProducts = [{
         longDescipt: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, vero cum corrupti iusto officia quis voluptatem totam dicta? Accusantium sunt vel ex non voluptas recusandae dicta rerum iste atque sapiente!",
         price: 55000,
         img: {
-            src: '/img/notebook.jpeg',
+            src: 'https://mexx-img-2019.s3.amazonaws.com/notebook-bangho-i5_39890_1.jpeg',
             alt: "Imagen Notebook Bangho core i5"
         },
         category: categories.NOTEBOOK,

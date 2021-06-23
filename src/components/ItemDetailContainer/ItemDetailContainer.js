@@ -22,7 +22,7 @@ const myPromise = () => {
 export const ItemDetailContainer = () => {
 
     const classes = useStyle();
-    const { idCat, idItem} = useParams();
+    const { idCat,idItem} = useParams();
     const history = useHistory();
     const location = useLocation();
 
@@ -34,9 +34,9 @@ export const ItemDetailContainer = () => {
     const getItems = () => {
         console.log(idItem);
         myPromise().then(data => {
-            const filterData = data.filter(product => product.id === idItem);
-            console.log(filterData);
-            setProductData(filterData); 
+            console.log(idItem);
+            //const filterData = data.filter(item => item.id === idItem);
+            setProductData(data[idItem-1]);
         });
         myPromise().catch(error => {
             setError(error);
