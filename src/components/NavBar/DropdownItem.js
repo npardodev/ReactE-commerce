@@ -6,17 +6,16 @@ import {NavBarStyle} from './NavBarStyle.js'
 const useStyle = makeStyles ((theme) => NavBarStyle(theme));
 
 export const DropdownItem = ({item}) => {
-
+  const classes = useStyle ();
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
-  const classes = useStyle ();
 
   return (
     <>
     <Link 
         className={classes.dropdownLink}
         to={item.path}
-        onClick={() => setClick(false)}
+        onClick={handleClick}
         >
         {item.title}
     </Link>

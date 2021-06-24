@@ -1,7 +1,6 @@
 import React from 'react';
-import {Box, Container, Grid} from '@material-ui/core';
-import {Link } from 'react-router-dom';
-import { makeStyles, Typography, } from '@material-ui/core';
+import {Box, Container} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';

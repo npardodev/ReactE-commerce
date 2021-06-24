@@ -1,9 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import { CounterStyle } from './CounterStyle.js'
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Input from '@material-ui/core/Input';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Button} from '@material-ui/core';
 
 const useStyle = makeStyles ((theme) => CounterStyle(theme));
 

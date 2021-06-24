@@ -1,10 +1,6 @@
-import React , { useState, useEffect } from 'react';
+import React from 'react';
 import { ItemDetailStyle } from './ItemDetailStyle.js'
-import { makeStyles, CircularProgress} from '@material-ui/core';
-import {Button, Typography, Chip} from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-
+import { makeStyles, CircularProgress, Button} from '@material-ui/core';
 import { CustomSelectComponent } from './../CustomComponents/CustomSelectComponent.js'
 
 let categories = [{name:'Opt1', value:'Opt1'},{name:'Opt2', value:'Opt2'},{name:'Opt3', value:'Opt3'}];

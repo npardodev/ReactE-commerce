@@ -1,14 +1,9 @@
-import React from 'react';
-import { flexbox } from '@material-ui/system';
-
-
 export const CounterStyle = theme => {
 
     return ({
         counter: {
             display: 'flex',
             flexDirection: 'row',
-            padding: '0 4px',
             color: 'red',
             backgroundColor: 'white',
             padding: '1em',

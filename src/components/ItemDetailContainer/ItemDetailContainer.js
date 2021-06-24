@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { ItemDetailContainerStyle } from './ItemDetailContainerStyle'
-import { Alert, AlertTitle } from '@material-ui/lab';
+import { Alert } from '@material-ui/lab';
 import {Snackbar} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { myProducts } from './../../data/myProducts.js';
-import { useParams, Link, useHistory, useLocation} from 'react-router-dom';
+import { useParams} from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ItemDetailContainerStyle(theme));
 
@@ -21,9 +21,7 @@ export const ItemDetailContainer = () => {
 
     const classes = useStyle();
     const { idCat,idItem} = useParams();
-    const history = useHistory();
-    const location = useLocation();
-
+ 
     const [productData, setProductData] = useState('');
     const [filter, setFilter] = useState('');
     const [error, setError] = useState('');

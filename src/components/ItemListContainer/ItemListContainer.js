@@ -3,11 +3,7 @@ import { ItemList } from '../../components/ItemList/ItemList';
 import { ItemListContainerStyle } from './ItemListContainerStyle.js'
 import { makeStyles } from '@material-ui/core';
 import { myProducts } from './../../data/myProducts.js';
-import {Snackbar} from '@material-ui/core';
-import {IconButton, Container} from '@material-ui/core';
-import {CloseIcon} from '@material-ui/icons';
-import { Alert, AlertTitle } from '@material-ui/lab';
-import { useParams, useHistory} from 'react-router-dom';
+import { useParams, } from 'react-router-dom';
 import {CustomNotification} from './../CustomComponents/CustomNotification.js';
 
 const useStyle = makeStyles ((theme) => ItemListContainerStyle(theme));

@@ -1,7 +1,3 @@
-import React from 'react';
-
-const commonStyles = {}
-
 export const HomeStyle = theme => {
 
     return ({
@@ -18,7 +14,6 @@ export const HomeStyle = theme => {
             flexDirection: 'column',
             wrap: 'no-wrap',
             alignItems: 'center',
-            textAlign: 'center',
             color: '#083748',
 
             '& h1': {
@@ -42,7 +37,6 @@ export const HomeStyle = theme => {
                 border: 'none',
                 backgroundColor: '#6E65FF',
                 boxShadow: '0 4px 2px -2px gray',
-                color: 'white',
                 fontWeight: '600',
             }
         }

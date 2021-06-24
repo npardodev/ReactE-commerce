@@ -1,18 +1,9 @@
 import React, {useState} from 'react';
-import {CartWidget} from '../../components/CartWidget/CartWidget';
 import {Link } from 'react-router-dom';
-import { makeStyles, Button} from '@material-ui/core';
+import { makeStyles} from '@material-ui/core';
 import { NavBarStyle } from './NavBarStyle.js';
 import {Dropdown} from './DropDown.js';
-
-const useStyles2 = makeStyles({
-    list: {
-      width: 250,
-    },
-    fullList: {
-      width: 'auto',
-    },
-  });
+import {CartWidget} from '../../components/CartWidget/CartWidget';
 
 const useStyle = makeStyles ((theme) => NavBarStyle(theme));
 

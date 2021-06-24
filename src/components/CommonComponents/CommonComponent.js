@@ -1,15 +1,8 @@
 import React from 'react';
 import { makeStyles, Button } from '@material-ui/core';
-
 import { commonComponentStyle } from './commonComponentStyle.js'
 
 const useStyle = makeStyles ((theme) => commonComponentStyle(theme));
-
-const commonStyles = {
-    color: 'white',
-    fontSize: '1em',
-    fontWeight: 'bold',
-}
 
 export const CommonComponent = ({title, subtitle, image, alt, buttonLabel, action}) => {
 

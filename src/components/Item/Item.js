@@ -1,13 +1,8 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Counter} from '../Counter/Counter.js';
 import { ItemStyle } from './ItemStyle.js'
-import CircularProgress from '@material-ui/core/CircularProgress';
-import Snackbar from '@material-ui/core/Snackbar';
-import CloseIcon from '@material-ui/icons/Close';
-import { Alert, AlertTitle } from '@material-ui/lab';
 import { makeStyles } from '@material-ui/core/styles';
-import LinearProgress from '@material-ui/core/LinearProgress';
-import { useParams, Link, useHistory, useLocation} from 'react-router-dom';
+import { useParams, useHistory, useLocation} from 'react-router-dom';
 
 const useStyle = makeStyles ((theme) => ItemStyle(theme));
 
