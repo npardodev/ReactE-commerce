@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {CartWidget} from '../../components/CartWidget/CartWidget';
 import {Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core';
-import { NavBarStyle } from './NavBarStyle.js'
+import { makeStyles, Button} from '@material-ui/core';
+import { NavBarStyle } from './NavBarStyle.js';
+import {Dropdown} from './DropDown.js';
 
 const useStyles2 = makeStyles({
     list: {
@@ -19,20 +20,67 @@ export const NavBar = () => {
 
     const classes = useStyle();
     
+    const [click, setClick] = useState(false);
+    const [dropdown, setDropdown] = useState(false);
+    
+    const handlerClick = () => {
+        setClick(!click);
+    }
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
+
     return <>
-        <div className={classes.nav}>
-            <ul>
-                <li className={classes.logo}>
-                    <img src='./img/logo.svg' alt="Imagen logo" />
+    
+        <nav className={classes.navbar}>
+            <ul className={click ? classes.navMenuActive : classes.navMenu}>
+                <li className={classes.navbarLogo}>
+                <Link to="/">
+                    <img src='./img/logo.png' width="50px" height="" alt="Imagen logo" />
+                </Link>
                 </li>
-                <li><Link to="/aboutus">Nosotros</Link></li>
-                <li><Link to="/products">Productos</Link></li>
-                <li><Link to="/contact">Contacto</Link></li>
-                <li>
+                <li className={classes.navItem}>
+                    <Link to="/aboutus" 
+                        className={classes.navLinks}
+                        onClick={handlerClick}>
+                        Nosotros
+                    </Link>
+                </li>
+                <li 
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    className={classes.navItem}>
+                    <Link to="/products" 
+                        className={classes.navLinks}
+                        onClick={handlerClick}>
+                        Productos
+                    </Link>
+                    {dropdown && <Dropdown />}
+                </li>
+                <li className={classes.navItem}>
+                    <Link to="/contact" 
+                        className={classes.navLinks}
+                        onClick={handlerClick}>
+                        Contacto
+                    </Link>
+                </li>                <li>
                     <CartWidget />
                 </li>
             </ul>
-        </div>
+        </nav>
     </>
 }
 

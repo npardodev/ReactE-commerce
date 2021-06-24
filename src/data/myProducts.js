@@ -1,25 +1,4 @@
-export const categories = {
-    NOTEBOOK: {
-        name: 'Notebook',
-        id: '1'
-    },
-    DISCOS: {
-        name: 'Discos',
-        id: '2'
-    },
-    MONITORES: {
-        name: 'Monitores',
-        id: '3'
-    },
-    COMBO_PC: {
-        name: 'Combos de pc',
-        id: '4'
-    },
-    PLACAS_VIDEO: {
-        name: 'Placas de video',
-        id: '5'
-    }
-}
+import { categories } from './categories.js';
 
 export const myProducts = [{
         id: 1,
@@ -62,6 +41,58 @@ export const myProducts = [{
     },
     {
         id: 4,
+        title: 'Combo AMD',
+        descrip: 'Combo actualizacion PC',
+        longDescipt: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, vero cum corrupti iusto officia quis voluptatem totam dicta? Accusantium sunt vel ex non voluptas recusandae dicta rerum iste atque sapiente!",
+        price: 122000,
+        img: {
+            src: 'https://mexx-img-2019.s3.amazonaws.com/40133_1.jpeg',
+            alt: "Imagen como para PC"
+        },
+        category: categories.COMBO_PC,
+        stock: 9
+    },
+    {
+        id: 5,
+        title: 'Combo AMD',
+        descrip: 'Combo actualizacion PC',
+        longDescipt: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, vero cum corrupti iusto officia quis voluptatem totam dicta? Accusantium sunt vel ex non voluptas recusandae dicta rerum iste atque sapiente!",
+        price: 122000,
+        img: {
+            src: 'https://mexx-img-2019.s3.amazonaws.com/40133_1.jpeg',
+            alt: "Imagen como para PC"
+        },
+        category: categories.COMBO_PC,
+        stock: 9
+    },
+    {
+        id: 6,
+        title: 'Combo AMD',
+        descrip: 'Combo actualizacion PC',
+        longDescipt: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, vero cum corrupti iusto officia quis voluptatem totam dicta? Accusantium sunt vel ex non voluptas recusandae dicta rerum iste atque sapiente!",
+        price: 122000,
+        img: {
+            src: 'https://mexx-img-2019.s3.amazonaws.com/40133_1.jpeg',
+            alt: "Imagen como para PC"
+        },
+        category: categories.COMBO_PC,
+        stock: 9
+    },
+    {
+        id: 7,
+        title: 'Combo AMD',
+        descrip: 'Combo actualizacion PC',
+        longDescipt: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, vero cum corrupti iusto officia quis voluptatem totam dicta? Accusantium sunt vel ex non voluptas recusandae dicta rerum iste atque sapiente!",
+        price: 122000,
+        img: {
+            src: 'https://mexx-img-2019.s3.amazonaws.com/40133_1.jpeg',
+            alt: "Imagen como para PC"
+        },
+        category: categories.COMBO_PC,
+        stock: 9
+    },
+    {
+        id: 8,
         title: 'Combo AMD',
         descrip: 'Combo actualizacion PC',
         longDescipt: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, vero cum corrupti iusto officia quis voluptatem totam dicta? Accusantium sunt vel ex non voluptas recusandae dicta rerum iste atque sapiente!",

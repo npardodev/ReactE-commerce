@@ -8,15 +8,14 @@ import { ItemListContainer } from '../components/ItemListContainer/ItemListConta
 import { ItemDetailContainer } from '../components/ItemDetailContainer/ItemDetailContainer.js';
 import {CustomNotFound} from '../components/CustomComponents/CustomNotFound.js'
 
-
 export const appPaths = {
     PRODUCTS_PATH: '/products',
+    ITEM_DETAIL_PATH: '/products/:idCat/:idItem',
     ABOUT_US_PATH: '/aboutus',
     ITEM_PATH: '/item',
-    ITEM_DETAIL_PATH: '/products/:idCat/:idItem',
+    ITEMS_CATEGORYS_PATH: '/products/:idCat',
 }
    
-
 export const RouterApp= () => {
     return (
     <Switch>
@@ -29,6 +28,9 @@ export const RouterApp= () => {
         />
         </Route>
         <Route exact path={appPaths.PRODUCTS_PATH}>
+            <ItemListContainer />
+        </Route>
+        <Route exact path={appPaths.ITEMS_CATEGORYS_PATH}>
             <ItemListContainer />
         </Route>
         <Route exact path={appPaths.ITEM_DETAIL_PATH}>

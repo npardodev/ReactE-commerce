@@ -8,16 +8,13 @@ export const commonComponentStyle = theme => {
         container: {
             display: 'flex',
             flexDirection: 'column',
-            position: 'relative',
-            height: '100vh',
             justifyItems: 'center',
             justifyContent: 'center',
             backgroundColor: 'white',
             justifyContent: 'center',
             alignItems: 'center',
             ' & h2': {
-                position: 'absolute',
-                top: '2rem',
+                top: '1rem',
                 justifyItems: 'center',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -25,8 +22,6 @@ export const commonComponentStyle = theme => {
                 color: '#464EB8'
             },
             ' & h3': {
-                position: 'absolute',
-                top: '12%',
                 justifyItems: 'center',
                 justifyContent: 'center',
                 alignItems: 'center',
@@ -35,8 +30,8 @@ export const commonComponentStyle = theme => {
                 color: '#6E65FF'
             },
             ' & img': {
-                width: 'clamp(18em, 20em, 22em)',
-                heigth: 'clamp(18em, 20em, 22em)',
+                width: 'clamp(16em, 18em, 20em)',
+                heigth: 'clamp(16em, 18em, 20em)',
 
             },
 

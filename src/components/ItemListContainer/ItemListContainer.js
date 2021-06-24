@@ -8,50 +8,49 @@ import {IconButton, Container} from '@material-ui/core';
 import {CloseIcon} from '@material-ui/icons';
 import { Alert, AlertTitle } from '@material-ui/lab';
 import { useParams, useHistory} from 'react-router-dom';
+import {CustomNotification} from './../CustomComponents/CustomNotification.js';
 
 const useStyle = makeStyles ((theme) => ItemListContainerStyle(theme));
 
-const TIME_DURATION_ERROR_MSG = 3000;
 
 const myPromise = () => {
     return new Promise ((resolve, reject) => {
         setTimeout(() => resolve (
            myProducts
-        ), 3000)
+        ), 3000);
+        //reject("Error cargando productos")
     })
 }
 
 export const ItemListContainer = () => {
      
-      const {id} = useParams();
-      console.log(id);
-      
+      const {idCat, id } = useParams();
+      const initialErrorState = '';
+
       const classes = useStyle ();
       const [productData, setProductsData] = useState([]);
-      const [error,setError] = useState('');
-      const [showError,setShowError] = useState(false);
+      const [error,setError] = useState(initialErrorState);
      
       const getItems = () => {
-          myPromise().then(data => {
-            setProductsData(data)
+          myPromise().then(data => {            
+            const filterData = data.filter(item => item.category.id === idCat);
+            setProductsData(filterData !=0 ? filterData:data);
           });
           myPromise().catch(error => {
               setError(error);
-              setShowError(true);
           });
       }
       
       useEffect(() => {
           getItems()
-      }, [])
+      }, [{idCat, id }])
+      
 
     return <>
-            <ItemList items={productData} />
-            <Snackbar open={showError} autoHideDuration={3000} >
-                <Alert onClose={() => setShowError(false)} severity="error">
-                    {error}
-                </Alert>
-            </Snackbar>
+            {error!=initialErrorState ? 
+                <CustomNotification message={error} type="error"/>:
+                <ItemList items={productData} />}   
+           
     </>
 }
 

@@ -13,6 +13,8 @@ export const ItemStyle = theme => {
             boxShadow: 'rgb(70 79 184 / 80%) 0px 10px 36px -25px',
             alignItems: 'center',
             textAlign: 'center',
+            display: 'flex',
+            flexDirection: 'column',
 
             ' & h4': {
                 fontSize: '1em',
@@ -27,7 +29,10 @@ export const ItemStyle = theme => {
             },
 
             ' & p': {
-                padding: '0.3em',
+                padding: '0em',
+                fontSize: '0.8em',
+                margin: '0',
+
             }
         }
     })

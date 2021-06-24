@@ -14,6 +14,11 @@ export const ItemDetailStyle = theme => {
             margin: '1rem',
             padding: '3rem',
 
+            ' & hover': {
+                width: '100%',
+                height: 'auto',
+            },
+
             ' & img': {
                 width: '100%',
                 height: 'auto',

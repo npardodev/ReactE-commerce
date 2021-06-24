@@ -38,7 +38,7 @@ export const Counter = ({ stock, initial,  onAdd }) => {
                 <h5> {`${count}`} </h5>
                 <Button onClick={handleAddCount} color="primary">+ </Button>                
             </div>
-            { count !== 0 ? <Button id="AddToCart" variant="contained" color="primary">{"Agregar"}</Button> : null }
+            { count !== 0 ? <Button id="AddToCart" variant="contained" color="primary">Agregar</Button> : null }
             <h4>{`En stock: ${stock}`}</h4>
         </div>
     )

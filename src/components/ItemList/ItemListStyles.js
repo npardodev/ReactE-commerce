@@ -4,13 +4,19 @@ import { Grid } from '@material-ui/core';
 export const ItemListStyles = theme => {
 
     return ({
+
+      conten:{
+          alignItems: 'center',
+          textAlign: 'center',
+          backgroundColor:'#ffff',
+        },
         products: {
-                width: '100%',
+                postion:'relative',
                 padding: '2em',
                 display: 'grid',
                 gridTemplateColumns: 'repeat(4, 1fr)',
                 gridGap: '1em',
-                backgroundColor: 'rgb(212, 215, 222)',
+                backgroundColor:'#ffff',
                 margin: '0',
                 '@media (max-width: 1200px)' : {
                     gridTemplateColumns: 'repeat(3, 1fr)',

@@ -25,9 +25,11 @@ export const CounterStyle = theme => {
 
         counterWidget: {
             '& h4': {
-                padding: '0.6em',
-                fontSize: '0.9em',
-                fontWeight: '600'
+                padding: '0.2em',
+                fontSize: '0.4em',
+                fontWeight: '600',
+                marginBottom: '0.2em',
+                color: '#083748'
             },
 
         }
