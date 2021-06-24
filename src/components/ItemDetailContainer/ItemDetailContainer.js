@@ -9,13 +9,11 @@ import { useParams, Link, useHistory, useLocation} from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ItemDetailContainerStyle(theme));
 
-
 //Creamos la promise emulando la llamada al backend
 const myPromise = () => {
     return new Promise((resolve, reject) => {
-        /*setTimeout(() => 
-        resolve(myProducts), 3000)*/
-        reject("Error en db")
+        setTimeout(() => 
+        resolve(myProducts), 3000)
     })
 }
 

@@ -29,7 +29,7 @@ export const Item = ({item , onClick, onFocus}) => {
 
     const handlerClick = (e) =>{ 
         e.preventDefault();
-        history.push(`${location.pathname}/${idCategory}/${idItem}`);
+        history.push(`${location.pathname}/${idItem}`);
     }
 
     const handlerFocus = () =>{
