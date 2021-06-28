@@ -1,39 +1,36 @@
 import React, { useEffect, useState } from 'react';
-import { ItemDetailContainerStyle } from './ItemDetailContainerStyle'
 import { Alert } from '@material-ui/lab';
-import {Snackbar} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core';
+import { Snackbar } from '@material-ui/core';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { myProducts } from './../../data/myProducts.js';
-import { useParams} from 'react-router-dom';
-
-const useStyle = makeStyles((theme) => ItemDetailContainerStyle(theme));
+import { useParams } from 'react-router-dom';
 
 //Creamos la promise emulando la llamada al backend
 const myPromise = () => {
     return new Promise((resolve, reject) => {
-        setTimeout(() => 
-        resolve(myProducts), 3000)
+        setTimeout(() =>
+            resolve(myProducts), 3000)
     })
 }
 
 export const ItemDetailContainer = () => {
 
-    const classes = useStyle();
-    const { idCat,idItem} = useParams();
- 
+    const { idCat, idItem } = useParams();
     const [productData, setProductData] = useState('');
-    const [filter, setFilter] = useState('');
-    const [error, setError] = useState('');
-    const [showError, setShowError] = useState(false);
+    const  [error, setError] = useState('');
+    const  [showError, setShowError] = useState(false);
 
     const getItems = () => {
-        console.log(idItem);
+
+
         myPromise().then(data => {
-            console.log(idItem);
-            //const filterData = data.filter(item => item.id === idItem);
-            //setProductData(filterData);
-            setProductData(data[idItem-1]);
+
+            const filterData = data.filter(function(item) {
+                return item.category.id === idCat && item.id === parseInt(item.id);
+            });
+
+            setProductData(filterData[0] !== 0 ? filterData[0]:data);
+         
         });
         myPromise().catch(error => {
             setError(error);
@@ -45,13 +42,12 @@ export const ItemDetailContainer = () => {
         getItems()
     }, [idItem]);
 
-    return <>
-       
-        <ItemDetail item={productData}/>
-        <Snackbar open={showError} autoHideDuration={3000} >
-            <Alert onClose={() => setShowError(false)} severity="error">
-                {error}
-            </Alert>
-        </Snackbar>
-    </>
+    return  <>
+    <ItemDetail item={productData}/>
+    <Snackbar open={showError} autoHideDuration={3000} >
+        <Alert onClose={() => setShowError(false)} severity="error">
+            {error}
+        </Alert>
+    </Snackbar>
+</>
 }

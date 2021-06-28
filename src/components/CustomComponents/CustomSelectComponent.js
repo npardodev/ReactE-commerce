@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Select from '@material-ui/core/Select/Select';
 import MenuItem from '@material-ui/core/MenuItem/MenuItem';
 
-
-export const CustomSelectComponent = ({options, value, name, color, actionChange, actionFocus}) => {
+export const CustomSelectComponent = ({options, value, name, actionChange, actionFocus}) => {
     //const classes = useStyle();
 
     const [selectValue, setSelectValue] = useState(value ?? ''); 
 
     useEffect(() =>{
-        setSelectValue((value ?? ''), [value]);
+        setSelectValue((selectValue ?? ''), [selectValue]);
     });       
 
     const handleFocus = () => {
@@ -19,8 +18,7 @@ export const CustomSelectComponent = ({options, value, name, color, actionChange
     };
 
     const handleChange = (e) => {
-        const value = e.target.value;
-        setSelectValue(value);
+        setSelectValue(e.target.value);
         if (actionChange) {
             actionChange(value);
         }
@@ -30,12 +28,10 @@ export const CustomSelectComponent = ({options, value, name, color, actionChange
         <Select
             labelId="SelectComp"
             id="SelectComp"
-            value={4}
-            onChange={handleChange}
             name={name}
             value={selectValue}    
             onFocus={handleFocus}
-            onChange={handleChange} 
+            onChange={(e) => handleChange(e)} 
         > 
         {options.map((option, index)=>{
             return (

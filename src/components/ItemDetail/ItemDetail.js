@@ -1,7 +1,8 @@
 import React from 'react';
 import { ItemDetailStyle } from './ItemDetailStyle.js'
-import { makeStyles, CircularProgress, Button} from '@material-ui/core';
+import { makeStyles, CircularProgress} from '@material-ui/core';
 import { CustomSelectComponent } from './../CustomComponents/CustomSelectComponent.js'
+import {StockContainer, CustomStockChangeController} from './../StockContainer/StockContainer.js';
 
 let categories = [{name:'Opt1', value:'Opt1'},{name:'Opt2', value:'Opt2'},{name:'Opt3', value:'Opt3'}];
 
@@ -19,16 +20,20 @@ export const ItemDetail = ({item}) => {
                 </div>
                 <div className= {classes.productDetails}>
                     <h3>{item.title}</h3>
-                    <h4 className= {classes.actualPrice}>{item.price}</h4>
-                    <h4 className= {classes.offerPrice}>{item.price}</h4>
+                    <h4 className= {classes.actualPrice}>${item.price}</h4>
+                    <h4 className= {classes.offerPrice}>${item.price}</h4>
                     <p>{item.longDescipt}</p>
-                    <div>
-                    <h4>Categoria</h4>
-                    <CustomSelectComponent options ={categories} />
+                    <div className= {classes.stockDetails}>
+                        <p>{`Stock:${item.stock}`}</p>
+                        <h6>Categoria</h6>
+                        <CustomSelectComponent options ={categories} /> 
                     </div>
-                    <Button variant="contained" color="primary"> Agregar </Button>
+                    <StockContainer component={CustomStockChangeController}/>
                 </div>
+                
             </div>
+           
+
     </section>))
 }
 

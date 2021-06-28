@@ -11,6 +11,9 @@ export const appPaths = {
     ABOUT_US_PATH: '/aboutus',
     ITEM_PATH: '/item',
     ITEMS_CATEGORYS_PATH: '/products/:idCat',
+    CART_PATH: '/cart',
+    TEST_PATH: '/test',
+
 }
    
 export const RouterApp= () => {
@@ -32,6 +35,13 @@ export const RouterApp= () => {
         </Route>
         <Route exact path={appPaths.ITEM_DETAIL_PATH}>
             <ItemDetailContainer/>
+        </Route>
+        <Route exact path={appPaths.CART_PATH}>
+            <CustomNotFound/>
+        </Route>
+
+        <Route exact path={appPaths.TEST_PATH}>
+            <CustomNotFound/>
         </Route>
         <Route component={CustomNotFound}/>
     </Switch>)

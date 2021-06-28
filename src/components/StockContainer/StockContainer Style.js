@@ -1,19 +1,15 @@
 export const ItemDetailStyle = theme => {
 
     return ({
-
-        StockContainer: {
-            display: 'flex',
-            flexDirection: 'row',
-        },
         productItem: {
 
-            padding: '0.4rem',
+            padding: '2em',
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
             gridGap: '1em',
             backgroundColor: '#FFFFF',
             margin: '1rem',
+            padding: '3rem',
 
             ' & hover': {
                 width: '100%',
@@ -25,17 +21,16 @@ export const ItemDetailStyle = theme => {
                 height: 'auto',
             },
 
-            '&productDetails': {
+            ' & productDetails': {
                 display: 'flex',
                 flexDirection: 'column',
-                flewWrap: 'wrap',
             }
         },
 
         productDetails: {
             '& h3': {
                 textAlign: 'start',
-                padding: '0.4rem',
+                padding: '1rem',
                 fontSize: '1.5rem',
                 fontWeight: '600',
                 color: '#464EB8',
@@ -44,27 +39,48 @@ export const ItemDetailStyle = theme => {
             '& h4': {
                 textAlign: 'start',
                 paddingLeft: '1rem',
-                padding: '0.4rem',
+                paddingTop: '0.5rem',
                 fontSize: '1.2rem',
                 fontWeight: '100',
             },
 
-            '& h6': {
-                fontWeight: '300',
-            },
-
             '& p': {
                 textAlign: 'start',
+                textAlign: 'justify',
                 textjustify: 'inter-word',
-                padding: '0.4rem',
+                padding: '1rem',
                 marginRight: '20%',
                 fontSize: '1rem',
                 fontWeight: '100',
                 color: '#706f6f',
             },
 
-        },
 
+            ' & button': {
+                width: '25%',
+                fontSize: '1rem',
+                color: '#ffff',
+                alignItems: 'center',
+                textAlign: 'center',
+                margin: '2 rem',
+                border: '#a89283',
+                padding: '0.3 rem',
+                marginLeft: '1rem',
+                paddingTop: '0.5rem',
+            },
+
+            '& div': {
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                width: '40%',
+                paddingBottom: '0.8rem',
+
+
+
+            }
+
+        },
 
         actualPrice: {
             fontSize: '1rem'
@@ -82,16 +98,6 @@ export const ItemDetailStyle = theme => {
             marginLeft: ' 1rem',
             fontSize: '0.7rem',
             border: 'none',
-        },
-
-        stockDetails: {
-            display: 'flex',
-            flexDirection: 'row',
-            flewWrap: 'nowrap',
-            justifyContent: 'start',
-            textAlign: 'start',
-            gap: '2rem',
-
         }
 
 
