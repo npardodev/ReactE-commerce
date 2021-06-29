@@ -23,7 +23,7 @@ export const ItemListContainer = () => {
       const getItems = () => {
           myPromise().then(data => {            
             const filterData = data.filter(item => item.category.id === idCat);
-            setProductsData(filterData !==0 ? filterData:data);
+            setProductsData(filterData !=0 ? filterData:data);
           });
           myPromise().catch(error => {
               setError(error);

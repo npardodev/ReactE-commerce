@@ -27,15 +27,19 @@ export const RouterApp= () => {
             buttonLabel="Conocenos"
         />
         </Route>
+        
         <Route exact path={appPaths.PRODUCTS_PATH}>
             <ItemListContainer />
         </Route>
+
         <Route exact path={appPaths.ITEMS_CATEGORYS_PATH}>
             <ItemListContainer />
         </Route>
+
         <Route exact path={appPaths.ITEM_DETAIL_PATH}>
             <ItemDetailContainer/>
         </Route>
+
         <Route exact path={appPaths.CART_PATH}>
             <CustomNotFound/>
         </Route>
@@ -43,6 +47,7 @@ export const RouterApp= () => {
         <Route exact path={appPaths.TEST_PATH}>
             <CustomNotFound/>
         </Route>
+        
         <Route component={CustomNotFound}/>
     </Switch>)
 }
