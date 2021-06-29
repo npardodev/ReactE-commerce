@@ -76,7 +76,7 @@ export const myProducts = [{
             alt: "Imagen como para PC"
         },
         category: categories.COMBO_PC,
-        stock: 9
+        stock: 0
     },
     {
         id: 6,

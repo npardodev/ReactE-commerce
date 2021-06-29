@@ -1,45 +1,62 @@
 
-import React from 'react';
+import React,{useContext}  from 'react';
 import {Button} from '@material-ui/core';
 import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import {CartContext} from './../CartContext/CartContext.js'
 
 
 export const ShowMessage = ({stock}) => {
 	return <h4>{`Agregar:${stock}`}</h4>
 }
 
-
-export const CustomStockChangeController = ({changeStock, stock}) => {
+export const CustomStockChangeController = ({stock, changeStock, item}) => {
 	
     const [finish, setFinish] = useState(false);
     const history = useHistory();
+	const {cartItems, addItem, removeItem} = useContext(CartContext);
 
-    const handlerFinishCart = () => {history.push(`/cart`)};
-    const handlerAddToCart = () => {setFinish(true)};
-    const handlerCancelCart = () => {setFinish(false)};
+    const onAdd = () => {
+        changeStock(stock +1)
+    }
+    const onRemove = () => {
+        if (stock>0)
+            changeStock(stock -1)
+    }
 
-	return <>
-		<Button onClick={() => changeStock(stock +1)}>+</Button>
-		<Button onClick={() => stock>0?changeStock(stock -1):null}>-</Button>
-        { (!finish && stock)? <Button variant="contained" color="primary" onClick={handlerAddToCart}> <AddCircleIcon/>  Agregar </Button> : null }
-        { (finish && stock)? <Button variant="contained" color="primary" onClick={handlerFinishCart}>Finalizar <AddShoppingCartIcon /></Button> : null }
-        { (finish && stock)? <Button  color="secondary" size="small" onClick={handlerCancelCart}>Cancelar <DeleteIcon /></Button> : null }
-    </>
-}
+    const handlerFinishCart = () => {
+
+        history.push(`/cart`)
+    };
+
+    const handlerAddToCart = () => {
+        addItem(item,stock);
+        setFinish(true);
+    };
+
+    const handlerCancelCart = () => {
+        for (let i=0; i<stock; i++)
+            removeItem(item.id);
+        setFinish(false);
+    };
+
+        return <>
+            { (!finish)? <Button onClick={ onAdd}>+</Button> : null}
+            { (!finish)? <Button onClick={ onRemove}>-</Button> : null}
+            { (!finish && stock)? <Button variant="contained" color="primary" onClick={handlerAddToCart}> <AddCircleIcon/>  Agregar </Button> : null }
+            { (finish && stock)? <Button variant="contained" color="primary" onClick={handlerFinishCart}>Finalizar <AddShoppingCartIcon /></Button> : null }
+            { (finish && stock)? <Button  color="secondary" size="small" onClick={handlerCancelCart}>Cancelar <DeleteIcon /></Button> : null }
+        </>
+    }
 
 
-export const StockContainer = ({component : ComponentCustomChangerStock}) =>{
-
-	const [stock, setStock] = useState(0);
-
-	const handlerStock = value => setStock(value);
+export const StockContainer = ({component : ComponentCustomChangerStock, stock,handlerChange, item={item}}) =>{
 
 	return <div>
         <ShowMessage stock={stock}/>
-		<ComponentCustomChangerStock stock={stock} changeStock={handlerStock} />
+		<ComponentCustomChangerStock stock={stock} changeStock={handlerChange} item={item} />
 	</div>
 }

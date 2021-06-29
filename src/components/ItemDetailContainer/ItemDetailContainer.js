@@ -13,6 +13,7 @@ const myPromise = () => {
     })
 }
 
+
 export const ItemDetailContainer = () => {
 
     const { idCat, idItem } = useParams();
@@ -21,7 +22,6 @@ export const ItemDetailContainer = () => {
     const  [showError, setShowError] = useState(false);
 
     const getItems = () => {
-
 
         myPromise().then(data => {
 

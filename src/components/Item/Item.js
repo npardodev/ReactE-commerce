@@ -22,7 +22,6 @@ export const Item = ({ item, onClick, onFocus }) => {
             /* Efecto onFocus */
         };
 
-
         return (
             <div className= {classes.card}  onFocus={handlerFocus()}>
                 <div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ItemDetailStyle } from './ItemDetailStyle.js'
 import { makeStyles, CircularProgress} from '@material-ui/core';
 import { CustomSelectComponent } from './../CustomComponents/CustomSelectComponent.js'
@@ -11,7 +11,10 @@ const useStyles = makeStyles ((theme) => ItemDetailStyle(theme));
 export const ItemDetail = ({item}) => {
 
     const classes = useStyles();
+    const [stock, setStock] = useState(0);
+	const handlerStock = value => setStock(value);
 
+  
     return (item.length === 0 ? (<CircularProgress color="primary" />) : (
         <section>
             <div className= {classes.productItem}>
@@ -28,11 +31,9 @@ export const ItemDetail = ({item}) => {
                         <h6>Categoria</h6>
                         <CustomSelectComponent options ={categories} /> 
                     </div>
-                    <StockContainer component={CustomStockChangeController}/>
+                    <StockContainer component={CustomStockChangeController} stock={stock} handlerChange={handlerStock} item={item} />
                 </div>
-                
-            </div>
-           
+            </div>           
 
     </section>))
 }

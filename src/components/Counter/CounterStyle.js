@@ -26,9 +26,19 @@ export const CounterStyle = theme => {
                 marginBottom: '0.2em',
                 color: '#083748'
             },
+        },
+        Stock: {
 
-        }
-
+            '& h4': {
+                color: '#22F1A2',
+                '& mark': {
+                    backgroundColor: '#c4eddd',
+                },
+            },
+            '& h5': {
+                color: '#a0555d',
+            }
+        },
 
     })
 };
