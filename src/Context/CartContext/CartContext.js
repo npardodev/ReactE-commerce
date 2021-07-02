@@ -1,5 +1,5 @@
 import React, {useState, createContext} from 'react';
-import {CustomNotification} from './../CustomComponents/CustomNotification.js';
+import {CustomNotification} from './../../components/CustomComponents/CustomNotification.js';
 
 export const CartContext = createContext(); // Lo creo
 
@@ -35,9 +35,17 @@ export const CartComponentContext = ({ defaultValue=[], children}) => {
         return cartItems.find(cartItem => cartItem.item === item)? true : false;
     }
 
+    const getTotalQuantity = () =>{
+        let total = 0;
+        cartItems.map((item) =>{
+            total += item.quantity;
+        });
+        return total;
+    }
+
 
 	//Lo disponibilizo y defino que comparto
-	return <CartContext.Provider value={{cartItems,addItem, removeItem, clear, isInCart}} >
+	return <CartContext.Provider value={{cartItems,addItem, removeItem, clear, isInCart, getTotalQuantity}} >
 	{children}
 	</CartContext.Provider>
 }

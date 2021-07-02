@@ -9,7 +9,6 @@ export const ItemDetailStyle = theme => {
             gridGap: '1em',
             backgroundColor: '#FFFFF',
             margin: '1rem',
-            padding: '3rem',
 
             ' & hover': {
                 width: '100%',
@@ -46,7 +45,6 @@ export const ItemDetailStyle = theme => {
 
             '& p': {
                 textAlign: 'start',
-                textAlign: 'justify',
                 textjustify: 'inter-word',
                 padding: '1rem',
                 marginRight: '20%',

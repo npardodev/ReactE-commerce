@@ -4,6 +4,7 @@ import { Home } from '../components/Home/Home.js';
 import { ItemListContainer } from '../components/ItemListContainer/ItemListContainer.js';
 import { ItemDetailContainer } from '../components/ItemDetailContainer/ItemDetailContainer.js';
 import {CustomNotFound} from '../components/CustomComponents/CustomNotFound.js'
+import {CartContainer} from '../components/CartContainer/CartContainer.js'
 
 export const appPaths = {
     PRODUCTS_PATH: '/products',
@@ -41,7 +42,7 @@ export const RouterApp= () => {
         </Route>
 
         <Route exact path={appPaths.CART_PATH}>
-            <CustomNotFound/>
+            <CartContainer/>
         </Route>
 
         <Route exact path={appPaths.TEST_PATH}>

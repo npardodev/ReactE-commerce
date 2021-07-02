@@ -1,30 +1,27 @@
-import React,{useState} from 'react';
-
-import { makeStyles } from '@material-ui/core';
-import { withStyles } from '@material-ui/core';
-
+import React,{useContext} from 'react';
+import {useHistory} from 'react-router-dom';
+import { Badge } from '@material-ui/core';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import Badge from '@material-ui/core/Badge';
 import IconButton from '@material-ui/core/IconButton';
+import {CartContext} from './../../Context/CartContext/CartContext.js'
 
-import { CartWidgetStyle, CartWidgetBadgeStyle} from './CartWidgetStyle.js'
-
-const useStyle = makeStyles ((theme) => CartWidgetStyle(theme));
-const StyledBadge = withStyles((theme) => CartWidgetBadgeStyle(theme))(Badge);
-  
 export const CartWidget = ( {items }) => {
     
-    const classes = useStyle();
+    const history = useHistory();
+    const {getTotalQuantity} = useContext(CartContext);
+    const total = getTotalQuantity();
 
-    const [count, setCount] = useState(0);
+    const handlerClick = () => {
+        history.push(`/cart`);
+    }
 
     return (
-        <div className="CartWidget">
+        <div>
             <h4>{items}</h4>
-            <IconButton aria-label="cart">
-            <StyledBadge badgeContent={`${count}`} color="primary">
+            <IconButton aria-label="cart" onClick={handlerClick}>
+            <Badge badgeContent={`${total}`} color="primary">
                 <ShoppingCartIcon />
-            </StyledBadge>
+            </Badge>
             </IconButton>
         </div>
     )

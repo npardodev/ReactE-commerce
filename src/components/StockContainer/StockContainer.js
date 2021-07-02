@@ -6,8 +6,7 @@ import {useHistory} from 'react-router-dom';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-import {CartContext} from './../CartContext/CartContext.js'
-
+import {CartContext} from './../../Context/CartContext/CartContext.js'
 
 export const ShowMessage = ({stock}) => {
 	return <h4>{`Agregar:${stock}`}</h4>

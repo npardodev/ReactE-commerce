@@ -14,18 +14,17 @@ export const ItemDetail = ({item}) => {
     const [stock, setStock] = useState(0);
 	const handlerStock = value => setStock(value);
 
-  
     return (item.length === 0 ? (<CircularProgress color="primary" />) : (
         <section>
             <div className= {classes.productItem}>
                 <div>
-                    <img src={item.img.src} alt={item.img.alt}/>
+                   <img src={item.imgSrc} alt={item.imgAlt}/> 
                 </div>
                 <div className= {classes.productDetails}>
                     <h3>{item.title}</h3>
                     <h4 className= {classes.actualPrice}>${item.price}</h4>
                     <h4 className= {classes.offerPrice}>${item.price}</h4>
-                    <p>{item.longDescipt}</p>
+                    <p>{item.longDescription}</p>
                     <div className= {classes.stockDetails}>
                         <p>{`Stock:${item.stock}`}</p>
                         <h6>Categoria</h6>

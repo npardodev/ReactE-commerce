@@ -25,10 +25,10 @@ export const Item = ({ item, onClick, onFocus }) => {
         return (
             <div className= {classes.card}  onFocus={handlerFocus()}>
                 <div>
-                    <img src={item.img.src} alt={item.img.alt} onClick={(e) => handlerClick(e)} />
+                    <img src={item.imgSrc} alt={item.imgAlt} onClick={(e) => handlerClick(e)} />
                 </div>
                 <h4>{`$${item.price}`}</h4>
-                <p>{item.descrip}</p>
+                <p>{item.description}</p>
                 <Counter stock= {item.stock} initial={0} />
             </div>
         )

@@ -6,8 +6,8 @@ export const CustomLoadingComponent = (props) => {
 
     return (
         <>
-            <h3>{messageLoad}</h3>
             <props.iconLoad color={color} />
+            <h3>{messageLoad}</h3>
         </>
 
     )

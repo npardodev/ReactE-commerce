@@ -14,7 +14,7 @@ export const ItemList = ({items}) => {
     
     return <>
         <Container className = {classes.conten } color="primary" alignContent="center">
-            {(items.length === 0 ? (<CustomLoadingComponent  iconLoad={CircularProgress} messageLoad="Cargando..." color="primary"/> ) : (
+            {(!items? (<CustomLoadingComponent  iconLoad={CircularProgress} messageLoad="Cargando..." color="primary"/> ) : (
                     <div className = {classes.products }>
                         {items.map((element, index)=><Item key={index} item={element}/>)}
                     </div>
