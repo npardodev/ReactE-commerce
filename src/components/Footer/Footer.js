@@ -5,6 +5,8 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
 import {FooterStyle} from './FooterStyle.js';
+import Divider from '@material-ui/core/Divider';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => FooterStyle(theme));
 
@@ -15,6 +17,8 @@ export const Footer = () => {
 
     return (<>
             <footer>
+            <Divider variant="middle" />
+
                 <Container className={classes.footer} >
                     <Box className={classes.footerColumns} >
                         <Box p={1} >
@@ -31,9 +35,9 @@ export const Footer = () => {
                         </Box>
                         <Box p={1} >
                             <h4 >Seguinos</h4>
-                            <InstagramIcon color="primary" />
-                            <FacebookIcon color="primary" />  
-                            <MailOutlinedIcon color="primary" />                          
+                            <InstagramIcon color="primary" fontSize="large" />
+                            <FacebookIcon color="primary" fontSize="large" />
+                            <LinkedInIcon color="primary" fontSize="large" />  
                         </Box>
                     </Box>
                     <Box textAlign="center">

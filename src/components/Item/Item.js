@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { Counter } from '../Counter/Counter.js';
 import { ItemStyle } from './ItemStyle.js';
 import { makeStyles } from '@material-ui/core/styles';
-import {useHistory, useLocation } from 'react-router-dom';
+import {useHistory } from 'react-router-dom';
+
+
+import { TestComponent} from './../test.js';
+
 
 const useStyle = makeStyles((theme) => ItemStyle(theme));
 
@@ -10,12 +14,13 @@ export const Item = ({ item, onClick, onFocus }) => {
 
         const classes = useStyle();
         const history = useHistory();
-        const location = useLocation();
         const idItem = item.id;
-       
+        const idCategory = item.category;
+
         const handlerClick = (e) => {
             e.preventDefault();
-            history.push(`${location.pathname}/${idItem}`);
+            history.replace(`/`);
+            history.push(`products/${idCategory}/${idItem}`);
         }
 
         const handlerFocus = () => {
@@ -30,6 +35,7 @@ export const Item = ({ item, onClick, onFocus }) => {
                 <h4>{`$${item.price}`}</h4>
                 <p>{item.description}</p>
                 <Counter stock= {item.stock} initial={0} />
+                <TestComponent/>
             </div>
         )
     }

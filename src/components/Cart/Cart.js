@@ -37,7 +37,7 @@ export const Cart = ( {item, quantity}) => {
         </Box>
         <Box className={classes.priceBox}> 
             <h3> Precio p/u:</h3>
-            <h4><mark>{item.price} </mark></h4>
+            <h4><mark>${item.price} </mark></h4>
         </Box>
     </div>
 <Divider variant="middle"/>

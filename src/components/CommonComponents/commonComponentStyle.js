@@ -7,13 +7,15 @@ export const commonComponentStyle = theme => {
             justifyItems: 'center',
             justifyContent: 'center',
             backgroundColor: 'white',
-            justifyContent: 'center',
             alignItems: 'center',
+            heigth: '100vh',
+            width: '100%',
             ' & h2': {
                 top: '1rem',
                 justifyItems: 'center',
                 justifyContent: 'center',
                 alignItems: 'center',
+                textAlign: 'center',
                 fontSize: '2.2em',
                 color: '#464EB8'
             },
@@ -21,6 +23,7 @@ export const commonComponentStyle = theme => {
                 justifyItems: 'center',
                 justifyContent: 'center',
                 alignItems: 'center',
+                textAlign: 'center',
                 fontWeight: '600',
                 fontSize: '1.3em',
                 color: '#6E65FF'
@@ -31,6 +34,9 @@ export const commonComponentStyle = theme => {
 
             },
 
+            ' & button': {
+                marginBottom: '3em',
+            },
         }
 
     })

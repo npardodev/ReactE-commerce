@@ -25,6 +25,38 @@ export const FooterStyle = theme => {
             alignItems: "center",
         },
 
+        '@media (max-width: 1024px)': {
+
+            footer: {
+                '& h4': {
+                    fontSize: '0.9rem',
+                },
+                '& h5': {
+                    fontSize: '0.9rem',
+
+                }
+            },
+        },
+        '@media (max-width: 992px)': {
+
+            footer: {
+                '& h4': {
+                    fontSize: '0.8rem',
+                },
+                '& h5': {
+                    fontSize: '0.8rem',
+
+                }
+            },
+            footerColumns: {
+                display: "flex",
+                flexWrap: "wrap",
+                alignItems: "center",
+                textAlign: 'center'
+            },
+
+        },
+
 
 
     })

@@ -6,17 +6,25 @@ import {DolarService} from './services/cotizacion/DolarService';
 import {RouterApp} from './router/RouterApp.js';
 import { BrowserRouter} from 'react-router-dom';
 import { CartComponentContext} from './Context/CartContext/CartContext.js';
+import { ThemeProvider } from '@material-ui/styles';
+import { CustomTheme } from './../src/styles/CustomTheme.js';
+
+import {SocialIconButtons} from '../src/components/test.js'
+
 
 
 const App = props => {
 
   return (
     <CartComponentContext>
-        <BrowserRouter>
-            <NavBar/>
-            <RouterApp/>
-            <Footer/>
-        </BrowserRouter>
+        <ThemeProvider theme={CustomTheme}>
+            <BrowserRouter>
+                <NavBar/>
+                <RouterApp/>
+                <SocialIconButtons/>
+                <Footer/> 
+            </BrowserRouter>
+        </ThemeProvider>
     </CartComponentContext>
     );
     /* En Test

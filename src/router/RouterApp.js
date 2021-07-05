@@ -5,6 +5,11 @@ import { ItemListContainer } from '../components/ItemListContainer/ItemListConta
 import { ItemDetailContainer } from '../components/ItemDetailContainer/ItemDetailContainer.js';
 import {CustomNotFound} from '../components/CustomComponents/CustomNotFound.js'
 import {CartContainer} from '../components/CartContainer/CartContainer.js'
+import {ContactContainer} from '../../src/screens/Contact/ContactContainer/ContactContainer.js'
+
+import {SocialIconButtons} from '../../src/components/test.js'
+
+import {MyCustomMap} from './../screens/Contact/Map/MyCustomMap.js'
 
 export const appPaths = {
     PRODUCTS_PATH: '/products',
@@ -13,8 +18,8 @@ export const appPaths = {
     ITEM_PATH: '/item',
     ITEMS_CATEGORYS_PATH: '/products/:idCat',
     CART_PATH: '/cart',
+    CONTACT_PATH: '/contact',
     TEST_PATH: '/test',
-
 }
    
 export const RouterApp= () => {
@@ -45,10 +50,14 @@ export const RouterApp= () => {
             <CartContainer/>
         </Route>
 
-        <Route exact path={appPaths.TEST_PATH}>
-            <CustomNotFound/>
+        <Route exact path={appPaths.CONTACT_PATH}>
+            <ContactContainer/>
         </Route>
-        
+
+        <Route exact path={appPaths.TEST_PATH}>
+            <MyCustomMap/>
+        </Route>
+
         <Route component={CustomNotFound}/>
     </Switch>)
 }

@@ -12,10 +12,12 @@ export const ItemStyle = theme => {
             textAlign: 'center',
             display: 'flex',
             flexDirection: 'column',
-
+            
             ' & h4': {
                 fontSize: '1em',
                 fontWeight: '500',
+                margin: '0',
+                padding: '0.5em',
             },
 
             ' & img': {

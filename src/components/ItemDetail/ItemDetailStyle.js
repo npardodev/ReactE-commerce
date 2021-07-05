@@ -11,7 +11,7 @@ export const ItemDetailStyle = theme => {
             padding: '0.4rem',
             display: 'grid',
             gridTemplateColumns: 'repeat(2, 1fr)',
-            gridGap: '1em',
+            gridGap: '2em',
             backgroundColor: '#FFFFF',
             margin: '1rem',
 
@@ -21,8 +21,9 @@ export const ItemDetailStyle = theme => {
             },
 
             ' & img': {
-                width: '100%',
+                width: '80%',
                 height: 'auto',
+
             },
 
             '&productDetails': {
@@ -36,17 +37,19 @@ export const ItemDetailStyle = theme => {
             '& h3': {
                 textAlign: 'start',
                 padding: '0.4rem',
-                fontSize: '1.5rem',
+                fontSize: '1.9rem',
                 fontWeight: '600',
                 color: '#464EB8',
+                marign: '0',
+
             },
 
             '& h4': {
                 textAlign: 'start',
-                paddingLeft: '1rem',
-                padding: '0.4rem',
-                fontSize: '1.2rem',
+                paddingLeft: '1em',
+                fontSize: '1em',
                 fontWeight: '100',
+                marign: '0',
             },
 
             '& h6': {
@@ -92,6 +95,52 @@ export const ItemDetailStyle = theme => {
             textAlign: 'start',
             gap: '2rem',
 
+        },
+
+        '@media (max-width: 992px)': {
+
+            productItem: {
+
+                gridTemplateColumns: 'repeat(1, 1fr)',
+                ' & img': {
+                    width: '50%',
+                    height: 'auto',
+                    display: 'block',
+                    margin: 'auto',
+                }
+            },
+            productDetails: {
+                '& h3': {
+                    textAlign: 'center',
+                    padding: '0.2em',
+                    fontSize: '1.5rem',
+                    fontWeight: '600',
+                    color: '#464EB8',
+                },
+
+                '& h4': {
+                    textAlign: 'start',
+                    paddingLeft: '1rem',
+                    padding: '0.2em',
+                    fontSize: '1.2rem',
+                    fontWeight: '100',
+                },
+
+                '& h6': {
+                    fontWeight: '300',
+                },
+
+                '& p': {
+                    textAlign: 'center',
+                    textjustify: 'inter-word',
+                    padding: '0.4rem',
+                    marginRight: '20%',
+                    fontSize: '1rem',
+                    fontWeight: '100',
+                    color: '#706f6f',
+                },
+
+            },
         }
 
 
