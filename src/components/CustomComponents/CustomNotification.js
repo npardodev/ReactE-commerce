@@ -12,12 +12,9 @@ export const CustomNotification = ({message="", type="info", time={TIME_DURATION
         setShowMessage(false);
     }
     return (
-        <>
             <Snackbar open={showMessage} onClose={handlerClose} autoHideDuration={TIME_DURATION_MSG} >
                 <Alert onClose={handlerClose} severity={type}>{message}</Alert>
             </Snackbar>
-        </>
-
     )
 }
 

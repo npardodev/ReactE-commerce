@@ -5,8 +5,6 @@ import { Cart } from './../Cart/Cart.js';
 import {CartContext} from './../../Context/CartContext/CartContext.js'
 import { CustomCartEmpty } from './../CustomComponents/CustomCartEmpty.js';
 
-
-
 const useStyle = makeStyles((theme) => CartContainerStyle(theme));
 
 export const CartContainer = ({ items }) => {
@@ -21,7 +19,6 @@ export const CartContainer = ({ items }) => {
     },[])
 
     return ( <>
-
         {(cartItems.length ===0? (<CustomCartEmpty/>) : (
             <div>
                 <div className={classes.cartTitle}>
@@ -35,8 +32,7 @@ export const CartContainer = ({ items }) => {
                     </Paper>
                 </Container>
             </div>
-        ))} 
-             
+        ))}            
  </> )
 }
 

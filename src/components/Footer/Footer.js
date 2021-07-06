@@ -15,7 +15,7 @@ export const Footer = () => {
 
     const classes = useStyles();
 
-    return (<>
+    return (
             <footer>
             <Divider variant="middle" />
 
@@ -44,6 +44,5 @@ export const Footer = () => {
                         balutech.com &reg; Todos los derechos reservados 
                     </Box>
                 </Container>
-            </footer>
-            </>)
+            </footer>)
 }

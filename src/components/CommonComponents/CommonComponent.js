@@ -14,7 +14,6 @@ export const CommonComponent = ({title, subtitle, image, alt, buttonLabel, actio
     }
 
     return (
-        <>
         <section className={classes.container}>
             <div>
                 <h2> {title} </h2>
@@ -23,7 +22,5 @@ export const CommonComponent = ({title, subtitle, image, alt, buttonLabel, actio
             </div>
             <Button variant="contained" color="primary" onClick={commonAction} >{buttonLabel}</Button>
         </section>
-
-    </>
     )
 };

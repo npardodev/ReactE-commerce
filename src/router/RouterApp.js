@@ -9,7 +9,6 @@ import {ContactContainer} from '../../src/screens/Contact/ContactContainer/Conta
 
 import {SocialIconButtons} from '../../src/components/test.js'
 
-import {MyCustomMap} from './../screens/Contact/Map/MyCustomMap.js'
 
 export const appPaths = {
     PRODUCTS_PATH: '/products',
@@ -55,7 +54,7 @@ export const RouterApp= () => {
         </Route>
 
         <Route exact path={appPaths.TEST_PATH}>
-            <MyCustomMap/>
+            <ContactContainer/>
         </Route>
 
         <Route component={CustomNotFound}/>
