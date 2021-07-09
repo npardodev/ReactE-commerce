@@ -8,6 +8,7 @@ import {CartContainer} from '../components/CartContainer/CartContainer.js'
 import {ContactContainer} from '../../src/screens/Contact/ContactContainer/ContactContainer.js'
 
 import {SocialIconButtons} from '../../src/components/test.js'
+import Checkout from '../../src/components/Checkout/Checkout.js'
 
 
 export const appPaths = {
@@ -18,6 +19,7 @@ export const appPaths = {
     ITEMS_CATEGORYS_PATH: '/products/:idCat',
     CART_PATH: '/cart',
     CONTACT_PATH: '/contact',
+    CHECKOUT_PATH: '/checkout',
     TEST_PATH: '/test',
 }
    
@@ -53,8 +55,8 @@ export const RouterApp= () => {
             <ContactContainer/>
         </Route>
 
-        <Route exact path={appPaths.TEST_PATH}>
-            <ContactContainer/>
+        <Route exact path={appPaths.CHECKOUT_PATH}>
+            <Checkout/>
         </Route>
 
         <Route component={CustomNotFound}/>

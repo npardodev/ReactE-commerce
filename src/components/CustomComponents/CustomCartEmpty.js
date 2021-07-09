@@ -1,12 +1,11 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 import {CommonComponent} from './../CommonComponents/CommonComponent.js'
-import imgEmptyCart from './../../assets/img/emptyCart.svg';
+import imgEmptyCart from '../../assets/img/emptyCart.svg';
 
 export const CustomCartEmpty = (props) => {
     
     const history = useHistory();
-
     const BackToHome = () =>{
         history.push(`/`);
     }

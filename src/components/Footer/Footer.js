@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Container} from '@material-ui/core';
+import {Box, Container, Typography} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -9,6 +9,18 @@ import Divider from '@material-ui/core/Divider';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => FooterStyle(theme));
+
+export const Copyright = () => {
+    return (
+      <Typography variant="body2" color="textSecondary" align="center">
+        {'Copyright © '}
+         Balutech
+        {' '}
+        {new Date().getFullYear()}
+        {'.'}
+      </Typography>
+    );
+  }
 
 
 export const Footer = () => {
@@ -40,9 +52,7 @@ export const Footer = () => {
                             <LinkedInIcon color="primary" fontSize="large" />  
                         </Box>
                     </Box>
-                    <Box textAlign="center">
-                        balutech.com &reg; Todos los derechos reservados 
-                    </Box>
+                    <Copyright/>
                 </Container>
             </footer>)
 }

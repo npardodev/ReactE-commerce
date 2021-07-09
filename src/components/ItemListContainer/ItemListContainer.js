@@ -1,64 +1,74 @@
 import React, {useState, useEffect} from 'react';
 import { ItemList } from '../../components/ItemList/ItemList';
-import { myProducts } from './../../data/myProducts.js';
 import { useParams, } from 'react-router-dom';
 import {CustomNotification} from './../CustomComponents/CustomNotification.js';
 import { dataBase } from './../../Firebase/Firebase.js';
-import {CustomLoadingComponent} from './../CustomComponents/CustomLoadingComponent.js'
+import {Pagination} from '@material-ui/lab';
+import Box from "@material-ui/core/Box";
 
 const COLLECTION_NAME = "productos";
+const MAX_GET_ITEM_COLLECTION = 50;
 
-const myPromise = () => {
-    return new Promise ((resolve, reject) => {
-        setTimeout(() => resolve (
-           myProducts
-        ), 3000);
-    })
-}
+
+export const CustomPagination = ({pageValue, setPageValue}) => {
+   
+    const handleChange = (event, value) => {
+        setPageValue(value);
+    };
+
+    useEffect(() => {
+    }, [])
+  
+    return (
+        <Box justifyContent="center" display="flex">
+            <Pagination count={4} color="primary" variant="outlined" page={pageValue} onChange={handleChange} />
+        </Box>
+    );
+  }
 
 export const ItemListContainer = () => {
      
       const {idCat, id } = useParams();
       const initialErrorState = '';
-
+      const [page, setPage] = useState([]);
       const [productData, setProductsData] = useState([]);
       const [error,setError] = useState(initialErrorState);
       const [loading, setLoading] = useState(false);
       const [showError, setShowError] = useState(false);
+      const [postion, setPosition]= useState ({
+        currentPage: 1,
+        itemsPerPage: 8
+      });
 
+    const indexLast = postion.currentPage * postion.itemsPerPage;
+    const indexFirst = indexLast - postion.itemsPerPage;
+
+    
       const getItems = () => {
-          /* myPromise().then(data => {            
-            const filterData = data.filter(item => item.category.id === idCat);
-            setProductsData(filterData !=0 ? filterData:data);
-          });
-          myPromise().catch(error => {
-              setError(error);
-          }); */
-
-
-            
+         
         setLoading(true);
         const productsCollections = dataBase.collection(COLLECTION_NAME);
-        
-        //const myProducts = productsCollections.where('price', '>', 500).where('category', '==', 'products').limits(20);
-        
-        productsCollections.get().then((querySnapshot) => {
+        const filterProducts = (
+            idCat? productsCollections.where('category', '==', idCat).limit(MAX_GET_ITEM_COLLECTION)
+            : 
+            productsCollections);
+        filterProducts.get().then((querySnapshot) => {
             if (querySnapshot.size === 0) {
-                console.log('No results');
-                setError('No results');
+                setError('No hay productos');
                 setShowError(true);
             }
-            //setProductData(querySnapshot.docs.map(doc => doc.data()));
-            
-            //filtrar con where
-            const datos = querySnapshot.docs.map(doc => doc.data());
-            const filterData = datos.filter(item => item.category === idCat);
-            setProductsData(filterData !=0 ? filterData:datos);
+
+            const quantityResults = querySnapshot.docs.length;
+            const quantityDividePage = quantityResults/postion.itemsPerPage;
+    
+            const results = querySnapshot.docs.map(doc => doc.data());
+            const currentResult = results.slice(indexFirst, indexLast);
+            setProductsData(currentResult);
 
         }).catch((error) => {
             setError(error);
             setShowError(true);
-            console.log('Error buscando items', error);
+            console.log('Error en respuesta del servidor', error);
         }).finally(() => {
             setLoading(false);
            
@@ -66,17 +76,20 @@ export const ItemListContainer = () => {
       }
       
       useEffect(() => {
-          getItems()
-      }, [{idCat, id }])
+          getItems();
+      }, [idCat])
       
 
     return <>
             {error!==initialErrorState ? 
                 <CustomNotification message={error} type="error"/>:
                 <ItemList items={productData} />}   
-           
+                <CustomPagination pageValue={page} setPageValue={setPage} />
     </>
 }
+
+
+
 
 
 

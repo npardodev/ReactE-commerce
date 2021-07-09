@@ -3,17 +3,12 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import LanguageIcon from '@material-ui/icons/Language';
-import CheckIcon from '@material-ui/icons/Check';
-import ClearIcon from '@material-ui/icons/Clear';
 import StoreIcon from '@material-ui/icons/Store';
 import Box from '@material-ui/core/Box';
-
+import {Link } from 'react-router-dom';
 import Fab from '@material-ui/core/Fab';
-import AddIcon from '@material-ui/icons/Add';
-import EditIcon from '@material-ui/icons/Edit';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import NavigationIcon from '@material-ui/icons/Navigation';
-
+import {useHistory } from 'react-router-dom';
+import ReactWhatsapp from 'react-whatsapp';
 
 
 import iconWhatsapp from './../assets/icons/iconsWhatsapp2.svg';
@@ -94,13 +89,33 @@ const useStyles = makeStyles((theme) => ({
     }
   }));
 
+
 export const SocialIconButtons=() => {
     const classes = useStyles();
+    const history = useHistory();
+        
+    const handlerOnClick = (e) =>{
+        e.preventDefault();
+        window.open(`https://api.whatsapp.com/send?phone=393456789715`)
+    }
+
+    const handlerOnFocus = () =>{
+
+    }
 
     return (
-        <Fab size="small" color="secondary" aria-label="like" className={classes.float}>
-            <img src={iconWhatsapp} />
-        </Fab>
+            <Fab size="small" 
+                color="secondary" 
+                aria-label="like" 
+                className={classes.float}
+                onClick={e => handlerOnClick(e)}
+                onFocus={handlerOnFocus()}
+
+                >
+                <img src={iconWhatsapp} />
+            </Fab>
     );
   }
+
+
 

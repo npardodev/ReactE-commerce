@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import { ItemDetailStyle } from './ItemDetailStyle.js'
-import { makeStyles, CircularProgress} from '@material-ui/core';
+import { makeStyles,CircularProgress} from '@material-ui/core';
 import { CustomSelectComponent } from './../CustomComponents/CustomSelectComponent.js'
+import { CustomLoadingComponent } from './../CustomComponents/CustomLoadingComponent.js'
+
 import {StockContainer, CustomStockChangeController} from './../StockContainer/StockContainer.js';
 
 let categories = [{name:'Opt1', value:'Opt1'},{name:'Opt2', value:'Opt2'},{name:'Opt3', value:'Opt3'}];
@@ -14,7 +16,7 @@ export const ItemDetail = ({item}) => {
     const [stock, setStock] = useState(0);
 	const handlerStock = value => setStock(value);
 
-    return (item.length === 0 ? (<CircularProgress color="primary" />) : (
+    return (item.length === 0 ? (<CustomLoadingComponent iconLoad={CircularProgress} color="primary" messageLoad="cargando"/>) : (
         <section>
             <div className= {classes.productItem}>
                 <div>
