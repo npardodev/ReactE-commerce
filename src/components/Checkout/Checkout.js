@@ -10,9 +10,9 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import {CheckoutForm} from './CheckoutForm';
+import {CheckoutFormContainer} from './CheckoutForm';
 import {Payment} from './Payment.js';
-import {OrderView} from './OrderView.js';
+import {OrderResumeView} from './OrderView.js';
 import {CheckoutStyle} from './CheckoutStyle.js'
 
 const useStyle = makeStyles((theme) => CheckoutStyle(theme));
@@ -28,7 +28,7 @@ const checkoutSteps =[
     {
         name: 'Shipping',
         id: 0,
-        content: <CheckoutForm />
+        content: <CheckoutFormContainer />
     },
     {
         name: 'Payment',
@@ -38,18 +38,18 @@ const checkoutSteps =[
     {
         name: 'Review',
         id: 2,
-        content: <OrderView />
+        content: <OrderResumeView />
     }
 ];
 
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <CheckoutForm />;
+      return <CheckoutFormContainer />;
     case 1:
       return <Payment />;
     case 2:
-      return <OrderView />;
+      return <OrderResumeView />;
     default:
       throw new Error('Unknown step');
   }

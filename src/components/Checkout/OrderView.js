@@ -25,9 +25,10 @@ const payments = [
   { name: 'Expiry date', detail: '04/2024' },
 ];
 
+//{ buyer: { name, phone, email }, items: [{id, title, price}], date, total  }
 
 
-export const OrderView = () => {
+export const OrderResumeView = () => {
   const classes = useStyle();
   const {cartItems, addItem, removeItem} = useContext(CartContext);
   
@@ -42,7 +43,6 @@ export const OrderView = () => {
       </Typography>
 
       <List disablePadding>
-
         {cartItems.map((element, index) => (
           <ListItem className={classes.listItem} key={index}>
             <ListItemText primary={`${element.quantity} x ${element.item.title}`} secondary={element.item.description}/>
@@ -59,6 +59,7 @@ export const OrderView = () => {
 
 
       <Grid container spacing={2}>
+
         <Grid item xs={12} sm={6}>
           <Typography variant="h6" gutterBottom className={classes.title}>
             Shipping
@@ -66,6 +67,7 @@ export const OrderView = () => {
           <Typography gutterBottom>John Smith</Typography>
           <Typography gutterBottom>{addresses.join(', ')}</Typography>
         </Grid>
+
         <Grid item container direction="column" xs={12} sm={6}>
           <Typography variant="h6" gutterBottom className={classes.title}>
             Payment details

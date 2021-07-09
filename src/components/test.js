@@ -8,7 +8,6 @@ import Box from '@material-ui/core/Box';
 import {Link } from 'react-router-dom';
 import Fab from '@material-ui/core/Fab';
 import {useHistory } from 'react-router-dom';
-import ReactWhatsapp from 'react-whatsapp';
 
 
 import iconWhatsapp from './../assets/icons/iconsWhatsapp2.svg';

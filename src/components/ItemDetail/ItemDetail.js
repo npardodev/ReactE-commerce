@@ -23,10 +23,12 @@ export const ItemDetail = ({item}) => {
                    <img src={item.imgSrc} alt={item.imgAlt}/> 
                 </div>
                 <div className= {classes.productDetails}>
-                    <h3>{item.title}</h3>
-                    <h4 className= {classes.actualPrice}>${item.price}</h4>
-                    <h4 className= {classes.offerPrice}>${item.price}</h4>
-                    <p>{item.longDescription}</p>
+                    <div>
+                        <h3>{item.title}</h3>
+                        <h4 className= {classes.actualPrice}>${item.price}</h4>
+                        <h4 className= {classes.offerPrice}>${item.price}</h4>
+                        <p>{item.longDescription}</p>
+                    </div>
                     <div className= {classes.stockDetails}>
                         <p>{`Stock:${item.stock}`}</p>
                         <h6>Categoria</h6>

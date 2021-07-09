@@ -110,6 +110,9 @@ export const ItemDetailStyle = theme => {
                 }
             },
             productDetails: {
+                display: 'flex',
+                flexDirection: 'column',
+
                 '& h3': {
                     textAlign: 'center',
                     padding: '0.2em',

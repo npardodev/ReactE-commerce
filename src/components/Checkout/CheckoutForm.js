@@ -1,97 +1,138 @@
 
-import React from 'react';
+import React, {useState} from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 
-export const CheckoutForm = () => {
 
-    return (
-    <React.Fragment>
-      <Typography variant="h6" gutterBottom>
-        Shipping address
-      </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="firstName"
-            name="firstName"
-            label="First name"
-            fullWidth
-            autoComplete="given-name"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="lastName"
-            name="lastName"
-            label="Last name"
-            fullWidth
-            autoComplete="family-name"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            required
-            id="address1"
-            name="address1"
-            label="Address line 1"
-            fullWidth
-            autoComplete="shipping address-line1"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <TextField
-            id="address2"
-            name="address2"
-            label="Address line 2"
-            fullWidth
-            autoComplete="shipping address-line2"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="city"
-            name="city"
-            label="City"
-            fullWidth
-            autoComplete="shipping address-level2"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField id="state" name="state" label="State/Province/Region" fullWidth />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="zip"
-            name="zip"
-            label="Zip / Postal code"
-            fullWidth
-            autoComplete="shipping postal-code"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="country"
-            name="country"
-            label="Country"
-            fullWidth
-            autoComplete="shipping country"
-          />
-        </Grid>
-        <Grid item xs={12}>
+const textFields =[
+  { 
+    required: true,
+    id: "firstName",
+    name: "firstName",
+    label: "Nombre",
+    fullWidth: true,
+    autoComplete:"Nombre",
+  },
+  { 
+    required: true,
+    id: "lastName",
+    name: "lastName",
+    label: "Apellido",
+    fullWidth: true,
+    autoComplete:"Apellido",
+  },
+  { 
+    required: true,
+    id: "address",
+    name: "address",
+    label: "Direccion",
+    fullWidth: true,
+    autoComplete:"Direccion",
+  },
+  { 
+    required: false,
+    id: "addressObs",
+    name: "addressObs",
+    label: "Entre calles",
+    fullWidth: true,
+    autoComplete:"Aclaracion",
+  },
+  { 
+    required: true,
+    id: "city",
+    name: "city",
+    label: "Ciudad",
+    fullWidth: true,
+    autoComplete:"Ciudad",
+  },
+  { 
+    required: true,
+    id: "postalCode",
+    name: "postalCode",
+    label: "Codigo Postal",
+    fullWidth: true,
+    autoComplete: "Codigo Postal",
+  },
+  { 
+    required: true,
+    id: "locality",
+    name: "locality",
+    label: "Localidad",
+    fullWidth: true,
+    autoComplete:"Localidad",
+  },
+]
+
+
+export const CheckoutFormContainer = () => {
+
+  const [delivery, setDelivery] = useState(true);
+
+  return (<>
+    <Typography variant="h6" gutterBottom>
+      Direccion de Envío
+    </Typography>
+    <Grid container spacing={3}>
+          <CheckoutForm delivery={delivery} />
+          <FormController mode={delivery} setMode={setDelivery}/>
+    </Grid>
+  </>)
+}
+
+  export const CheckoutForm = ({ delivery}) =>{
+  
+      return <>{ textFields.map((item,index) => {
+         return <>
+         <Grid item xs={12} sm={6}>
+           <TextField
+                 Key = {index}
+                 required ={item.item}
+                 id = {item.id}
+                 name = {item.name}
+                 label = {item.label}
+                 fullWidth = {item.fullWidth}
+                 autoComplete = {item.autoComplete}
+                 disabled={delivery} />
+         </Grid>
+         </>
+     })}
+   </>
+   }
+
+
+  export const FormController = ({ mode , setMode}) =>{
+
+    const handleChange =() => {
+      setMode(!mode);
+    }
+
+    return <Grid item xs={12}>
           <FormControlLabel
-            control={<Checkbox color="secondary" name="saveAddress" value="yes" />}
-            label="Use this address for payment details"
+            control={
+            <Checkbox 
+              color="secondary"
+              name="saveAddress"
+              value="yes"
+              required={true}
+              checked={!mode}
+              onChange={handleChange}
+            />}
+            label="Usaré esta direccion para el envío de mi compra"
           />
-        </Grid>
-      </Grid>
-    </React.Fragment>
-    )}
+           <FormControlLabel
+            control={
+            <Checkbox 
+              color="secondary"
+              name="saveAddress"
+              value="yes"
+              required={true}
+              checked={mode}
+              onChange={handleChange}
+            />}
+            label="Acordaré el retiro del producto en el Local"
+          />
+     </Grid>
+  }
