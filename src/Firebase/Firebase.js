@@ -12,32 +12,3 @@ var firebaseConfig = {
 const fb = firebase.initializeApp(firebaseConfig);
 
 export const dataBase = fb.firestore();
-
-
-
-
-
-
-//Esta llamada va en item list contanier
-/*
-useEffect(() => {
-
-    setLoading(true);
-    const productsCollections = dataBase.collection(COLLECTION_NAME);
-
-    const higPriceProducts = productsCollections.where('price', '>', 500)
-        .where('category', '==', 'products').limit(20);
-
-    productsCollections.get().then((querySnapshot) => {
-        if (querySnapshot.size === 0) {
-            console.log('No results');
-        }
-        setProducts(querySnapshot.docs.map(doc => doc.data()));
-    }).catch((error) => {
-        console.log('Error buscando items', error);
-    }).finally(() => {
-        setLoading(false);
-    })
-
-}, []);
-*/

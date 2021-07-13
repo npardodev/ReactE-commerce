@@ -25,13 +25,14 @@ const payments = [
   { name: 'Expiry date', detail: '04/2024' },
 ];
 
-//{ buyer: { name, phone, email }, items: [{id, title, price}], date, total  }
+//{ buyer: { name, lastname, phone, email }, delivery:{true,false} items: [{id, title, price}], date, total  }
 
 
-export const OrderResumeView = () => {
+export const OrderResume = () => {
   const classes = useStyle();
   const {cartItems, addItem, removeItem} = useContext(CartContext);
-  
+  //const {} = useContext(OrderContext);
+
   useEffect(() => {
     console.log(cartItems);
   }, [])
@@ -39,7 +40,7 @@ export const OrderResumeView = () => {
   return (
     <>
       <Typography variant="h6" gutterBottom>
-        Order summary
+        Tu Orden:
       </Typography>
 
       <List disablePadding>
@@ -62,7 +63,7 @@ export const OrderResumeView = () => {
 
         <Grid item xs={12} sm={6}>
           <Typography variant="h6" gutterBottom className={classes.title}>
-            Shipping
+            Envío:
           </Typography>
           <Typography gutterBottom>John Smith</Typography>
           <Typography gutterBottom>{addresses.join(', ')}</Typography>
@@ -70,7 +71,7 @@ export const OrderResumeView = () => {
 
         <Grid item container direction="column" xs={12} sm={6}>
           <Typography variant="h6" gutterBottom className={classes.title}>
-            Payment details
+            Forma de Pago:
           </Typography>
           <Grid container>
             {payments.map((payment) => (

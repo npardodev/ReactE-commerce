@@ -10,56 +10,97 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
-import {CheckoutFormContainer} from './CheckoutForm';
-import {Payment} from './Payment.js';
-import {OrderResumeView} from './OrderView.js';
+import {ShippingFormContainer} from './ShippingForm';
+import {ContactFormContainer} from './ContactForm';
+import {PaymentContainer} from './Payment.js';
+import {OrderResume} from './Resume.js';
 import {CheckoutStyle} from './CheckoutStyle.js'
+import {Order} from './Order.js'
+import {OrderService} from './OrderService.js'
+
 
 const useStyle = makeStyles((theme) => CheckoutStyle(theme));
 
 const actualDate =  new Date().getFullYear();
 
-
-
-
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
-
 const checkoutSteps =[
     {
-        name: 'Shipping',
+        name: 'Contacto',
         id: 0,
-        content: <CheckoutFormContainer />
+        content: <ContactFormContainer />
     },
     {
-        name: 'Payment',
+        name: 'Delivery',
         id: 1,
-        content: <Payment />
+        content: <ShippingFormContainer />
     },
     {
-        name: 'Review',
+        name: 'Pago',
         id: 2,
-        content: <OrderResumeView />
+        content: <PaymentContainer />
+    },
+    {
+      name: 'Confirma',
+      id: 3,
+      content:<OrderService/>
+    },
+    /*
+    {
+      name: 'Resumen',
+      id: 4,
+      content: <OrderResume />
     }
+    */
 ];
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <CheckoutFormContainer />;
-    case 1:
-      return <Payment />;
-    case 2:
-      return <OrderResumeView />;
-    default:
-      throw new Error('Unknown step');
-  }
+
+
+
+export const CheckoutStepsController = ({currentStep, onBack, onNext}) => {
+    
+    const classes = useStyle();
+
+    return (
+        <>
+        <div className={classes.buttons}>
+          {currentStep !== 0 && (
+            <Button onClick={onBack} className={classes.button}>
+            Atrás  
+            </Button>
+          )}
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={onNext}
+            className={classes.button}
+          >
+            {currentStep === checkoutSteps.length - 1 ? 'Listo!' : 'Siguiente'}
+          </Button>
+        </div>
+        </>
+    )
 }
 
+export const CheckoutStepper = ({actualStep}) => {
+    
+    const classes = useStyle();
+
+    return <Stepper activeStep={actualStep} className={classes.stepper}>
+      {checkoutSteps.map((step, index) => (
+        <Step key={index}>
+          <StepLabel>{step.name}</StepLabel>
+        </Step>
+      ))}
+    </Stepper>
+}
+
+
 export default function Checkout() {
+
   const classes = useStyle();
   const [activeStep, setActiveStep] = useState(0);
 
-  const handleNext = () => {
+  const handleNext = () => {    
     setActiveStep(activeStep + 1);
   };
 
@@ -68,128 +109,29 @@ export default function Checkout() {
   };
 
   return (
-    <React.Fragment>
-      <CssBaseline />
-     
+    <>
       <main className={classes.layout}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h4" align="center">
             Checkout
           </Typography>
-
-          <Stepper activeStep={activeStep} className={classes.stepper}>
-            {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-
-          <React.Fragment>
-            {activeStep === steps.length ? (
-              <Order/>
-              ) : (
-              <React.Fragment>
-                {getStepContent(activeStep)}
-                <div className={classes.buttons}>
-                  {activeStep !== 0 && (
-                    <Button onClick={handleBack} className={classes.button}>
-                      Back
-                    </Button>
-                  )}
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleNext}
-                    className={classes.button}
-                  >
-                    {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
-                  </Button>
-                </div>
-              </React.Fragment>
-            )}
-          </React.Fragment>
+          <CheckoutStepper actualStep={activeStep}/>
+          <>
+            {activeStep === checkoutSteps.length ? 
+            (<Order/>) 
+            : 
+            (<>
+              {checkoutSteps[activeStep].content}
+              <CheckoutStepsController currentStep={activeStep} onBack={handleBack} onNext={handleNext}/> 
+            </>)}
+          </>
         </Paper>
       </main>
-    </React.Fragment>
+    </>
   );
 }
 
 
-
-
-
-export const Order = ({orderNumber}) => {
-    
-    if (orderNumber !== undefined && orderNumber !== null) {
-
-     }
-
-    return <>
-        <Typography variant="h5" gutterBottom>
-        Gracias por tu órden!
-        </Typography>
-        <Typography variant="subtitle1">
-        Tu número de órden es: {`#${orderNumber}`}.
-        Te enviaremos al mail brindado la confirmación y los detalles de 
-        tu compra.
-        </Typography>
-        <Typography variant="subtitle1">
-        Te enviaremos al mail brindado la confirmación y los detalles de 
-        tu compra.
-        </Typography>
-  </>
-}
-
-
-
-export const CheckoutStepsController = () => {
-    
-    const classes = useStyle();
-
-    const activeStep = 0;
-    const handleBack= 0;
-    const handleNext= 0;
-
-    return (
-        <>
-        {getStepContent(activeStep)}
-        <div className={classes.buttons}>
-          {activeStep !== 0 && (
-            <Button onClick={handleBack} className={classes.button}>
-              Back
-            </Button>
-          )}
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleNext}
-            className={classes.button}
-          >
-            {activeStep === steps.length - 1 ? 'Place order' : 'Next'}
-          </Button>
-        </div>
-        </>
-    )
-}
-
-export const CheckoutStepper = () => {
-    
-    const classes = useStyle();
-
-    const activeStep= 0;
-    const steps=0;
-    return (
-        <Stepper activeStep={activeStep} className={classes.stepper}>
-        {steps.map((label) => (
-        <Step key={label}>
-            <StepLabel>{label}</StepLabel>
-        </Step>
-        ))}
-        </Stepper>
-        )
-
-}
 
 
 

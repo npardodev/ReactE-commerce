@@ -1,50 +1,72 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
+import Container from '@material-ui/core/Container';
+import Button from '@material-ui/core/Button';
+import AttachMoneyIcon from '@material-ui/icons/AttachMoney';
+import PaymentIcon from '@material-ui/icons/Payment';
+import AccountBalanceIcon from '@material-ui/icons/AccountBalance';
+import { OrderContext } from './../../Context/OrderContext/OrderContext.js'
 
+const paymentMethods =[
+  {
+      name: 'Efectivo',
+      id: 0,
+      icon: <AttachMoneyIcon/>,
+      color: 'primary',
+    },
+  {
+      name: 'Tarjeta',
+      id: 1,
+      icon: <PaymentIcon/>,
+      color: 'primary',
+  },
+  {
+      name: 'Transf.',
+      id: 2,
+      icon: <AccountBalanceIcon />,
+      color: 'primary',
+  }
+];
 
-export const Payment =  ()  => {
+export const Payment =  ({paymentMethod})  => {
+  
+  const [finishElect, setFinishElect] = useState(false);
+  const {saveOrderPayment} = useContext(OrderContext);
+
+  const onClickHandler = (e) => {
+      e.preventDefault();
+      saveOrderPayment(e.target.innerText);
+      setFinishElect(true);
+  }
+  
   return (
-    <React.Fragment>
+        <Grid item md={4} >
+            <Button
+              arial-label={paymentMethod.name}
+              color={paymentMethod.color}
+              onClick={e => onClickHandler(e)}
+              size="medium"
+              variant= {finishElect? "contained" : "outlined"}
+              >{paymentMethod.name}
+                <h6>{paymentMethod.icon} </h6>
+            </Button>
+        </Grid>
+  );
+}
+
+
+export const PaymentContainer =  ()  => {
+  return (
+    <Container >
       <Typography variant="h6" gutterBottom>
-        Payment method
+      Forma de Pago:
       </Typography>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
-          <TextField required id="cardName" label="Name on card" fullWidth autoComplete="cc-name" />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cardNumber"
-            label="Card number"
-            fullWidth
-            autoComplete="cc-number"
-          />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField required id="expDate" label="Expiry date" fullWidth autoComplete="cc-exp" />
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <TextField
-            required
-            id="cvv"
-            label="CVV"
-            helperText="Last three digits on signature strip"
-            fullWidth
-            autoComplete="cc-csc"
-          />
-        </Grid>
-        <Grid item xs={12}>
-          <FormControlLabel
-            control={<Checkbox color="secondary" name="saveCard" value="yes" />}
-            label="Remember credit card details for next time"
-          />
-        </Grid>
+      <Grid container spacing={5} justifyContent="center">
+        {paymentMethods.map((method, index) => {
+            return <Payment key={index} paymentMethod={method}/>
+        })}
       </Grid>
-    </React.Fragment>
+    </Container>
   );
 }
