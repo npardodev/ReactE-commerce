@@ -50,7 +50,7 @@ export const CustomStockChangeController = ({stock, changeStock, item}) => {
             { (finish && stock)? <Button  color="secondary" size="small" onClick={handlerCancelCart}>Cancelar <DeleteIcon /></Button> : null }
         </>
     }
-
+    
 
 export const StockContainer = ({component : ComponentCustomChangerStock, stock,handlerChange, item={item}}) =>{
 
