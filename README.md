@@ -1,9 +1,8 @@
 ![image](https://user-images.githubusercontent.com/83429848/127074805-52de262d-cc34-4044-93b0-4c79422fab22.png)
 # BaluTech React e-commerce
 
-Este portal fue creado como Proyecto Final del Curso "React" de Coderhouse y tiene como finalidad la creación de un e-commerce para la venta de artículos de tecnología.
+Este repositorio es parte del Proyecto Final del Curso React de Coderhouse, el cual tiene como finalidad la creación de un e-commerce. En este caso se opto con el desarrollo de un sitio web para venta de artículos de informática y tecnología.
 
-*Visita nuestro sitio:* [Balutech link](https://www.google.com)
 
 ## Descripción
 
