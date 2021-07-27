@@ -18,6 +18,9 @@ Al clickear cada item se podrá acceder a la compra de los artículos requeridos
 ### Display
 
 * *Portada*
+
+![image](https://user-images.githubusercontent.com/83429848/127089317-98e05c39-d3a3-441d-8109-2299e7c7b729.png)
+
 ![image](https://user-images.githubusercontent.com/83429848/127074641-08abc7f7-8347-40d4-b3a4-14f1e3b34e7f.png)
 ![image](https://user-images.githubusercontent.com/83429848/127074545-91f437c6-23f1-417e-bbea-bd9ae12162de.png)
 
