@@ -45,12 +45,11 @@ export const ItemDetailStyle = theme => {
             },
 
             '& h4': {
-                textAlign: 'start',
-                paddingLeft: '1em',
-                fontSize: '1em',
-                fontWeight: '100',
-                marign: '0',
+                fontSize: '1.1em',
+                fontWeight: '500',
+                padding: '0.5em',
             },
+
 
             '& h6': {
                 fontWeight: '300',
@@ -66,16 +65,6 @@ export const ItemDetailStyle = theme => {
                 color: '#706f6f',
             },
 
-        },
-
-
-        actualPrice: {
-            fontSize: '1rem'
-        },
-
-        offerPrice: {
-            fontSize: '12rem',
-            textDecoration: 'line-through',
         },
 
         CustomSelectComponent: {
@@ -94,6 +83,7 @@ export const ItemDetailStyle = theme => {
             justifyContent: 'start',
             textAlign: 'start',
             gap: '2rem',
+            color: '#6E65FF',
 
         },
 
@@ -122,7 +112,7 @@ export const ItemDetailStyle = theme => {
                 },
 
                 '& h4': {
-                    textAlign: 'start',
+                    textAlign: 'center',
                     paddingLeft: '1rem',
                     padding: '0.2em',
                     fontSize: '1.2rem',
@@ -131,16 +121,22 @@ export const ItemDetailStyle = theme => {
 
                 '& h6': {
                     fontWeight: '300',
+                    textAlign: 'center',
                 },
 
                 '& p': {
                     textAlign: 'center',
                     textjustify: 'inter-word',
                     padding: '0.4rem',
-                    marginRight: '20%',
                     fontSize: '1rem',
                     fontWeight: '100',
                     color: '#706f6f',
+                },
+            },
+
+            stockDetails: {
+                '& p': {
+                    textAlign: 'center',
                 },
 
             },

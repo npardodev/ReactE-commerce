@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles, Container,Box, Paper} from '@material-ui/core';
 import { Counter } from './../Counter/Counter.js';
 
@@ -12,7 +12,7 @@ import WorkIcon from '@material-ui/icons/Work';
 import BeachAccessIcon from '@material-ui/icons/BeachAccess';
 import Divider from '@material-ui/core/Divider';
 import { spacing } from '@material-ui/system';
-
+import {CartContext} from './../../Context/CartContext/CartContext.js'
 import { CartStyle } from './CartStyle.js'
 
 const useStyle = makeStyles ((theme) => CartStyle(theme));
@@ -20,7 +20,13 @@ const useStyle = makeStyles ((theme) => CartStyle(theme));
 export const Cart = ( {item, quantity}) => {
     
     const classes = useStyle();
+    const [count, setCount] = useState(quantity);
     const shortDescript = item.description.substring(0, 19)+"...";
+    const {cartItems, addItem} = useContext(CartContext);
+
+    const onAdd = () =>{
+        addItem(item,count);
+    }
 
     return ( <>
     <div className={classes.cartItem}>
@@ -33,7 +39,7 @@ export const Cart = ( {item, quantity}) => {
         </ListItem>
         </Box>
         <Box className={classes.stockBox}>
-            <Counter stock= {item.stock} initial={quantity} />
+            <Counter stock= {item.stock} count={count} setter={setCount} onAdd={onAdd} />
         </Box>
         <Box className={classes.priceBox}> 
             <h3> Precio p/u:</h3>

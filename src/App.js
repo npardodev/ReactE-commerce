@@ -9,7 +9,7 @@ import { CartComponentContext} from './Context/CartContext/CartContext.js';
 import { OrderComponentContext} from './Context/OrderContext/OrderContext.js';
 import { ThemeProvider } from '@material-ui/styles';
 import { CustomTheme } from './../src/styles/CustomTheme.js';
-import {SocialIconButtons} from '../src/components/test.js'
+import {SocialIcon} from '../src/components/SocialIcons/SocialIcon.js'
 
 
 
@@ -22,7 +22,7 @@ const App = props => {
                     <BrowserRouter>
                         <NavBar/>
                         <RouterApp/>
-                        <SocialIconButtons/>
+                        <SocialIcon/>
                         <Footer/> 
                     </BrowserRouter>
                 </ThemeProvider>

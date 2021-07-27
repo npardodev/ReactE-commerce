@@ -1,15 +1,15 @@
 import React from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { HomeView } from '../screens/Home/HomeView.js';
+import {ContactView} from '../../src/screens/Contact/ContactView.js'
 import { ItemListContainer } from '../components/ItemListContainer/ItemListContainer.js';
 import { ItemDetailContainer } from '../components/ItemDetailContainer/ItemDetailContainer.js';
 import {CustomNotFound} from '../components/CustomComponents/CustomNotFound.js'
 import {CartContainer} from '../components/CartContainer/CartContainer.js'
-import {ContactContainer} from '../../src/screens/Contact/ContactContainer/ContactContainer.js'
+import {AboutUsContainer} from '../../src/screens/AboutUs/AboutUsContainer.js'
 import Checkout from '../../src/components/Checkout/Checkout.js'
 import './../styles/animations.css';
 import {TransitionGroup, CSSTransition} from 'react-transition-group'
-
 
 export const appPaths = {
     HOME_PATH: '/',
@@ -26,14 +26,14 @@ export const appPaths = {
 
 const routes = [
     { path: appPaths.HOME_PATH, name: 'products', Component: HomeView },
+    { path: appPaths.ABOUT_US_PATH, name: 'aboutus', Component: AboutUsContainer },
     { path: appPaths.PRODUCTS_PATH, name: 'products', Component: ItemListContainer },
     { path: appPaths.ITEMS_CATEGORYS_PATH, name: 'Items Category', Component: ItemListContainer },
     { path: appPaths.ITEM_DETAIL_PATH, name: 'Items Detail', Component: ItemDetailContainer },
     { path: appPaths.CART_PATH, name: 'Cart', Component: CartContainer },
-    { path: appPaths.CONTACT_PATH, name: 'Contact', Component: ContactContainer },
+    { path: appPaths.CONTACT_PATH, name: 'Contact', Component: ContactView },
     { path: appPaths.CHECKOUT_PATH, name: 'Checkout', Component: Checkout },
 ];
-
 
 export const RouterApp= () => {
 
@@ -44,7 +44,7 @@ export const RouterApp= () => {
             <CSSTransition
             key={location.key}
             classNames="fade"
-            timeout={800}
+            timeout={300}
             >
             <Switch location={location}>
             {routes.map(({ path, Component }) => (
@@ -69,46 +69,3 @@ export const RouterApp= () => {
 
 
 
-
-/*
-export const RouterApp= () => {
-    return (
-    <Switch>
-        <Route exact path="/">
-            <Home 
-            title="BaluTech" 
-            subtitle="Todo lo que buscas en tecnologia"
-            slogan="en un solo lugar..." 
-            buttonLabel="Conocenos"
-        />
-        </Route>
-        
-        <Route exact path={appPaths.PRODUCTS_PATH}>
-            <ItemListContainer />
-        </Route>
-
-        <Route exact path={appPaths.ITEMS_CATEGORYS_PATH}>
-            <ItemListContainer />
-        </Route>
-
-        <Route exact path={appPaths.ITEM_DETAIL_PATH}>
-            <ItemDetailContainer/>
-        </Route>
-
-        <Route exact path={appPaths.CART_PATH}>
-            <CartContainer/>
-        </Route>
-
-        <Route exact path={appPaths.CONTACT_PATH}>
-            <ContactContainer/>
-        </Route>
-
-        <Route exact path={appPaths.CHECKOUT_PATH}>
-            <Checkout/>
-        </Route>
-
-        <Route component={CustomNotFound}/>
-    </Switch>)
-}
-
-*/

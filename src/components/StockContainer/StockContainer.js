@@ -27,7 +27,6 @@ export const CustomStockChangeController = ({stock, changeStock, item}) => {
     }
 
     const handlerFinishCart = () => {
-
         history.push(`/cart`)
     };
 
@@ -43,14 +42,13 @@ export const CustomStockChangeController = ({stock, changeStock, item}) => {
     };
 
         return <>
-            { (!finish)? <Button onClick={ onAdd}>-</Button> : null}
-            { (!finish)? <Button onClick={ onRemove}>+</Button> : null}
+            { (!finish)? <Button onClick={onRemove}>-</Button> : null}
+            { (!finish)? <Button onClick={onAdd}>+</Button> : null}
             { (!finish && stock)? <Button variant="contained" color="primary" onClick={handlerAddToCart}> <AddCircleIcon/>  Agregar </Button> : null }
             { (finish && stock)? <Button variant="contained" color="primary" onClick={handlerFinishCart}>Finalizar <AddShoppingCartIcon /></Button> : null }
             { (finish && stock)? <Button  color="secondary" size="small" onClick={handlerCancelCart}>Cancelar <DeleteIcon /></Button> : null }
         </>
-    }
-    
+}
 
 export const StockContainer = ({component : ComponentCustomChangerStock, stock,handlerChange, item={item}}) =>{
 

@@ -21,7 +21,6 @@ export const HomeStyle = theme => {
                 textAlign: 'center',
                 fontSize: '3rem',
                 fontWeight: '900',
-
             },
             '& h2': {
                 textAlign: 'center',

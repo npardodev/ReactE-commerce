@@ -11,8 +11,7 @@ const newOrder = {
     total: price()
 }
 
-//si sale bien devuelve el id auto generado del documento.
-//sino el error
+
 orders.add(newOrder)
     .then(({ id }) => {
         setOrderId(id);
@@ -24,7 +23,6 @@ orders.add(newOrder)
         setLoading(false);
     })
 
-//Update 
 const product = { id = "", data: {} }
 const item = dataBase.collection('products').doc(product.id);
 

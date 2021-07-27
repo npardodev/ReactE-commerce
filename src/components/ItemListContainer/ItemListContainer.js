@@ -10,22 +10,6 @@ const COLLECTION_NAME = "productos";
 const MAX_GET_ITEM_COLLECTION = 50;
 
 
-export const CustomPagination = ({pageValue, setPageValue}) => {
-   
-    const handleChange = (event, value) => {
-        setPageValue(value);
-    };
-
-    useEffect(() => {
-    }, [])
-  
-    return (
-        <Box justifyContent="center" display="flex">
-            <Pagination count={4} color="primary" variant="outlined" page={pageValue} onChange={handleChange} />
-        </Box>
-    );
-  }
-
 export const ItemListContainer = () => {
      
       const {idCat, id } = useParams();
@@ -84,8 +68,7 @@ export const ItemListContainer = () => {
             {error!==initialErrorState ? 
                 <CustomNotification message={error} type="error"/>:
                 <ItemList items={productData} />}   
-                <CustomPagination pageValue={page} setPageValue={setPage} />
-    </>
+        </>
 }
 
 

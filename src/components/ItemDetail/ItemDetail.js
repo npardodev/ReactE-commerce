@@ -1,12 +1,8 @@
 import React, {useState} from 'react';
 import { ItemDetailStyle } from './ItemDetailStyle.js'
 import { makeStyles,CircularProgress} from '@material-ui/core';
-import { CustomSelectComponent } from './../CustomComponents/CustomSelectComponent.js'
 import { CustomLoadingComponent } from './../CustomComponents/CustomLoadingComponent.js'
-
 import {StockContainer, CustomStockChangeController} from './../StockContainer/StockContainer.js';
-
-let categories = [{name:'Opt1', value:'Opt1'},{name:'Opt2', value:'Opt2'},{name:'Opt3', value:'Opt3'}];
 
 const useStyles = makeStyles ((theme) => ItemDetailStyle(theme));
 
@@ -26,13 +22,10 @@ export const ItemDetail = ({item}) => {
                     <div>
                         <h3>{item.title}</h3>
                         <h4 className= {classes.actualPrice}>${item.price}</h4>
-                        <h4 className= {classes.offerPrice}>${item.price}</h4>
                         <p>{item.longDescription}</p>
                     </div>
                     <div className= {classes.stockDetails}>
-                        <p>{`Stock:${item.stock}`}</p>
-                        <h6>Categoria</h6>
-                        <CustomSelectComponent options ={categories} /> 
+                        <p>{item.stock>0? "Hay Stock":"Sin Stock"}</p>
                     </div>
                     <StockContainer component={CustomStockChangeController} stock={stock} handlerChange={handlerStock} item={item} />
                 </div>

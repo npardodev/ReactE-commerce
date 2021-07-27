@@ -44,16 +44,11 @@ export const CartContainer = ({ items }) => {
                         onClick={e => onClickHandler(e)}
                         > Finalizar
                     </Button>
-
                 </Container>
             </div>
         ))}            
  </> )
 }
-
-    {/*
-        Despues implementar el loader spinner
-    {(cartItems.length ===0? (<CustomLoadingComponent  iconLoad={CircularProgress} messageLoad="Cargando..." color="primary"/> ) : (    ))} */}
 
 
  

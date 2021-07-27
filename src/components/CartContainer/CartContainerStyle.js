@@ -7,19 +7,19 @@ export const CartContainerStyle = theme => {
             flexDirection: 'column',
             wrap: 'no-wrap',
             alignItems: 'center',
+            color: '#083748',
 
             '& h1': {
                 padding: '1rem',
                 textAlign: 'center',
                 fontSize: '2.2rem',
                 fontWeight: '900',
-
             },
             '& h2': {
                 textAlign: 'center',
                 color: ''
             }
-        }
-     
+        },
+
     })
 }

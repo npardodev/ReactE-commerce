@@ -1,43 +1,5 @@
 import { categories } from './categories.js';
 
-/** 
-Nueva estructura
-
-{
-category: "1"
-description: "Notebook Bangho i7"
-imgAlt: "Imagen Notebook Bangho"
-imgSrc: "https://mexx-img-2019.s3.amazonaws.com/notebook-bangho-i5_39890_1.jpeg"
-longDescription: "Notebook Bangho Core i7 8Gb 256gb ssd 15.6""
-price: 55000
-stock: 32
-title: "Notebook Bang}
-
-*/
-/*
-export const categories = {
-    NOTEBOOK: {
-        name: 'Notebook',
-        id: '1'
-    },
-    DISCOS: {
-        name: 'Discos',
-        id: '2'
-    },
-    MONITORES: {
-        name: 'Monitores',
-        id: '3'
-    },
-    COMBO_PC: {
-        name: 'Combos de pc',
-        id: '4'
-    },
-    PLACAS_VIDEO: {
-        name: 'Placas de video',
-        id: '5'
-    }
-};
-*/
 export const myProducts = [{
         id: 0,
         title: 'Notebook Bangho',
@@ -194,7 +156,7 @@ export const myProducts = [{
             alt: "Imagen como para PC"
         },
         category: categories.MONITORES,
-        stock: 22   
+        stock: 22
     },
     {
         id: 12,
