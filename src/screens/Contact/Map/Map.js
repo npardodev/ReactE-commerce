@@ -1,11 +1,6 @@
 import React from 'react';
-import { makeStyles} from '@material-ui/core';
-import { GoogleMap, Marker } from "react-google-maps";
 import GoogleMapReact from 'google-map-react';
 
-
-
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export const MyCustomMap = () =>{
   const defaultProps = {
@@ -17,19 +12,12 @@ export const MyCustomMap = () =>{
   };
 
   return (
-    // Important! Always set the container height explicitly
     <div style={{ height: '50vh', width: '100%' }}>
       <GoogleMapReact
         bootstrapURLKeys={{ key: "" }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent
-          lat={59.955413}
-          lng={30.337844}
-          text="My Marker"
-        />
-      </GoogleMapReact>
+      />
     </div>
   );
 }

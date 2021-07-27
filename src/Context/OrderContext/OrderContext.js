@@ -5,32 +5,31 @@ export const OrderContext = createContext();
 
 export const OrderComponentContext = ({ defaultValue=[], children}) => {
 
-    //{ buyer: { name, phone, email },delivery:{}, items: [{id, title, price}], date, total, orderId  }
-
+	
+    const {cartItems} = useContext(CartContext);
+    const [order, setOrder] = useState([]);
 	const [orderBuyer, setOrderBuyer] = useState('');
 	const [orderDelivery, setOrderDelivery] = useState('');
 	const [orderPayment, setOrderPayment] = useState('');
 
 	const [orderDate, setOrderDate] = useState(0);
 	const [orderTotal, setOrderTotal] = useState(0);
+    const [orderItems, setOrderItems] = useState(cartItems);
 
 	const [orderId, setOrderId] = useState(0);
-    const {cartItems} = useContext(CartContext);
-    const [orderItems, setOrderItems] = useState(cartItems);
-    const [order, setOrder] = useState([]);
-
-    // Funciones
-	//const addOrder = newOrder => setOrders([...orders,newOrder]);
+    
 	/*
+	Funciones
+	const addOrder = newOrder => setOrders([...orders,newOrder]);
+	
 	const ORDER = { 
-
 		buyer:orderBuyer,
 		delivery:orderDelivery,
 		items: cartItems,
         date: firebase.firestore.Timestamp.fromDate(new Date()),
 		total:
 	 }
-	 */
+	*/
 
 	const saveOrderId = (id) =>{
 		setOrderId(id);
