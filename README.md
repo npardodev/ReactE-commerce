@@ -3,20 +3,17 @@
 
 Este repositorio es parte del Proyecto Final del Curso React de Coderhouse, el cual tiene como finalidad la creación de un e-commerce. En este caso se opto con el desarrollo de un sitio web para venta de artículos de informática y tecnología.
 
-
 ## Descripción
 
-El portal ofrece la experiencia única de navegar en nuestro comercio. El potencial cliente accederá a los datos de la empresa (su historia y contactos) y podrá visualizar los variados productos tecnológicos que ofrecemos, distribuidos en las siguientes categorías:
+El sitio ofrece 4 secciones, Home (pantalla de bienvenida), Acerca nuestro (breve resumen de la empresa), Contacto (mapa y redes sociales) y Productos donde se visualizan los variados productos tecnológicos que ofrecemos, distribuidos en las siguientes categorías:
+
 * Notebooks
 * Discos
 * Monitores
 * Combos de PC
 * Placas de videos
 
-Además podrá consultar precios, fotos y descripciones de los artículos para poder realizar la elección del producto correcto para su satisfacción. 
-A partir de esta exploración por el sitió podrán acceder a la compra de los artículos requeridos, seleccionando la cantidad de items, los cuales se irán almacenando en el carrito de compras, para luego poder elegir la forma de envío y las opciones de pago, dando por finalizada la transacción. 
-
-### Deploy
+Al clickear cada item se podrá acceder a la compra de los artículos requeridos, seleccionando la cantidad de items, los cuales se irán almacenando en el carrito de compras, para luego poder elegir en el checkout la forma de envío y las opciones de pago, dando por finalizada la órden. 
 
 ### Display
 
