@@ -1,9 +1,8 @@
 import React from 'react';
-import {Box, Container, Typography} from '@material-ui/core';
+import {Box, Container} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
 import {FooterStyle} from './FooterStyle.js';
 import Divider from '@material-ui/core/Divider';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -18,7 +17,6 @@ export const Footer = () => {
     return (
             <footer>
             <Divider variant="middle" />
-
                 <Container className={classes.footer} >
                     <Box className={classes.footerColumns} >
                         <Box p={1} >
