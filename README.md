@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+![image](https://user-images.githubusercontent.com/83429848/127074805-52de262d-cc34-4044-93b0-4c79422fab22.png)
+# BaluTech React e-commerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este repositorio es parte del Proyecto Final del Curso React de Coderhouse, el cual tiene como finalidad la creación de un e-commerce. En este caso se opto con el desarrollo de un sitio web para venta de artículos de informática y tecnología.
 
-## Available Scripts
+## Descripción
 
-In the project directory, you can run:
+El sitio ofrece 4 secciones, Home (pantalla de bienvenida), Acerca nuestro (breve resumen de la empresa), Contacto (mapa y redes sociales) y Productos donde se visualizan los variados productos tecnológicos que ofrecemos, distribuidos en las siguientes categorías:
 
-### `npm start`
+* Notebooks
+* Discos
+* Monitores
+* Combos de PC
+* Placas de videos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Al clickear cada item se podrá acceder a la compra de los artículos requeridos, seleccionando la cantidad de items, los cuales se irán almacenando en el carrito de compras, para luego poder elegir en el checkout la forma de envío y las opciones de pago, dando por finalizada la órden. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Display
 
-### `npm test`
+* *Home*
+![image](https://user-images.githubusercontent.com/83429848/127089317-98e05c39-d3a3-441d-8109-2299e7c7b729.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* *Footer*
+![image](https://user-images.githubusercontent.com/83429848/127074750-9c135005-2e8c-4375-a0ef-15b6c7c8b40a.png)
 
-### `npm run build`
+* *Sobre Nosotros*
+![image](https://user-images.githubusercontent.com/83429848/127074730-0650c141-409d-404e-9c4e-8516851799db.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* *Productos*
+![image](https://user-images.githubusercontent.com/83429848/127089495-d6a30b71-16df-4c2e-866d-6a6662cc3f48.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* *Descripción de Producto*
+![image](https://user-images.githubusercontent.com/83429848/127076527-6e8a7179-63c1-4414-b85d-912d664440ba.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* *Carrito de Compras*
+![image](https://user-images.githubusercontent.com/83429848/127076694-97056aa1-fd76-41b4-bd5d-635c4d359ba0.png)
 
-### `npm run eject`
+* *Checkout*
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![image](https://user-images.githubusercontent.com/83429848/127076758-bdda3d47-15c3-4531-b282-396c3b301b5d.png)
+![image](https://user-images.githubusercontent.com/83429848/127077079-40555313-a631-412d-85c6-b5ad8aad0639.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* *Contacto*
+![image](https://user-images.githubusercontent.com/83429848/127089643-275fc9b6-6bbf-448e-8887-08b660e85692.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Aspectos Técnicos
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Se realizó la integración del servicio de Firebase de google como motor de base de datos no relacional en la nube para el almacenamiento de los productos y de las órdenes generadas.
 
-## Learn More
+![image](https://user-images.githubusercontent.com/83429848/127078135-ac2e3992-1278-4735-a65f-785d70614bf5.png)
+![image](https://user-images.githubusercontent.com/83429848/127078167-02a5459f-060d-4e58-b6b9-88a21c0447be.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
