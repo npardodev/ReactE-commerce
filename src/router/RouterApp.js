@@ -9,7 +9,7 @@ import {CartContainer} from '../components/CartContainer/CartContainer.js'
 import {AboutUsContainer} from '../../src/screens/AboutUs/AboutUsContainer.js'
 import Checkout from '../../src/components/Checkout/Checkout.js'
 import './../styles/animations.css';
-import {TransitionGroup, CSSTransition} from 'react-transition-group'
+import { CSSTransition} from 'react-transition-group'
 
 export const appPaths = {
     HOME_PATH: '/',
@@ -21,8 +21,7 @@ export const appPaths = {
     CART_PATH: '/cart',
     CONTACT_PATH: '/contact',
     CHECKOUT_PATH: '/checkout',
-    TEST_PATH: '/test',
-}
+  }
 
 const routes = [
     { path: appPaths.HOME_PATH, name: 'products', Component: HomeView },
@@ -40,12 +39,6 @@ export const RouterApp= () => {
     let location = useLocation();
 
     return (
-        <TransitionGroup>
-            <CSSTransition
-            key={location.key}
-            classNames="fade"
-            timeout={300}
-            >
             <Switch location={location}>
             {routes.map(({ path, Component }) => (
               <Route key={path} exact path={path}>
@@ -62,9 +55,7 @@ export const RouterApp= () => {
               </Route>
             ))}   
             <Route component={CustomNotFound}/>
-        </Switch>
-        </CSSTransition>
-    </TransitionGroup>)
+        </Switch>)
 };
 
 

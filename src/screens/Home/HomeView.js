@@ -7,6 +7,5 @@ export const HomeView = () => {
     title = "BaluTech"
     subtitle = "Todo lo que buscas en tecnologia"
     slogan = "en un solo lugar..."
-    buttonLabel = "Conocenos" /
-        >
+    buttonLabel = "Conocenos" />
 }

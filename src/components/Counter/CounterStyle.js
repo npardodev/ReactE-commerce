@@ -34,11 +34,9 @@ export const CounterStyle = theme => {
                 '& mark': {
                     backgroundColor: '#c4eddd',
                 },
-            },
-            '& h5': {
-                color: '#a0555d',
             }
         },
+
 
     })
 };

@@ -1,17 +1,12 @@
 import React, { useState, useContext } from 'react';
 import { makeStyles, Container,Box, Paper} from '@material-ui/core';
 import { Counter } from './../Counter/Counter.js';
-
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
-import ImageIcon from '@material-ui/icons/Image';
-import WorkIcon from '@material-ui/icons/Work';
-import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+
 import Divider from '@material-ui/core/Divider';
-import { spacing } from '@material-ui/system';
 import {CartContext} from './../../Context/CartContext/CartContext.js'
 import { CartStyle } from './CartStyle.js'
 

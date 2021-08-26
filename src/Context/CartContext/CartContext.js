@@ -1,20 +1,17 @@
-import React, {useState, createContext} from 'react';
-import {CustomNotification} from './../../components/CustomComponents/CustomNotification.js';
+import React, { useState, createContext } from 'react';
 
-export const CartContext = createContext(); // Lo creo
+export const CartContext = createContext();
 
-//Creo el componente que lo usa.
-export const CartComponentContext = ({ defaultValue=[], children}) => {
+export const CartComponentContext = ({ defaultValue = [], children }) => {
 
-	const [cartItems, setCartItems] = useState(defaultValue);
-   
+    const [cartItems, setCartItems] = useState(defaultValue);
+
     const addItem = (item, quantity) => {
 
-        if (!isInCart(item)){
-            setCartItems([...cartItems,{item:item, quantity:quantity}]);          
+        if (!isInCart(item)) {
+            setCartItems([...cartItems, { item: item, quantity: quantity }]);
             console.log(`Se agregaron ${quantity} del item ${item.title} al carrito`);
-        }
-        else
+        } else
             console.log(`Elemento${item} existente en el carrito`);
     }
 
@@ -32,20 +29,17 @@ export const CartComponentContext = ({ defaultValue=[], children}) => {
     }
 
     const isInCart = (item) => {
-        return cartItems.find(cartItem => cartItem.item === item)? true : false;
+        return cartItems.find(cartItem => cartItem.item === item) ? true : false;
     }
 
-    const getTotalQuantity = () =>{
+    const getTotalQuantity = () => {
         let total = 0;
-        cartItems.map((item) =>{
+        cartItems.map((item) => {
             total += item.quantity;
         });
         return total;
     }
 
 
-	//Lo disponibilizo y defino que comparto
-	return <CartContext.Provider value={{cartItems,addItem, removeItem, clear, isInCart, getTotalQuantity}} >
-	{children}
-	</CartContext.Provider>
+    return <CartContext.Provider value = {{ cartItems, addItem, removeItem, clear, isInCart, getTotalQuantity }} > { children } </CartContext.Provider>
 }

@@ -9,12 +9,9 @@ export const Home = ({ title, subtitle, slogan}) => {
 
     const classes = useStyle();
 
-    return (
-        <div className={classes.home}>
+    return <section className={classes.home}>
             <h1> {title} </h1>
             <h2> {subtitle} </h2>
             <h3>  {slogan} </h3>
-        </div>
-
-    )
+        </section>
 }

@@ -29,10 +29,7 @@ const App = props => {
         </OrderComponentContext>
     </CartComponentContext>
 
-    );
-    /* En Test
-     <DolarService/>
-    */      
+    );  
 }
 
 export default App;

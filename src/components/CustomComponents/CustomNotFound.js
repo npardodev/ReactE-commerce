@@ -11,14 +11,11 @@ export const CustomNotFound = (props) => {
         history.push(`/`);
     }
 
-    return ( <
-        CommonComponent title = 'Ups!'
-        subtitle = 'Página no Encontrada ...'
-        image = { imgNotFound }
-        alt = 'Eror 404 - Página no encontrada'
-        buttonLabel = 'Volver'
-        action = { BackToHome }
-        />
-
-    )
+    return <CommonComponent title = 'Ups!'
+    subtitle = 'Página no Encontrada ...'
+    image = { imgNotFound }
+    alt = 'Eror 404 - Página no encontrada'
+    buttonLabel = 'Volver'
+    action = { BackToHome }
+    />
 }

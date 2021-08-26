@@ -7,21 +7,9 @@ import MailOutlinedIcon from '@material-ui/icons/MailOutlined';
 import {FooterStyle} from './FooterStyle.js';
 import Divider from '@material-ui/core/Divider';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import {Copyright} from './Copyrigth.js';
 
 const useStyles = makeStyles((theme) => FooterStyle(theme));
-
-export const Copyright = () => {
-    return (
-      <Typography variant="body2" color="textSecondary" align="center">
-        {'Copyright © '}
-         Balutech
-        {' '}
-        {new Date().getFullYear()}
-        {'.'}
-      </Typography>
-    );
-  }
-
 
 export const Footer = () => {
 

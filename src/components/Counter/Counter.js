@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { CounterStyle } from './CounterStyle.js'
 import { makeStyles, Button } from '@material-ui/core';
 
@@ -38,7 +38,7 @@ export const Counter = ({ stock,count, setter, initial, onAdd }) => {
                 </div>
                 <div className={classes.Stock}>
                 { count !== 0 ? <Button variant="contained" color="primary" onClick={handlerClick}>Agregar</Button> : null }
-                {stock ? <h4 ><mark>{`En stock!`}</mark></h4> : <h5 className={classes.noStock}>{`Agotado`}</h5> }
+                {stock ? <h4 ><mark>{`En stock!`}</mark></h4> : <h4 className={classes.noStock}>{`Agotado`}</h4> }
                 </div>
                
             </div>
