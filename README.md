@@ -1,5 +1,8 @@
-![image](https://user-images.githubusercontent.com/83429848/127074805-52de262d-cc34-4044-93b0-4c79422fab22.png)
-# BaluTech React e-commerce
+
+<p align="center">    
+  <img align="center" src="https://user-images.githubusercontent.com/83429848/127074805-52de262d-cc34-4044-93b0-4c79422fab22.png" data-canonical-src="https://user-images.githubusercontent.com/83429848/127074805-52de262d-cc34-4044-93b0-4c79422fab22.png" width="200" height="200" />
+  <h2 align="center">Balutech E-commerce</h2>
+</p>
 
 Este repositorio es parte del Proyecto Final del Curso React de Coderhouse, el cual tiene como finalidad la creación de un e-commerce. En este caso se opto con el desarrollo de un sitio web para venta de artículos de informática y tecnología.
 
@@ -14,6 +17,27 @@ El sitio ofrece 4 secciones, Home (pantalla de bienvenida), Acerca nuestro (brev
 * Placas de videos
 
 Al clickear cada item se podrá acceder a la compra de los artículos requeridos, seleccionando la cantidad de items, los cuales se irán almacenando en el carrito de compras, para luego poder elegir en el checkout la forma de envío y las opciones de pago, dando por finalizada la órden. 
+
+## Diseño y Maquetado
+
+Todo el trabajo de Maquetado y diseño UX/UI se trabajó en forma vectorial utilizando AdobeXD. 
+Se realizaron las distintas secciones de la web junto con el diseño responsive de cada una de ellas.
+
+##  Herramientas y Librerias utilizadas 🛠️
+
+* [material](https://material-ui.com/) - Estilado y componentes visuales
+* [Github](https://github.org/) - Versionado
+* [AdobeXD](https://www.adobe.com/products/xd.html/) - Diseño UX
+
+### Dependencias Npm
+* [axios](https://www.npmjs.com/package/axios) - Manejo de promesas
+* [react-google-maps](https://www.npmjs.com/package/@react-google-maps/api) - Integracion con Google Maps
+* [react-transition-group](https://github.com/reactjs/react-transition-group) - Transition Group
+* [Firebase](https://firebase.google.com/) - Cloud Google Database
+
+* [react-moment](https://???) - ???
+* [react-react-hero-carousel](https://???) - ???
+* [react-react-router-dom](https://???) - ???
 
 ### Display
 
