@@ -5,7 +5,7 @@
 </p>
 
 ## Deploy
-* [view](https://react-e-commerce-mn9bhjd4t-npardodev.vercel.app/) - on Vercel
+* [Link al sitio](https://react-e-commerce-mn9bhjd4t-npardodev.vercel.app/) - on Vercel
 
 
 
@@ -79,3 +79,9 @@ Se realizó la integración del servicio de Firebase de google como motor de bas
 ![image](https://user-images.githubusercontent.com/83429848/127078135-ac2e3992-1278-4735-a65f-785d70614bf5.png)
 ![image](https://user-images.githubusercontent.com/83429848/127078167-02a5459f-060d-4e58-b6b9-88a21c0447be.png)
 
+### Mejoras a realizar
+
+- 
+-
+- 
+- 
