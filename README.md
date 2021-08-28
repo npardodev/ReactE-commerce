@@ -4,8 +4,8 @@
   <h2 align="center">Balutech E-commerce</h2>
 </p>
 
-#Deploy (on Vercel)
-* [Deploy](https://react-e-commerce-mn9bhjd4t-npardodev.vercel.app/) - ???
+## Deploy
+* [view](https://react-e-commerce-mn9bhjd4t-npardodev.vercel.app/) - on Vercel
 
 
 
