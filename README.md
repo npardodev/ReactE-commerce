@@ -81,7 +81,7 @@ Se realizó la integración del servicio de Firebase de google como motor de bas
 
 ### Mejoras a realizar
 
-- 
+- Incorporacion de referencia a valor dolar en el sitio.
 -
 - 
 - 
