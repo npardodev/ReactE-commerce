@@ -1,23 +1,26 @@
 import React from 'react';
-import GoogleMapReact from 'google-map-react';
+import { useState } from 'react';
+import ReactMapGL from 'react-map-gl';
+import {mapBoxConfig} from './MapConfig.js';
 
+export const MyCustomMap = () => {
+  
+  const { width, height, latitude, longitude, zoom, token, style } = mapBoxConfig;
 
-export const MyCustomMap = () =>{
-  const defaultProps = {
-    center: {
-      lat: 10.99835602,
-      lng: 77.01502627
-    },
-    zoom: 11
-  };
+  const [viewport, setViewport] = useState({
+    width: width,
+    height: height,
+    latitude: latitude,
+    longitude: longitude,
+    zoom: zoom,
+  });
 
   return (
-    <div style={{ height: '50vh', width: '100%' }}>
-      <GoogleMapReact
-        bootstrapURLKeys={{ key: "" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      />
-    </div>
+    <ReactMapGL
+      {...viewport}
+      mapboxApiAccessToken={token}
+      onViewportChange={nextViewport => setViewport(nextViewport) }
+      mapStyle={style}
+    />
   );
 }

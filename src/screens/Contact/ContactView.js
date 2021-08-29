@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContactContainer } from './ContactContainer.js';
+import { ContactContainer } from './ContactContainer/ContactContainer.js';
 
 export const ContactView = () => {
 

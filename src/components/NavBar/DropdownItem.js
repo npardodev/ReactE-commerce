@@ -10,16 +10,14 @@ export const DropdownItem = ({item}) => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
-  return (
-    <>
-    <Link 
-        className={classes.dropdownLink}
-        to={item.path}
-        onClick={handleClick}
-        >
-        {item.title}
-    </Link>
-    </>
-  );
+  const { title, path } = item;
+
+  return <Link 
+          className={classes.dropdownLink}
+          to={path}
+          onClick={handleClick}
+          >
+          {title}
+      </Link>
 }
 

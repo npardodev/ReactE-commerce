@@ -16,14 +16,14 @@ export const CartWidget = ( {items }) => {
     }
 
     return (
-        <div>
+        <li>
             <h4>{items}</h4>
             <IconButton aria-label="cart" onClick={handlerClick}>
-            <Badge badgeContent={`${total}`} color="primary">
-                <ShoppingCartIcon />
-            </Badge>
+                <Badge badgeContent={`${total}`} color="primary">
+                    <ShoppingCartIcon />
+                </Badge>
             </IconButton>
-        </div>
+        </li>
     )
 }
 

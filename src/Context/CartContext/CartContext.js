@@ -1,23 +1,35 @@
-import React, { useState, createContext } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 
 export const CartContext = createContext();
 
 export const CartComponentContext = ({ defaultValue = [], children }) => {
 
     const [cartItems, setCartItems] = useState(defaultValue);
+    const [cartTotal, setCartTotal] = useState(0);
 
-    const addItem = (item, quantity) => {
+    const addItem = (newItem, newQuantity) => {
 
-        if (!isInCart(item)) {
-            setCartItems([...cartItems, { item: item, quantity: quantity }]);
-            console.log(`Se agregaron ${quantity} del item ${item.title} al carrito`);
+        if (!isInCart(newItem)) {
+            setCartItems([...cartItems, { item: newItem, quantity: newQuantity }]);
         } else
-            console.log(`Elemento${item} existente en el carrito`);
+            updateItem(newItem.id, newQuantity);
     }
 
     const removeItem = (itemId) => {
-        console.log(`Se eliminó un item del elemento con id:${itemId}.`);
+        const cartItemsUpdated = cartItems.filter((item) => item.id !== itemId);
+        setCartItems(cartItemsUpdated);
     }
+
+    const updateItem = (itemId, newQuantity) => {
+        const cartItemsUpdated = cartItems.map((item) => {
+            if (item.item.id === itemId) {
+                return {...item, quantity: item.quantity + newQuantity };
+            } else {
+                return null;
+            }
+        });
+        setCartItems(cartItemsUpdated);
+    };
 
     const getItem = (itemId) => {
         return cartItems.item.find(item => item.id === itemId);
@@ -25,21 +37,26 @@ export const CartComponentContext = ({ defaultValue = [], children }) => {
 
     const clear = () => {
         setCartItems([]);
-        console.log('Se eliminaron todos los elementos del carrito.');
     }
 
     const isInCart = (item) => {
-        return cartItems.find(cartItem => cartItem.item === item) ? true : false;
+        return (getItem(item.id) !== undefined) ? true : false;
     }
 
     const getTotalQuantity = () => {
-        let total = 0;
-        cartItems.map((item) => {
-            total += item.quantity;
-        });
-        return total;
+        
+        return cartItems.reduce((sum, i) => {
+            return sum + i.quantity;
+          }, 0);
     }
 
+    useEffect(() => {
+        const total = getTotalQuantity();
+        setCartTotal(total);
+	}, [cartItems]);// eslint-disable-line react-hooks/exhaustive-deps
 
-    return <CartContext.Provider value = {{ cartItems, addItem, removeItem, clear, isInCart, getTotalQuantity }} > { children } </CartContext.Provider>
+
+    return <CartContext.Provider value = {
+        {cartItems, cartTotal, addItem, removeItem, clear, isInCart, getTotalQuantity, updateItem }
+    } > { children } </CartContext.Provider>
 }

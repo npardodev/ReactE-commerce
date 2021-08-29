@@ -26,7 +26,7 @@ export const Footer = () => {
                             <h5>Domingos de 09:00 a 13:00</h5>
                         </Box>
                         <Box p={1} >
-                        <h4>Horarios de Atencion</h4>
+                            <h4>Horarios de Atencion</h4>
                             <h5>Pedidos y Envios</h5>
                             <h5>11332255</h5>
                             <h5>contacto@e-commerce.com</h5>
@@ -38,7 +38,23 @@ export const Footer = () => {
                             <LinkedInIcon color="primary" fontSize="large" />  
                         </Box>
                     </Box>
-                    <Copyright/>
+                    <Copyright webName="BaluTech"/>
                 </Container>
             </footer>)
+}
+
+
+
+
+
+export const FooterColumn = () => {
+        
+    const classes = useStyles();
+    /*
+    return <Box p={1} >
+            <h4>{columnTitle}</h4>
+            {columnContent.map((index,content) => {
+                return <p>content</p>})}
+    </Box>
+    */
 }

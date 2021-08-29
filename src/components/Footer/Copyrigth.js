@@ -1,10 +1,10 @@
 import React from 'react';
 import {Typography} from '@material-ui/core';
 
-export const Copyright = () => {
+export const Copyright = ({webName}) => {
     return (
       <Typography variant="body2" color="textSecondary" align="center">
-        {`Copyright © Balutech ${new Date().getFullYear()}.`}
+        {`Copyright © ${webName} ${new Date().getFullYear()}.`}
       </Typography>
     );
   }

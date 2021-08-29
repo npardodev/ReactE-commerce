@@ -4,6 +4,8 @@ import { makeStyles} from '@material-ui/core';
 import { NavBarStyle } from './NavBarStyle.js';
 import {Dropdown} from './DropDown.js';
 import {CartWidget} from '../../components/CartWidget/CartWidget';
+import {NavBrand} from './NavBrand.js';
+
 
 const useStyle = makeStyles ((theme) => NavBarStyle(theme));
 
@@ -27,22 +29,14 @@ export const NavBar = () => {
   };
 
   const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
       setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
   };
 
-    return <>
-    
-        <nav className={classes.navbar}>
+    return <nav className={classes.navbar}>
             <ul className={click ? classes.navMenuActive : classes.navMenu}>
-                <li className={classes.navbarLogo}>
-                <Link to="/">
-                    <img src='./img/logo.png' width="50px" height="" alt="Imagen logo" />
-                </Link>
-                </li>
+                
+                <NavBrand/>
+
                 <li className={classes.navItem}>
                     <Link to="/aboutus" 
                         className={classes.navLinks}
@@ -67,12 +61,10 @@ export const NavBar = () => {
                         onClick={handlerClick}>
                         Contacto
                     </Link>
-                </li>                <li>
-                    <CartWidget />
-                </li>
+                </li>                
+                <CartWidget />
             </ul>
         </nav>
-    </>
 }
 
 

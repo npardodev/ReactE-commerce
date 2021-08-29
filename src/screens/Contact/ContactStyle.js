@@ -19,13 +19,6 @@ export const ContactStyle = theme => {
             alignItems: 'center',
             display: 'block',
             margin: '0',
-
-            '& img': {
-                display: 'block',
-                margin: 'auto',
-                textAling: 'center',
-                alignItems: 'center',
-            }
         },
         follow: {
             backgroundColor: 'white',
@@ -56,42 +49,18 @@ export const ContactStyle = theme => {
                 fontWidth: '1.9em',
                 fontWeight: '300',
             },
-
-        },
-        info: {
-            padding: '1em',
-            color: 'white',
-            display: 'flex',
-            flexWrap: 'no-wrap',
-            textAlign: 'center',
-            alignItems: 'center',
-            justifyContent: 'space-around',
-            gap: '2em',
-
-            '& div': {
-                textAlign: 'center',
-                alignItems: 'center',
-            },
-
-            '& h4, h5': {
-                padding: '0.5em',
-                fontWidth: '1.8em',
-                fontWeight: '100',
-            },
-
-            '& .MuiSvgIcon-root': {
-                color: 'white',
-            },
         },
 
         '@media (max-width: 992px)': {
-
             contactContainer: {
                 gridTemplateColumns: 'repeat(1, 1fr)',
-                '& img': {
-
-                }
+                padding: '0px',
+                margin: '0px',
             },
+            map: {
+                display: 'none',
+            }
+
 
         }
     })

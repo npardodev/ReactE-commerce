@@ -5,7 +5,6 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyle = makeStyles ((theme) => NavBarStyle(theme));
 
-//ToDo: acerlo dinámico a partir de la lista de categorias
 export const proudctItemsList = [
     {
       title: 'Notebooks',
@@ -37,7 +36,6 @@ export const Dropdown = () => {
 
 
   return (
-    <>
       <ul
         onClick={handleClick}
         className={click? classes.dropdownMenuClicked : classes.dropdownMenu}
@@ -50,7 +48,6 @@ export const Dropdown = () => {
           );
         })}
       </ul>
-    </>
   );
 }
 
