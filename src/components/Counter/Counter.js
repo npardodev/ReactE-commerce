@@ -12,7 +12,7 @@ export const Counter = ({ stock,count, setter, initial, onAdd }) => {
             if (stock - 1 >= count) {
                 setter(count + 1);
             } else
-                console.log("la cantidad indicada supera el stock actual");
+                return null;
         }
 
         const handleRemoveCount = () => {
@@ -24,9 +24,7 @@ export const Counter = ({ stock,count, setter, initial, onAdd }) => {
         const handlerClick = (e) => {
             if (count <= stock) {
                 onAdd();
-                setter(0);
-            }
-           
+            }  
         }
 
         return (

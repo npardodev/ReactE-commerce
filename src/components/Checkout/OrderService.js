@@ -1,13 +1,11 @@
 import React, {useState, useEffect, useContext} from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { CircularProgress,Typography } from '@material-ui/core';
+import { OrderContext } from './../../Context/OrderContext/OrderContext.js'
+import {CustomLoadingComponent} from './../CustomComponents/CustomLoadingComponent.js'
+import { CustomNotification } from './../CustomComponents/CustomNotification.js';
 import { dataBase } from './../../Firebase/Firebase.js';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import { OrderContext } from './../../Context/OrderContext/OrderContext.js'
-import {CustomLoadingComponent} from './../CustomComponents/CustomLoadingComponent.js'
-import { Snackbar,CircularProgress,Typography } from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
-
 
 //{ buyer: { name, lastname, phone, email }, delivery:{method} items: [{id, title, price}], date, total  }
 
@@ -43,17 +41,20 @@ export const OrderService = () => {
             console.log(`Orden creada con id:" ${id}`);
             setOrderNumber(id);
         }).catch(err => {
+            setShowError(true);
             setError(err); 
         }).finally(() => {
             setLoading(false);
         })
     }
 
-    useEffect(() => {
-        setTimeout(() => {
-            createOrder()
-        },1500);
-    }, []);
+    useEffect(
+        () => {
+        let timer = setTimeout(() => createOrder(), 1500);
+        return () => {
+            clearTimeout(timer);
+        };
+    });
 
     return <> 
     {(loading? (<CustomLoadingComponent iconLoad={CircularProgress} color="primary" messageLoad={'Cargando...'} />) : (
@@ -64,13 +65,7 @@ export const OrderService = () => {
         <Typography variant="subtitle1">
         Tu número de órden es: {`#${orderNumber}`}.
         </Typography>
-        <Snackbar open={showError} autoHideDuration={3000} >
-            <Alert onClose={() => setShowError(false)} severity="error">
-                {error}
-            </Alert>
-        </Snackbar>
-       
+        {showError ? <CustomNotification message = { error } type = "error" /> : null }
     </div>))}
-    
-     </>
+    </>
 }

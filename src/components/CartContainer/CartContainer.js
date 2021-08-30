@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { makeStyles, Container, Paper, Button} from '@material-ui/core';
 import { CartContainerStyle } from './CartContainerStyle.js'
 import { Cart } from './../Cart/Cart.js';
@@ -13,12 +13,6 @@ export const CartContainer = ({ items }) => {
     const classes = useStyle();
     const history = useHistory();
     const {cartItems, addItem, removeItem} = useContext(CartContext);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        console.log(cartItems);
-        console.log(`los elementos del carrito son ${(cartItems.map((element)=>element.quantity))}`);
-    },[])
 
     const onClickHandler = (e) =>{
         e.preventDefault();
@@ -28,14 +22,14 @@ export const CartContainer = ({ items }) => {
 
     return ( <>
         {(cartItems.length ===0? (<CustomCartEmpty/>) : (
-            <div>
+            <section>
                 <div className={classes.cartTitle}>
                     <h1> {"En carrito:"} </h1>
                 </div>
                 <Container maxWidth="l">
                     <Paper elevation={2} variant="outlined" > 
                         <div className = {classes.products }>
-                            {cartItems.map((element, index)=><Cart key={index} item={element.item} quantity={element.quantity}/>)}
+                            {cartItems.map((element)=><Cart key={element.id} item={element.item} quantity={element.quantity}/>)}
                         </div>
                     </Paper>
                     <Button 
@@ -45,7 +39,7 @@ export const CartContainer = ({ items }) => {
                         > Finalizar
                     </Button>
                 </Container>
-            </div>
+            </section>
         ))}            
  </> )
 }

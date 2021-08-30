@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import { ItemDetailStyle } from './ItemDetailStyle.js'
-import { makeStyles,CircularProgress} from '@material-ui/core';
-import { CustomLoadingComponent } from './../CustomComponents/CustomLoadingComponent.js'
+import { makeStyles} from '@material-ui/core';
 import {StockContainer, CustomStockChangeController} from './../StockContainer/StockContainer.js';
 
 const useStyles = makeStyles ((theme) => ItemDetailStyle(theme));
@@ -12,9 +11,7 @@ export const ItemDetail = ({item}) => {
     const [stock, setStock] = useState(0);
 	const handlerStock = value => setStock(value);
 
-    return (item.length === 0 ? (<CustomLoadingComponent iconLoad={CircularProgress} color="primary" messageLoad="cargando"/>) : (
-        <section>
-            <div className= {classes.productItem}>
+    return <section className= {classes.productItem}>
                 <div>
                    <img src={item.imgSrc} alt={item.imgAlt}/> 
                 </div>
@@ -33,8 +30,6 @@ export const ItemDetail = ({item}) => {
                         }
                     </div>
                 </div>
-            </div>           
-
-    </section>))
+    </section>
 }
 

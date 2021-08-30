@@ -64,7 +64,7 @@ export const PaymentContainer =  ()  => {
       </Typography>
       <Grid container spacing={5} justifyContent="center">
         {paymentMethods.map((method, index) => {
-            return <Payment key={index} paymentMethod={method}/>
+            return <Payment key={method.id} paymentMethod={method}/>
         })}
       </Grid>
     </Container>

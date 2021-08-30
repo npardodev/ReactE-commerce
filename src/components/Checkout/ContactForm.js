@@ -43,21 +43,17 @@ const textFields = [{
 },
 ]
 
+const initialStateForm = {
+    firstName:'', 
+    lastName:'',
+    email:'', 
+    phone:'', 
+};
 
 export const ContactFormContainer = () => {
    
-    const initialStateForm = {
-        firstName:'', 
-        lastName:'',
-        email:'', 
-        phone:'', 
-    };
-
     const [subscribe, setSuscribe] = useState(false);
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+    let firstName, lastName, email, phone = '';
     const [contactForm, setContactForm] = useState(initialStateForm);
 
     const {saveOrderBuyer} = useContext(OrderContext);

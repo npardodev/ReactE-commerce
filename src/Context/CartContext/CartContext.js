@@ -7,23 +7,12 @@ export const CartComponentContext = ({ defaultValue = [], children }) => {
     const [cartItems, setCartItems] = useState(defaultValue);
     const [cartTotal, setCartTotal] = useState(0);
 
-    const addItem = (newItem, newQuantity) => {
-
-        if (!isInCart(newItem)) {
-            setCartItems([...cartItems, { item: newItem, quantity: newQuantity }]);
-        } else
-            updateItem(newItem.id, newQuantity);
-    }
-
-    const removeItem = (itemId) => {
-        const cartItemsUpdated = cartItems.filter((item) => item.id !== itemId);
-        setCartItems(cartItemsUpdated);
-    }
 
     const updateItem = (itemId, newQuantity) => {
+    
         const cartItemsUpdated = cartItems.map((item) => {
             if (item.item.id === itemId) {
-                return {...item, quantity: item.quantity + newQuantity };
+                return {...item, quantity: newQuantity};
             } else {
                 return null;
             }
@@ -31,16 +20,27 @@ export const CartComponentContext = ({ defaultValue = [], children }) => {
         setCartItems(cartItemsUpdated);
     };
 
-    const getItem = (itemId) => {
-        return cartItems.find(item => item.id === itemId);
+    const addItem = (newItem, newQuantity) => {
+
+        if (isInCart(newItem) == true) {
+            updateItem(newItem.id, newQuantity);
+        } else{
+            setCartItems([...cartItems, { item: newItem, quantity: newQuantity }]);
+        }
     }
+
+    const removeItem = (itemId) => {
+        const cartItemsUpdated = cartItems.filter((item) => item.id !== itemId);
+        setCartItems(cartItemsUpdated);
+    }
+
 
     const clear = () => {
         setCartItems([]);
     }
 
     const isInCart = (item) => {
-        return (getItem(item.id) !== undefined) ? true : false;
+        return cartItems.find(cartItem => cartItem.item === item)? true : false;
     }
 
     const getTotalQuantity = () => {
