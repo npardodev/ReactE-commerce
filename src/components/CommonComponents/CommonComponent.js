@@ -8,11 +8,6 @@ export const CommonComponent = ({title, subtitle, image, alt, buttonLabel, actio
 
     const classes = useStyle ();
 
-    const commonAction = () => {
-        action();
-        console.log('Ejecucion de boton comun');
-    }
-
     return (
         <section className={classes.container}>
             <div>
@@ -20,7 +15,7 @@ export const CommonComponent = ({title, subtitle, image, alt, buttonLabel, actio
                 <h3> {subtitle} </h3>
                 <img src={image} alt={alt} />
             </div>
-            <Button variant="contained" color="primary" onClick={commonAction} >{buttonLabel}</Button>
+            <Button variant="contained" color="primary" onClick={action} >{buttonLabel}</Button>
         </section>
     )
 };

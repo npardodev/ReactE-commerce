@@ -1,8 +1,6 @@
 export const FooterStyle = theme => {
 
     return ({
-
-
         footer: {
             padding: '1rem',
             backgroundColor: 'white',
@@ -23,6 +21,19 @@ export const FooterStyle = theme => {
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
+            textAlign: "center",
+            flexDirection: "row",
+
+            '& div': {
+                padding: '0',
+                margin: '1.3em',
+
+            },
+            '@media (max-width: 560px)': {
+
+                flexDirection: "column-reverse",
+            },
+
         },
 
         '@media (max-width: 1024px)': {
@@ -33,11 +44,10 @@ export const FooterStyle = theme => {
                 },
                 '& h5': {
                     fontSize: '0.9rem',
-
                 }
             },
         },
-        '@media (max-width: 992px)': {
+        '@media (max-width: 560px)': {
 
             footer: {
                 '& h4': {
@@ -45,19 +55,9 @@ export const FooterStyle = theme => {
                 },
                 '& h5': {
                     fontSize: '0.8rem',
-
                 }
             },
-            footerColumns: {
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "center",
-                textAlign: 'center'
-            },
-
         },
-
-
 
     })
 };

@@ -10,6 +10,7 @@ export const commonComponentStyle = theme => {
             alignItems: 'center',
             heigth: '100vh',
             width: '100%',
+
             ' & h2': {
                 top: '1rem',
                 justifyItems: 'center',

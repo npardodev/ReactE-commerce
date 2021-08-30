@@ -19,25 +19,15 @@ export const HomeStyle = theme => {
             '& h1': {
                 padding: '1rem',
                 textAlign: 'center',
-                fontSize: '3rem',
+                fontSize: '3em',
                 fontWeight: '900',
             },
             '& h2': {
                 textAlign: 'center',
                 color: ''
             },
-            '& button': {
-                marginTop: '7%',
-                width: '14%',
-                heigth: '10em',
-                padding: '0.5em',
-                color: '#00000',
-                fontSize: '1em',
-                border: 'none',
-                backgroundColor: '#6E65FF',
-                boxShadow: '0 4px 2px -2px gray',
-                fontWeight: '600',
-            }
-        }
+        },
+
+
     })
 };

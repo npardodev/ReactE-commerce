@@ -9,6 +9,12 @@ export const NavBarStyle = theme => {
             textAlign: 'center',
             listStyleType: 'none',
             backgroundColor: 'white',
+
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            padding: '1em 0 1em',
+
         },
 
         navbarLogo: {
@@ -17,6 +23,16 @@ export const NavBarStyle = theme => {
             cursor: 'pointer',
             textDecoration: 'none',
             fontSize: '1rem',
+            marginLeft: '2em',
+
+            '& img': {
+                width: "50px",
+                height: "50px",
+            }
+        },
+
+        cartWidget: {
+            marginRight: '2em',
         },
 
         navMenu: {
@@ -43,8 +59,7 @@ export const NavBarStyle = theme => {
         navItem: {
             display: 'flex',
             alignItems: 'center',
-            height: '80px',
-
+            height: '20px',
         },
 
         navLinks: {
@@ -52,13 +67,13 @@ export const NavBarStyle = theme => {
             textDecoration: 'none',
             padding: '0.5 rem 1 rem',
             '&:hover': {
-                backgroundColor: '#083748',
+                backgroundColor: '#ffff',
                 borderWidth: '2px',
                 borderStyle: 'solid',
                 borderColor: '#6E65FF',
                 borderRadius: '4px',
                 transition: 'all 0.2s ease-out',
-                color: '#ffff',
+                color: '#083748',
                 padding: '0.5rem',
                 fontWeight: 'bold'
             }
@@ -104,6 +119,11 @@ export const NavBarStyle = theme => {
             '&:hover': {
                 color: '#ffff',
             }
+        },
+
+        // TEST
+        ' @media screen and(max - width: 640 px)': {
+
         }
 
     })

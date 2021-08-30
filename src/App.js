@@ -1,4 +1,3 @@
-import './App.css';
 import React from 'react';
 import {NavBar} from './components/NavBar/NavBar'; 
 import {Footer} from './components/Footer/Footer'; 
@@ -9,8 +8,6 @@ import { OrderComponentContext} from './Context/OrderContext/OrderContext.js';
 import { ThemeProvider } from '@material-ui/styles';
 import { CustomTheme } from './../src/styles/CustomTheme.js';
 import {SocialIcon} from '../src/components/SocialIcons/SocialIcon.js'
-
-
 
 const App = props => {
 
@@ -27,7 +24,6 @@ const App = props => {
                 </ThemeProvider>
         </OrderComponentContext>
     </CartComponentContext>
-
     );  
 }
 

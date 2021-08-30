@@ -30,22 +30,3 @@ export const RouterApp= () => {
 };
 
 
-
-
-export const RoutingAnimation = (props) => {
-  
-    /*
-    return (
-    <CSSTransition
-      in={match != null}
-      timeout={300}
-      classNames="fade"
-      unmountOnExit
-    >
-    {props.children}
-  </CSSTransition>
-   )
-  */
- 
-}
-

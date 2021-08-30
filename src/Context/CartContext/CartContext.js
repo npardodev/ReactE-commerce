@@ -32,7 +32,7 @@ export const CartComponentContext = ({ defaultValue = [], children }) => {
     };
 
     const getItem = (itemId) => {
-        return cartItems.item.find(item => item.id === itemId);
+        return cartItems.find(item => item.id === itemId);
     }
 
     const clear = () => {

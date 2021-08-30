@@ -25,9 +25,13 @@ export const ItemDetail = ({item}) => {
                         <p>{item.longDescription}</p>
                     </div>
                     <div className= {classes.stockDetails}>
-                        <p>{item.stock>0? "Hay Stock":"Sin Stock"}</p>
+                        {
+                            item.stock>0 ?  
+                            <StockContainer component={CustomStockChangeController} stock={stock} handlerChange={handlerStock} item={item} />
+                            :
+                            <p>Sin Stock</p>
+                        }
                     </div>
-                    <StockContainer component={CustomStockChangeController} stock={stock} handlerChange={handlerStock} item={item} />
                 </div>
             </div>           
 

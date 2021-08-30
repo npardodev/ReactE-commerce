@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Counter } from '../Counter/Counter.js';
 import { ItemStyle } from './ItemStyle.js';
 import { makeStyles } from '@material-ui/core/styles';
-import {useHistory } from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import { ShippingMethod} from './../ShippingMethod/ShippingMethod.js';
 import {CartContext} from './../../Context/CartContext/CartContext.js'
 
@@ -29,9 +29,9 @@ export const Item = ({ item, onClick, onFocus }) => {
 
         return (
             <div className= {classes.card} >
-                <div>
+                <Link to={`/products/${idCategory}/${idItem}`}>
                     <img src={item.imgSrc} alt={item.imgAlt} onClick={(e) => handlerClick(e)} />
-                </div>
+                </Link>
                 <h4>{`$${item.price}`}</h4>
                 <p>{item.description}</p>
                 <Counter stock= {item.stock} count={count} setter={setCount} initial={0} onAdd={onAdd} />

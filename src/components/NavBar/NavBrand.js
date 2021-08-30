@@ -2,6 +2,7 @@ import React from 'react';
 import {Link } from 'react-router-dom';
 import { makeStyles} from '@material-ui/core';
 import { NavBarStyle } from './NavBarStyle.js';
+import logoNav from "../../assets/img/logo.png";
 
 const useStyle = makeStyles ((theme) => NavBarStyle(theme));
 
@@ -10,9 +11,9 @@ export const NavBrand = () => {
       
   const classes = useStyle();
 
-  return <li className={classes.navbarLogo}>
+  return <div className={classes.navbarLogo}>
     <Link to="/">
-        <img src='./img/logo.png' width="50px" height="" alt="Imagen logo" />
+        <img src={logoNav} alt="Imagen logo" />
     </Link>
-  </li>
+  </div>
 }

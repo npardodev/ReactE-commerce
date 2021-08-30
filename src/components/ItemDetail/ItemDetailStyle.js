@@ -138,7 +138,6 @@ export const ItemDetailStyle = theme => {
                 '& p': {
                     textAlign: 'center',
                 },
-
             },
         }
 

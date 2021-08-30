@@ -1,25 +1,7 @@
 import React from 'react'
 import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
-import LocalShippingIcon from '@material-ui/icons/LocalShipping';
-import StoreIcon from '@material-ui/icons/Store';
-
-const methodTypes = [
-    {
-        method: 'delivery',
-        title: 'Envio a domicilio',
-        color: 'secondary',
-        icon: <LocalShippingIcon/>,
-        label: "LocalShippingIcon"
-    },
-    {
-        method: 'inStore',
-        title: 'Retiro en tienda',
-        color: 'primary',
-        icon: <StoreIcon/>,
-        label: "StoreIcon"
-    },
-];
+import {methodTypes} from './methodTypes.js';
 
 export const ShippingMethod = ({delivery=false, inStore=false}) => {
 
@@ -27,11 +9,13 @@ export const ShippingMethod = ({delivery=false, inStore=false}) => {
         <div display="flex" justifyContent="space-around">
 
         { methodTypes.map((element) => {
-            const state = element.method ==='delivery'? delivery:inStore;
 
-            return <Tooltip title={element.title}>
-                <IconButton color={element.color} disabled={!state} aria-label={element.label}>
-                    {element.icon}
+            const {method, title, color, icon, label, style} = element;
+            const state = method ==='delivery'? delivery:inStore;
+
+            return <Tooltip title={title}>
+                <IconButton color={color} disabled={!state} aria-label={label} style={style} >
+                    {icon}
                 </IconButton>
             </Tooltip>
         }) }        

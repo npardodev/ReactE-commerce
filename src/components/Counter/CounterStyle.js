@@ -30,11 +30,11 @@ export const CounterStyle = theme => {
         Stock: {
 
             '& h4': {
-                color: '#22F1A2',
+                color: '#CC6666',
                 '& mark': {
                     backgroundColor: '#c4eddd',
                 },
-            }
+            },
         },
 
 
