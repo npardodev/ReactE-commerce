@@ -37,10 +37,9 @@ Se realizaron las distintas secciones de la web junto con el diseño responsive 
 * [react-google-maps](https://www.npmjs.com/package/@react-google-maps/api) - Integracion con Google Maps
 * [react-transition-group](https://github.com/reactjs/react-transition-group) - Transition Group
 * [Firebase](https://firebase.google.com/) - Cloud Google Database
-
-* [react-moment](https://???) - ???
-* [react-react-hero-carousel](https://???) - ???
-* [react-react-router-dom](https://???) - ???
+* [react-moment]
+* [react-react-hero-carousel]
+* [react-react-router-dom]
 
 ### Display
 
