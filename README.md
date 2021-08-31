@@ -5,7 +5,7 @@
 </p>
 
 # Deploy
-* [Link al sitio](https://react-e-commerce-mkh13jl1a-npardodev.vercel.app!) - on Vercel
+* [Link al sitio](https://react-e-commerce-gpkv9atfb-npardodev.vercel.app/) - on Vercel
 
 Este repositorio es parte del Proyecto Final del Curso React de Coderhouse, el cual tiene como finalidad la creación de un e-commerce. En este caso se opto con el desarrollo de un sitio web para venta de artículos de informática y tecnología.
 
