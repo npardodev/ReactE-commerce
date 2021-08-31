@@ -4,7 +4,7 @@ import { ItemListContainer } from '../components/ItemListContainer/ItemListConta
 import { ItemDetailContainer } from '../components/ItemDetailContainer/ItemDetailContainer.js';
 import { CartContainer } from '../components/CartContainer/CartContainer.js'
 import { AboutUsContainer } from '../../src/screens/AboutUs/AboutUsContainer.js'
-import Checkout from '../../src/components/Checkout/Checkout.js'
+import { Checkout } from '../../src/screens/Checkout/Checkout.js'
 
 export const appPaths = {
     HOME_PATH: '/',

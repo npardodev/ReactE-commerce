@@ -19,7 +19,6 @@ export const CartContainer = ({ items }) => {
         history.push('/checkout');
     }
 
-
     return ( <>
         {(cartItems.length ===0? (<CustomCartEmpty/>) : (
             <section>

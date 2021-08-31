@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { makeStyles, Container,Box, Paper} from '@material-ui/core';
+import { makeStyles,Box, } from '@material-ui/core';
 import { Counter } from './../Counter/Counter.js';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';

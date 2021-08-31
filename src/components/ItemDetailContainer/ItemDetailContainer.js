@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Alert } from '@material-ui/lab';
-import { Snackbar,CircularProgress } from '@material-ui/core';
+import { CircularProgress } from '@material-ui/core';
 import { ItemDetail } from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';
 import { dataBase } from './../../Firebase/Firebase.js';

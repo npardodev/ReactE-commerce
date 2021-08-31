@@ -1,55 +1,34 @@
-import React, {useState, createContext, useContext} from 'react';
-import {CartContext} from './../../Context/CartContext/CartContext.js'
+import React, {useState, createContext} from 'react';
 
 export const OrderContext = createContext();
 
 export const OrderComponentContext = ({ defaultValue=[], children}) => {
 
-	
-    const {cartItems} = useContext(CartContext);
-    const [order, setOrder] = useState([]);
-	const [orderBuyer, setOrderBuyer] = useState('');
-	const [orderDelivery, setOrderDelivery] = useState('');
-	const [orderPayment, setOrderPayment] = useState('');
+    const [order, setOrder] = useState({
+		buyer: '',
+		delivery: '',
+        items: '',
+		payment: '',
+        date: '',
+        total: '',
+		id: '',
+	});
 
-	const [orderDate, setOrderDate] = useState(0);
-	const [orderTotal, setOrderTotal] = useState(0);
-    const [orderItems, setOrderItems] = useState(cartItems);
-
-	const [orderId, setOrderId] = useState(0);
-    
-	/*
-	Funciones
-	const addOrder = newOrder => setOrders([...orders,newOrder]);
-	
-	const ORDER = { 
-		buyer:orderBuyer,
-		delivery:orderDelivery,
-		items: cartItems,
-        date: firebase.firestore.Timestamp.fromDate(new Date()),
-		total:
-	 }
-	*/
-
-	const saveOrderId = (id) =>{
-		setOrderId(id);
+	const saveOrderId = (newId) =>{
+		setOrder({ ...order, id:newId});
 	}
 
 	const saveOrderPayment = (payment) =>{
-		setOrderDelivery(payment);
+		setOrder({ ...order, payment:payment});
 	}
 
 	const saveOrderDelivery = (delivery) =>{
-		setOrderDelivery(delivery);
+		setOrder({ ...order, delivery:delivery});
 	}
 
-	const saveOrderBuyer = (nameValue, phoneValue, emailValue) =>{
-		if (nameValue != null && phoneValue != null && emailValue != null) 
-			setOrderBuyer({name:nameValue,phone:phoneValue, email: phoneValue });
-	}
-
-	const saveItems = (items) =>{
-		setOrderItems(items);
+	const saveOrderBuyer = (contactForm) =>{
+		const { firstName, lastName, email, phone  } = contactForm;
+		setOrder({ ...order, buyer:{name:`${firstName} ${lastName}`,phone:phone, email: email }});
 	}
 
 	return <OrderContext.Provider value={{saveOrderId, saveOrderBuyer, saveOrderDelivery, saveOrderPayment, order}} >
