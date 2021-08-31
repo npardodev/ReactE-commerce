@@ -1,4 +1,3 @@
-
 import React,{useContext}  from 'react';
 import {Button} from '@material-ui/core';
 import {useState} from 'react';
@@ -16,7 +15,7 @@ export const CustomStockChangeController = ({stock, changeStock, item}) => {
 	
     const [finish, setFinish] = useState(false);
     const history = useHistory();
-	const {cartItems, addItem, removeItem} = useContext(CartContext);
+	const { addItem, removeItem} = useContext(CartContext);
 
     const onAdd = () => {
         changeStock(stock +1)

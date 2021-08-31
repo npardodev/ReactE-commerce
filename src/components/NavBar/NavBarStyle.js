@@ -9,13 +9,8 @@ export const NavBarStyle = theme => {
             textAlign: 'center',
             listStyleType: 'none',
             backgroundColor: 'white',
-
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: '1em 0 1em',
-
         },
+
 
         navbarLogo: {
             color: '#ffff',
@@ -59,7 +54,8 @@ export const NavBarStyle = theme => {
         navItem: {
             display: 'flex',
             alignItems: 'center',
-            height: '20px',
+            height: '80px',
+
         },
 
         navLinks: {
@@ -67,13 +63,13 @@ export const NavBarStyle = theme => {
             textDecoration: 'none',
             padding: '0.5 rem 1 rem',
             '&:hover': {
-                backgroundColor: '#ffff',
+                backgroundColor: '#083748',
                 borderWidth: '2px',
                 borderStyle: 'solid',
                 borderColor: '#6E65FF',
                 borderRadius: '4px',
-                transition: 'all 0.2s ease-out',
-                color: '#083748',
+                color: '#ffff',
+                transition: '0.2s',
                 padding: '0.5rem',
                 fontWeight: 'bold'
             }
@@ -82,6 +78,8 @@ export const NavBarStyle = theme => {
         menuIcon: {
             display: 'none',
         },
+
+
 
         dropdownMenuClicked: {
             display: 'none',
@@ -119,11 +117,6 @@ export const NavBarStyle = theme => {
             '&:hover': {
                 color: '#ffff',
             }
-        },
-
-        // TEST
-        ' @media screen and(max - width: 640 px)': {
-
         }
 
     })

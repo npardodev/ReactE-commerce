@@ -23,6 +23,7 @@ export const OrderService = () => {
     const newOrder = {
         buyer: order.buyer,
         delivery: order.delivery,
+        newsletter: order.newsletter,
         payment: order.payment,
         items: cartItems,
         date: firebase.firestore.Timestamp.fromDate(new Date()),

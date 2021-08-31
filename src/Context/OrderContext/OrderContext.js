@@ -6,6 +6,7 @@ export const OrderComponentContext = ({ defaultValue=[], children}) => {
 
     const [order, setOrder] = useState({
 		buyer: '',
+		newsletter:'',
 		delivery: '',
         items: '',
 		payment: '',
@@ -22,6 +23,10 @@ export const OrderComponentContext = ({ defaultValue=[], children}) => {
 		setOrder({ ...order, payment:payment});
 	}
 
+	const saveNewsletter = (subscribe) =>{
+		setOrder({ ...order, newsletter:subscribe });
+	}
+	
 	const saveOrderDelivery = (delivery) =>{
 		setOrder({ ...order, delivery:delivery});
 	}
@@ -31,7 +36,7 @@ export const OrderComponentContext = ({ defaultValue=[], children}) => {
 		setOrder({ ...order, buyer:{name:`${firstName} ${lastName}`,phone:phone, email: email }});
 	}
 
-	return <OrderContext.Provider value={{saveOrderId, saveOrderBuyer, saveOrderDelivery, saveOrderPayment, order}} >
+	return <OrderContext.Provider value={{saveOrderId, saveNewsletter, saveOrderBuyer, saveOrderDelivery, saveOrderPayment, order}} >
 		{children}
 	</OrderContext.Provider>
 }

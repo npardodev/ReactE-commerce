@@ -21,5 +21,19 @@ export const CartContainerStyle = theme => {
             }
         },
 
+        cartContainer: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            textAlign: 'center',
+            alignItems: 'center',
+            padding: '1em',
+
+            '& button': {
+                marginTop: '2em',
+
+            }
+        }
+
     })
 }

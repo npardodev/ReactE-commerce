@@ -17,7 +17,7 @@ export const Cart = ( {item, quantity}) => {
     const classes = useStyle();
     const [count, setCount] = useState(quantity);
     const shortDescript = item.description.substring(0, 19)+"...";
-    const {cartItems, addItem} = useContext(CartContext);
+    const {addItem} = useContext(CartContext);
 
     const onAdd = () =>{
         addItem(item,count);

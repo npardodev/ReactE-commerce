@@ -33,77 +33,37 @@ export const NavBar = () => {
   };
 
     return <nav className={classes.navbar}>
-            
+                <ul className={click ? classes.navMenuActive : classes.navMenu}>
+
                 <NavBrand/>
-                
-                <div className={classes.navLinksList}>
-
-                    <ul className={click ? classes.navMenuActive : classes.navMenu}>
-                        <li className={classes.navItem}>
-                            <Link to="/aboutus" 
-                                className={classes.navLinks}
-                                onClick={handlerClick}>
-                                Nosotros
-                            </Link>
-                        </li>
-                        <li 
-                            onMouseEnter={onMouseEnter}
-                            onMouseLeave={onMouseLeave}
-                            className={classes.navItem}>
-                            <Link to="/products" 
-                                className={classes.navLinks}
-                                onClick={handlerClick}>
-                                Productos
-                            </Link>
-                            {dropdown && <Dropdown />}
-                        </li>
-                        <li className={classes.navItem}>
-                            <Link to="/contact" 
-                                className={classes.navLinks}
-                                onClick={handlerClick}>
-                                Contacto
-                            </Link>
-                        </li>         
-                    </ul>  
-                </div>
-
-                <CartWidget />
-        </nav>
-}
-/*
-const navLinkItems = [
-    {
-        path: "/aboutus",
-        title: "Nosotros",
-
-    },
-
-]
-
-/*
-
-  <li className={classes.navItem}>
+    
+                <li className={classes.navItem}>
                     <Link to="/aboutus" 
                         className={classes.navLinks}
                         onClick={handlerClick}>
                         Nosotros
                     </Link>
                 </li>
-                
-export const NavLinksItems = () => {
-
-    const classes = useStyle();
-
-    return  <div className={classes.navItems}>
-        {navLinkItems.map((index,element) =>  
-            <li className={classes.navItem}>
-                <Link to="/aboutus" 
-                    className={classes.navLinks}
-                    >
-                    Nosotros
-                </Link>
-            </li>
-        )}
-    </div>
+                <li 
+                    onMouseEnter={onMouseEnter}
+                    onMouseLeave={onMouseLeave}
+                    className={classes.navItem}>
+                    <Link to="/products" 
+                        className={classes.navLinks}
+                        onClick={handlerClick}>
+                        Productos
+                    </Link>
+                    {dropdown && <Dropdown />}
+                </li>
+                <li className={classes.navItem}>
+                    <Link to="/contact" 
+                        className={classes.navLinks}
+                        onClick={handlerClick}>
+                        Contacto
+                    </Link>
+                </li>                <li>
+                    <CartWidget />
+                </li>
+            </ul>
+        </nav>
 }
-*/

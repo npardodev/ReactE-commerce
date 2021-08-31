@@ -22,7 +22,7 @@ export const CartComponentContext = ({ defaultValue = [], children }) => {
 
     const addItem = (newItem, newQuantity) => {
 
-        if (isInCart(newItem) == true) {
+        if (isInCart(newItem) === true) {
             updateItem(newItem.id, newQuantity);
         } else{
             setCartItems([...cartItems, { item: newItem, quantity: newQuantity }]);

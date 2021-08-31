@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { makeStyles, Container, Paper, Button} from '@material-ui/core';
 import { CartContainerStyle } from './CartContainerStyle.js'
 import { Cart } from './../Cart/Cart.js';
@@ -12,7 +12,7 @@ export const CartContainer = ({ items }) => {
 
     const classes = useStyle();
     const history = useHistory();
-    const {cartItems, addItem, removeItem} = useContext(CartContext);
+    const {cartItems} = useContext(CartContext);
 
     const onClickHandler = (e) =>{
         e.preventDefault();
@@ -21,19 +21,20 @@ export const CartContainer = ({ items }) => {
 
     return ( <>
         {(cartItems.length ===0? (<CustomCartEmpty/>) : (
-            <section>
+            <section className={classes.cartContainer}>
                 <div className={classes.cartTitle}>
                     <h1> {"En carrito:"} </h1>
                 </div>
-                <Container maxWidth="l">
+                <Container maxWidth="l" >
                     <Paper elevation={2} variant="outlined" > 
                         <div className = {classes.products }>
                             {cartItems.map((element)=><Cart key={element.id} item={element.item} quantity={element.quantity}/>)}
                         </div>
                     </Paper>
                     <Button 
-                        variant="contained" 
-                        color="primary" 
+                        justifyContent= 'center'
+                        variant="outlined" 
+                        color="primary"
                         onClick={e => onClickHandler(e)}
                         > Finalizar
                     </Button>

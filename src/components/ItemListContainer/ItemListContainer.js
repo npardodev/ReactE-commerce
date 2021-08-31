@@ -10,7 +10,7 @@ import { COLLECTION_NAME, MAX_GET_ITEM_COLLECTION } from '../../Firebase/constan
 
 export const ItemListContainer = () => {
 
-    const { idCat, id } = useParams();
+    const { idCat } = useParams();
     const initialErrorState = 'Error cargando productos!';
     const [productData, setProductsData] = useState([]);
     const  [error, setError] = useState(initialErrorState);

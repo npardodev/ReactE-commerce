@@ -18,7 +18,7 @@ export const ContactFormContainer = () => {
     let firstName, lastName, email, phone = '';
     const [contactForm, setContactForm] = useState(initialStateForm);
 
-    const {saveOrderBuyer} = useContext(OrderContext);
+    const {saveOrderBuyer, saveNewsletter} = useContext(OrderContext);
 
     const addContact = newCont => setContactForm([newCont]);
 
@@ -29,11 +29,10 @@ export const ContactFormContainer = () => {
               lastName:lastName,
               email:email,
               phone:phone,
-          });
-          saveOrderBuyer(contactForm);
-          setContactForm(initialStateForm);
-          console.log(contactForm);
-
+        });
+        saveOrderBuyer(contactForm);
+        saveNewsletter(subscribe);
+        setContactForm(initialStateForm);
       }
     
       const handlerChange = e =>{
