@@ -4,10 +4,8 @@
   <h2 align="center">Balutech E-commerce</h2>
 </p>
 
-## Deploy
-* [Link al sitio](https://react-e-commerce-mn9bhjd4t-npardodev.vercel.app/) - on Vercel
-
-
+# Deploy
+* [Link al sitio](https://react-e-commerce-mkh13jl1a-npardodev.vercel.app!) - on Vercel
 
 Este repositorio es parte del Proyecto Final del Curso React de Coderhouse, el cual tiene como finalidad la creación de un e-commerce. En este caso se opto con el desarrollo de un sitio web para venta de artículos de informática y tecnología.
 
@@ -79,9 +77,13 @@ Se realizó la integración del servicio de Firebase de google como motor de bas
 ![image](https://user-images.githubusercontent.com/83429848/127078135-ac2e3992-1278-4735-a65f-785d70614bf5.png)
 ![image](https://user-images.githubusercontent.com/83429848/127078167-02a5459f-060d-4e58-b6b9-88a21c0447be.png)
 
+#Gif del sitio
+![Gif Navegacion]([Grabación-de-pantalla-2021-08-30-a-la_s_-22 40 37](https://user-images.githubusercontent.com/83429848/131428432-6aad17e8-27c1-416f-9c37-d87a03943f15.gif))
+
+
 ### Mejoras a realizar
 
 - Incorporacion de referencia a valor dolar en el sitio.
--
-- 
+- Customizaciones en proceso de Checkout
+- Correcciones en Responsive
 - 
